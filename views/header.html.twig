@@ -1,0 +1,42 @@
+{#
+
+Header
+
+@author     Jérémy Levron <jeremylevron@19h47.fr> (https://19h47.fr)
+@file       views/header.html.twig
+@package    DLAP
+
+#}
+
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html {{ html_class( 'ie9 no-js no-touch' ) }} {{ site.language_attributes }}>
+<![endif]-->
+<!--[if !(IE 9)]><!-->
+<html {{ site.language_attributes }} {{ html_class( 'no-js no-touch' ) }}>
+<!--<![endif]-->
+
+	<head>
+
+		<meta charset="{{ site.charset }}">
+		<link rel="profile" href="http://gmpg.org/xfn/11">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
+
+		{{ wp_head }}
+
+		{# {% include 'components/gtag.html.twig' with { id: 'UA-153672608-1' } %} #}
+
+    </head>
+
+
+    <body class="{{ body_class }}{{ post.body_classes ? ( ' ' ~ post.body_classes | join( ' ' ) ) }}">
+		<div id="svg-sprite" class="d-none">{% include 'icons.svg' %}</div>
+		<header class="Site-header">
+			<div class="Site-container">
+				<div class="row">
+					<div class="col-12 col-md-5">
+					</div>
+				</div>
+			</div>
+		</header>

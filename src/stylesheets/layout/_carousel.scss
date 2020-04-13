@@ -1,0 +1,19 @@
+/**
+ * Carousel
+ *
+ *
+ * @package DLAP
+ */
+.Carousel {
+	@extend %overflow-hidden;
+
+	.flickity-viewport {
+		overflow: visible;
+	}
+
+	// .Carousel__items
+	&__items {}
+
+	// .Carousel__item
+	&__item {}
+}

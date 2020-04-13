@@ -1,0 +1,41 @@
+/**
+ * Base
+ */
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	@extend %font-weight-regular, %font-family-body, %position-relative;
+
+	font-size: $base-font-size-px;
+	line-height: #{ $base-line-height }px;
+
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+
+	text-rendering: optimizeLegibility;
+}
+
+a,
+button {
+	cursor: pointer;
+	outline: none;
+}
+
+a {
+	color: currentColor;
+	text-decoration: none;
+}
+
+p {
+	@include margin (
+		top 0
+		bottom #{ $base-line-height }px
+	);
+}
+
+strong {
+	@extend %font-weight-bold;
+}

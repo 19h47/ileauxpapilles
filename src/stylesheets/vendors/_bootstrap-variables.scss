@@ -1,0 +1,78 @@
+/**
+ * Grid columns number
+ *
+ * Number of columns in the grid, it override `$grid-columns` from
+ * bootstrap-sass. It means, if you wish, that you can instantiate a grid of 8,
+ * for example.
+ *
+ * @see https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/_variables.scss#L329
+ */
+$grid-columns: 12;
+
+
+/**
+ * Gutter width
+ *
+ * Padding between columns. Gets divided in half for the left and right, it
+ * overide `$grid-gutter-width` from bootstrap-sass
+ *
+ * @see http://stackoverflow.com/a/28193872/5091221
+ * @see https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/_variables.scss#L331
+ */
+$grid-gutter-width-unitless: 24;
+$grid-gutter-width: ( $grid-gutter-width-unitless * 1px );
+
+
+/**
+ * Grid breakpoints
+ *
+ * Define the minimum dimensions at which your layout will change,
+ * adapting to different screen sizes, for use in media queries.
+ *
+ * @see https://github.com/twbs/bootstrap/blob/v4-dev/scss/_variables.scss#L180
+ */
+$grid-breakpoints: (
+	xs: 0,
+	sm: 754px,
+	md: 992px,
+	lg: 1200px,
+	hd: 1400px,
+);
+
+
+$grid-gutter-widths: (
+  	xs: $grid-gutter-width / 2,
+	sm: $grid-gutter-width / 2,
+  	md: $grid-gutter-width,
+	lg: $grid-gutter-width,
+	hd: $grid-gutter-width
+);
+
+@each $grid-breakpoint, $grid-gutter-width in $grid-gutter-widths {
+	@include media-breakpoint-up( $grid-breakpoint ) {
+
+    	$grid-gutter-half-width: $grid-gutter-width / 2;
+
+		.row:not(.no-gutters) {
+			margin-right: -$grid-gutter-half-width;
+			margin-left: -$grid-gutter-half-width;
+		}
+
+		.row:not(.no-gutters) > .col,
+		.row:not(.no-gutters) > [class*="col-"] {
+			padding-right: $grid-gutter-half-width;
+			padding-left: $grid-gutter-half-width;
+		}
+	}
+}
+
+.no-gutters {
+  	margin-right: 0;
+  	margin-left: 0;
+
+  	> .col,
+  	> [class*="col-"] {
+    	padding-right: 0;
+    	padding-left: 0;
+  	}
+}
