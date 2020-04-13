@@ -7,16 +7,13 @@
 
 @import 'base/fonts';
 
-@import
-	'~ress/ress',
-	'~flickity/css/flickity';
+@import '~ress/ress', '~flickity/css/flickity';
 
 // Functions
 @import '~@19h47/architecture/src/stylesheets/abstracts/functions';
 
 // Mixins.
-@import
-	'~@19h47/architecture/src/stylesheets/abstracts/mixins/auto-alpha',
+@import '~@19h47/architecture/src/stylesheets/abstracts/mixins/auto-alpha',
 	'~@19h47/architecture/src/stylesheets/abstracts/mixins/create-class-color',
 	'~@19h47/architecture/src/stylesheets/abstracts/mixins/font',
 	'~@19h47/architecture/src/stylesheets/abstracts/mixins/letter-spacing',
@@ -30,42 +27,24 @@
 @import '~@19h47/architecture/src/stylesheets/abstracts/placeholders';
 
 // Base stuff
-@import
-	'base/base',
-	'base/typographies';
+@import 'base/base', 'base/typographies';
 
 // Layout
-@import
-	'layout/site',
-	'layout/header',
-	'layout/footer',
-	'layout/partners',
-	'layout/hero',
-	'layout/map',
-	'layout/carousel';
+@import 'layout/site', 'layout/header', 'layout/footer', 'layout/partners', 'layout/hero',
+	'layout/content', 'layout/map', 'layout/carousel';
 
 // Components
-@import
-	'components/logo',
-	'components/menu',
-	'components/guid',
-	'components/form',
-	'components/socials',
-	'components/button';
+@import 'components/logo', 'components/menu', 'components/guid', 'components/form',
+	'components/socials', 'components/button';
 
 // Pages
-@import
-	'pages/page',
-	'pages/front-page';
-
+@import 'pages/page', 'pages/front-page';
 
 // Utilities.
-@import
-	'vendors/architecture-variables',
-	'~@19h47/architecture/src/stylesheets/utilities/colors',
+@import 'vendors/architecture-variables', '~@19h47/architecture/src/stylesheets/utilities/colors',
 	'~@19h47/architecture/src/stylesheets/utilities/cursors',
-// 	'~@19h47/architecture/src/stylesheets/utilities/displays',
-	'~@19h47/architecture/src/stylesheets/utilities/floats',
+	// 	'~@19h47/architecture/src/stylesheets/utilities/displays',
+		'~@19h47/architecture/src/stylesheets/utilities/floats',
 	'~@19h47/architecture/src/stylesheets/utilities/fonts',
 	'~@19h47/architecture/src/stylesheets/utilities/margins',
 	'~@19h47/architecture/src/stylesheets/utilities/overflows',
@@ -76,6 +55,6 @@
 	'~@19h47/architecture/src/stylesheets/utilities/text-decorations',
 	'~@19h47/architecture/src/stylesheets/utilities/text-transforms',
 	'~@19h47/architecture/src/stylesheets/utilities/vertical-aligns',
-// 	'~@19h47/architecture/src/stylesheets/utilities/visibilities',
-	'~@19h47/architecture/src/stylesheets/utilities/white-spaces',
+	// 	'~@19h47/architecture/src/stylesheets/utilities/visibilities',
+		'~@19h47/architecture/src/stylesheets/utilities/white-spaces',
 	'~@19h47/architecture/src/stylesheets/utilities/lists';

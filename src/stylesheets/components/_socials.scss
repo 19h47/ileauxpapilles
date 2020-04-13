@@ -8,35 +8,33 @@
 	@extend %list-style-type-none;
 	@extend .d-flex;
 
-	color: the_color( white );
+	color: the_color(white);
 
 	&__item {
-		@include margin( right 10px left 10px );
+		@include margin(right $grid-gutter-width / 4 left $grid-gutter-width / 4);
 
 		&:last-child {
-			@include margin( right 0 );
+			@include margin(right 0);
 		}
 		&:first-child {
-			@include margin( left 0 );
+			@include margin(left 0);
 		}
 	}
 
 	&__link {
 		@extend .d-flex, .align-items-center, .justify-content-center;
-		@include size( 60px );
+		@include size($grid-gutter-width);
 
-		border: 1px solid rgba( the_color( white ), 0.4 );
-		border-radius: 30px;
-		transition: border-color 0.3s map-get( $easings, ease-out-expo );
+		border-radius: $grid-gutter-width / 2;
+		background-color: the_color(cyan, dark-moderate);
 
 		&:hover {
-			border-color: the_color( white );
 		}
 
 		svg {
-			@include size( 27px, 24px );
+			@include size($grid-gutter-width / 2);
 
-			fill: currentColor;
+			fill: the_color(white);
 		}
 	}
 }

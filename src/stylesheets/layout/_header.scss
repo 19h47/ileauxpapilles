@@ -5,4 +5,10 @@
  *
  * @package DLAP
  */
-.Site-header {}
+.Site-header {
+	height: $grid-gutter-width * 3;
+
+	strong {
+		color: the_color(white);
+	}
+}

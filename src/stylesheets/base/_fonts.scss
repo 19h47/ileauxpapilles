@@ -1,13 +1,41 @@
-// Aeonik Bold
-// @font-face {
-//     font-family: 'Aeonik';
-//     src: url('../../src/fonts/aeonik/aeonik-bold.eot');
-//     src: url('../../src/fonts/aeonik/aeonik-bold.woff2') format('woff2'),
-//         url('../../src/fonts/aeonik/aeonik-bold.woff') format('woff'),
-// 		url('../../src/fonts/aeonik/aeonik-bold.eot?#iefix') format('embedded-opentype'),
-// 		url('../../src/fonts/aeonik/aeonik-bold.ttf') format('truetype'),
-// 		url('../../src/fonts/aeonik/aeonik-bold.svg#aeonik-bold') format('svg');
-//     font-weight: 700;
-// 	font-style: normal;
-// 	font-display: swap;
-// }
+// Titillium regular
+@font-face {
+	font-family: 'Titillium';
+	src: url('../../src/fonts/titillium/titillium-regular.eot');
+	src: url('../../src/fonts/titillium/titillium-regular.woff2') format('woff2'),
+		url('../../src/fonts/titillium/titillium-regular.woff') format('woff'),
+		url('../../src/fonts/titillium/titillium-regular.eot?#iefix') format('embedded-opentype'),
+		url('../../src/fonts/titillium/titillium-regular.ttf') format('truetype'),
+		url('../../src/fonts/titillium/titillium-regular.svg#titillium-regular') format('svg');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+// Titillium bold
+@font-face {
+	font-family: 'Titillium';
+	src: url('../../src/fonts/titillium/titillium-bold.eot');
+	src: url('../../src/fonts/titillium/titillium-bold.woff2') format('woff2'),
+		url('../../src/fonts/titillium/titillium-bold.woff') format('woff'),
+		url('../../src/fonts/titillium/titillium-bold.eot?#iefix') format('embedded-opentype'),
+		url('../../src/fonts/titillium/titillium-bold.ttf') format('truetype'),
+		url('../../src/fonts/titillium/titillium-bold.svg#titillium-bold') format('svg');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+// Didot bold italic
+@font-face {
+	font-family: 'Didot';
+	src: url('../../src/fonts/didot/didot-bold-italic.eot');
+	src: url('../../src/fonts/didot/didot-bold-italic.woff2') format('woff2'),
+		url('../../src/fonts/didot/didot-bold-italic.woff') format('woff'),
+		url('../../src/fonts/didot/didot-bold-italic.eot?#iefix') format('embedded-opentype'),
+		url('../../src/fonts/didot/didot-bold-italic.ttf') format('truetype'),
+		url('../../src/fonts/didot/didot-bold-italic.svg#titillium-bold-italic') format('svg');
+	font-weight: 700;
+	font-style: italic;
+	font-display: swap;
+}

@@ -5,4 +5,42 @@
  *
  * @package DLAP
  */
-.Page {}
+.Page {
+	&__title {
+		@extend %margin-0;
+
+		color: the_color(cyan, dark-moderate);
+	}
+
+	&__subtitle {
+		@extend %margin-0;
+		@extend .h2;
+
+		color: the_color(cyan, dark-moderate);
+	}
+
+	&__introduction {
+		@extend %margin-top-3, %margin-bottom-0;
+		@extend %position-relative;
+
+		z-index: 3;
+
+		strong {
+			color: the_color(white);
+		}
+	}
+
+	&__thumbnail {
+		@include size(100%);
+		@extend .d-inline-block;
+		@extend %vertical-align-middle, %position-relative;
+
+		object-fit: cover;
+		object-position: center;
+		z-index: 1;
+	}
+
+	&__content {
+		@include padding(top $grid-gutter-width * 3 bottom $grid-gutter-width * 6);
+	}
+}

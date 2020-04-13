@@ -18,8 +18,9 @@ use Timber\{ Timber, Post };
 
 $context = Timber::context();
 
-$context['post']      = new Post();
-$context['namespace'] = 'page';
+$context['post']         = new Post();
+$context['namespace']    = 'page';
+$context['body_classes'] = array( 'background-color-cyan-very-dark-desaturated', 'color-gray-very-light' );
 
 $templates = array( 'index.html.twig' );
 

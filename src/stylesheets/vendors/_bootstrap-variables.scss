@@ -9,7 +9,6 @@
  */
 $grid-columns: 12;
 
-
 /**
  * Gutter width
  *
@@ -20,8 +19,7 @@ $grid-columns: 12;
  * @see https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/_variables.scss#L331
  */
 $grid-gutter-width-unitless: 24;
-$grid-gutter-width: ( $grid-gutter-width-unitless * 1px );
-
+$grid-gutter-width: ($grid-gutter-width-unitless * 1px);
 
 /**
  * Grid breakpoints
@@ -38,41 +36,3 @@ $grid-breakpoints: (
 	lg: 1200px,
 	hd: 1400px,
 );
-
-
-$grid-gutter-widths: (
-  	xs: $grid-gutter-width / 2,
-	sm: $grid-gutter-width / 2,
-  	md: $grid-gutter-width,
-	lg: $grid-gutter-width,
-	hd: $grid-gutter-width
-);
-
-@each $grid-breakpoint, $grid-gutter-width in $grid-gutter-widths {
-	@include media-breakpoint-up( $grid-breakpoint ) {
-
-    	$grid-gutter-half-width: $grid-gutter-width / 2;
-
-		.row:not(.no-gutters) {
-			margin-right: -$grid-gutter-half-width;
-			margin-left: -$grid-gutter-half-width;
-		}
-
-		.row:not(.no-gutters) > .col,
-		.row:not(.no-gutters) > [class*="col-"] {
-			padding-right: $grid-gutter-half-width;
-			padding-left: $grid-gutter-half-width;
-		}
-	}
-}
-
-.no-gutters {
-  	margin-right: 0;
-  	margin-left: 0;
-
-  	> .col,
-  	> [class*="col-"] {
-    	padding-right: 0;
-    	padding-left: 0;
-  	}
-}

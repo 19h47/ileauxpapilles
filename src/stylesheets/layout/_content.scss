@@ -1,0 +1,19 @@
+/**
+ *
+ *
+ *
+ */
+.Content {
+	& > *:first-child {
+		@include margin(top 0);
+	}
+
+	& > *:last-child {
+		@include margin(bottom 0);
+	}
+
+	h3 {
+		@include margin(bottom $grid-gutter-width);
+		color: the_color(cyan, dark-moderate);
+	}
+}

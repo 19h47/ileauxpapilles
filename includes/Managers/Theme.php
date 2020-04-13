@@ -66,6 +66,9 @@ class Theme {
 		add_filter( 'timber/twig', array( $this, 'add_to_twig' ) );
 		add_filter( 'timber_context', array( $this, 'add_socials_to_context' ) );
 		add_filter( 'timber_context', array( $this, 'add_manifest_to_context' ) );
+		add_filter( 'timber_context', array( $this, 'add_menus_to_context' ) );
+		add_filter( 'timber_context', array( $this, 'add_to_context' ) );
+
 	}
 
 
@@ -83,10 +86,11 @@ class Theme {
 
 		$this->add_theme_supports();
 		$this->add_post_type_supports();
+		$this->remove_post_type_supports();
+		$this->register_menus();
 
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_style' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
-		add_action( 'admin_init', array( $this, 'register_menus' ) );
 	}
 
 
@@ -104,6 +108,7 @@ class Theme {
 		 * @see https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
 		add_theme_support( 'post-thumbnails' );
+		add_theme_support( 'menus' );
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
@@ -129,6 +134,16 @@ class Theme {
 	 */
 	public function add_post_type_supports() {
 		add_post_type_support( 'page', 'excerpt' );
+	}
+
+
+	/**
+	 * Remove post type supports
+	 *
+	 * @return void
+	 */
+	public function remove_post_type_supports() {
+		remove_post_type_support( 'page', 'editor' );
 	}
 
 	/**
@@ -165,6 +180,8 @@ class Theme {
 	 * Add manifest to context
 	 *
 	 * @param array $context Timber context.
+	 *
+	 * @return array $context
 	 */
 	public function add_manifest_to_context( array $context ) : array {
 		$context['manifest'] = $this->get_theme_manifest();
@@ -221,6 +238,21 @@ class Theme {
 	}
 
 
+	/**
+	 * Add to context
+	 *
+	 * @param  array $context Timber context
+	 *
+	 * @return array
+	 */
+	public function add_to_context( array $context ) : array {
+		$context['feed_link']    = get_feed_link();
+		$context['phone_number'] = get_option( 'phone_number' );
+
+		return $context;
+	}
+
+
 
 	/**
 	 * Add menus to context
@@ -235,6 +267,7 @@ class Theme {
 		foreach ( $menus as $menu => $value ) {
 			$context['menus'][ $menu ] = new Menu( $menu );
 		}
+
 		return $context;
 	}
 
@@ -314,8 +347,7 @@ class Theme {
 	public function register_menus() {
 		register_nav_menus(
 			array(
-				'menu'   => __( 'Menu', 'delileauxpapilles' ),
-				'footer' => __( 'Footer', 'delileauxpapilles' ),
+				'menu' => __( 'Menu', 'delileauxpapilles' ),
 			)
 		);
 	}

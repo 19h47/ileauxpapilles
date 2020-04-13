@@ -4,4 +4,14 @@
  *
  * @package DLAP
  */
-.Logo {}
+.Logo {
+	@extend .d-block;
+
+	svg {
+		@extend %vertical-align-middle;
+		@extend .d-inline-block;
+		@include size(108px, $grid-gutter-width * 2);
+
+		fill: the_color(white);
+	}
+}

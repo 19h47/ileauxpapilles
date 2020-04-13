@@ -1,0 +1,18 @@
+{#
+@file views/components/menu.html.twig
+@param arr items
+@author Jérémy Levron <jeremylevron@19h47.fr> (https://19h47.fr)
+@package prh
+
+#}
+{% if items is iterable %}
+	<ul class="Menu{{ classes ? ' ' ~ classes | join( ' ' ) }}" itemscope itemtype="http://schema.org/SiteNavigationElement">
+		{% for item in items %}
+			<li class="Menu__item" itemprop="name">
+				<a class="Menu__link{{ item.current ? ' is-active' }}" href="{{ item.url }}" itemprop="url"{{ item.target ? " target=\"#{item.target}\"" }}>
+					{{- item.title -}}
+				</a>
+			</li>
+		{% endfor %}
+	</ul>
+{% endif %}

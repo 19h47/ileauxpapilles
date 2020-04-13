@@ -6,4 +6,29 @@
  */
 .Hero {
 	$this: &;
+
+	@include margin(top $grid-gutter-width * 2);
+
+	&__logo {
+		@include size(100%, $grid-gutter-width * 24);
+		@extend %position-relative, %Pointer-events-none;
+		@extend %vertical-align-middle;
+		@extend .d-inline-block;
+
+		fill: the_color(white);
+		z-index: 2;
+	}
+
+	&__footer {
+		@include margin(top $grid-gutter-width * -8);
+		@include size(100%, $grid-gutter-width * 12);
+	}
+
+	&__horizontal-line {
+		@include margin(top $grid-gutter-width - 1.5px bottom -1.5px);
+		@include size(100%, 3px);
+
+		border: none;
+		background-color: the_color(cyan, dark-moderate);
+	}
 }

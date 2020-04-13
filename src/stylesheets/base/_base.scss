@@ -10,12 +10,14 @@ body {
 	@extend %font-weight-regular, %font-family-body, %position-relative;
 
 	font-size: $base-font-size-px;
-	line-height: #{ $base-line-height }px;
+	line-height: #{$base-line-height}px;
 
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
 
 	text-rendering: optimizeLegibility;
+
+	color: the_color(gray, very-dark);
 }
 
 a,
@@ -30,10 +32,7 @@ a {
 }
 
 p {
-	@include margin (
-		top 0
-		bottom #{ $base-line-height }px
-	);
+	@include margin(top 0 bottom #{$base-line-height}px);
 }
 
 strong {

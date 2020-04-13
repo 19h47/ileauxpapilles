@@ -6,59 +6,41 @@
 
 h1,
 .h1 {
-	@extend %font-weight-bold, %font-family-title;
+	@extend %font-weight-bold, %font-style-italic, %font-family-title;
 
-	@include margin(
-		top #{ $base-line-height }px
-		bottom #{ $base-line-height * 2 }px
-	);
+	font-size: $base-font-size-px * power($scale-factor, 3);
+	line-height: #{$base-line-height * 3}px;
 
-	@include media-breakpoint-up( md ) {
-		font-size: 120px;
-		line-height: 145px;
-	}
+	@include margin(top #{$base-line-height}px bottom #{$base-line-height * 2}px);
 }
 
 h2,
 .h2 {
-	@extend %font-weight-regular, %font-family-title;
+	@extend %font-weight-bold, %font-style-italic, %font-family-title;
 
-	@include margin(
-		top #{ $base-line-height }px
-		bottom #{ $base-line-height }px
-	);
+	font-size: $base-font-size-px * power($scale-factor, 2);
+	line-height: #{$base-line-height * 2}px;
 
-	@include media-breakpoint-up( md ) {
-		font-size: 100px;
-		line-height: 120px;
-	}
+	@include margin(top #{$base-line-height}px bottom #{$base-line-height}px);
 }
 
 h3,
 .h3 {
-	@extend %font-weight-bold, %font-family-title;
+	@extend %font-weight-bold, %font-style-italic, %font-family-title;
 
-	@include margin(
-		top #{ $base-line-height * 2 }px
-		bottom 0
-	);
+	@include margin(top #{$base-line-height * 1}px bottom 0);
 
-	@include media-breakpoint-up( md ) {
-		font-size: 80px;
-		line-height: 96px;
-	}
+	font-size: $base-font-size-px * power($scale-factor, 1);
+	line-height: #{$base-line-height * 1}px;
 }
 
 h4,
 .h4 {
 	@extend %font-weight-bold, %font-family-title;
 
-	@include margin(
-		top #{ $base-line-height }px
-		bottom 0
-	);
+	@include margin(top #{$base-line-height}px bottom 0);
 
-	@include media-breakpoint-up( md ) {
+	@include media-breakpoint-up(md) {
 		font-size: 50px;
 		line-height: 60px;
 	}
@@ -68,12 +50,9 @@ h5,
 .h5 {
 	@extend %font-weight-bold, %font-family-title;
 
-	@include margin(
-		top #{ $base-line-height }px
-		bottom 0
-	);
+	@include margin(top #{$base-line-height}px bottom 0);
 
-	@include media-breakpoint-up( md ) {
+	@include media-breakpoint-up(md) {
 		font-size: 35px;
 		line-height: 40px;
 	}
@@ -87,10 +66,14 @@ h6,
 	line-height: 30px;
 }
 
-.dh1 {}
+.dh1 {
+}
 
-.dh2 {}
+.dh2 {
+}
 
-.dh3 {}
+.dh3 {
+}
 
-.dh4 {}
+.dh4 {
+}
