@@ -9,33 +9,56 @@
 	$this: &;
 
 	@extend .d-flex, .flex-row, .justify-content-between;
-	@extend %list-style-type-none, %font-weight-bold, %text-transform-uppercase;
+	@extend %list-style-type-none, %font-weight-semibold, %text-transform-uppercase;
 	@include letter-spacing(100);
 
 	&__link {
 		@extend .d-block;
 		@extend %position-relative;
-		@include padding(top $grid-gutter-width bottom $grid-gutter-width);
 
-		color: the_color(gray, very-light);
 		transition: color 0.3s map-get($easings, ease-out-expo);
 
-		&::after {
-			@include absolute(top 0 right 0 left 0);
-			@include size(100%, 4.5px);
-
-			background-color: the_color(cyan, dark-moderate);
-			transform: scaleY(0);
-			transform-origin: 50% 0;
-			transition: transform 0.3s map-get($easings, ease-out-expo);
-			content: '';
+		@at-root .Front-page .Site-footer & {
+			color: the_color(white);
+		}
+		@at-root .Restaurant-page .Site-footer & {
+			color: the_color(white);
 		}
 
-		&:hover,
-		&.is-active {
-			color: the_color(white);
+		@at-root #{ $this }--header & {
+			@include padding(top $grid-gutter-width bottom $grid-gutter-width);
+
+			color: the_color(gray, very-light);
+
 			&::after {
-				transform: scaleY(1);
+				@include absolute(top 0 right 0 left 0);
+				@include size(100%, 4.5px);
+
+				background-color: the_color(cyan, dark-moderate);
+				transform: scaleY(0);
+				transform-origin: 50% 0;
+				transition: transform 0.3s map-get($easings, ease-out-expo);
+				content: '';
+
+				@at-root .Producers-page & {
+					background-color: the_color(white);
+				}
+
+				@at-root .Front-page & {
+					background-color: the_color(yellow, grayish);
+				}
+
+				@at-root .Restaurant-page & {
+					background-color: the_color(yellow, grayish);
+				}
+			}
+
+			&:hover,
+			&.is-active {
+				color: the_color(white);
+				&::after {
+					transform: scaleY(1);
+				}
 			}
 		}
 	}

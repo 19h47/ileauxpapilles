@@ -5,4 +5,70 @@
  *
  * @package DLAP
  */
-.Site-footer {}
+.Site-footer {
+	@include padding(top $grid-gutter-width * 3 bottom $grid-gutter-width * 3);
+
+	background-color: the_color(white);
+	color: the_color(gray, very-dark);
+
+	@at-root .Restaurant-page & {
+		background-color: the_color(gray, very-dark);
+		color: the_color(gray, very-light);
+	}
+
+	@at-root .Front-page & {
+		background-color: the_color(gray, very-dark);
+		color: the_color(gray, very-light);
+	}
+
+	&__title {
+		@include margin(top $grid-gutter-width / 2 bottom $grid-gutter-width);
+		@include letter-spacing(100);
+		@extend %text-transform-uppercase,
+			%font-family-body,
+			%font-style-normal,
+			%font-weight-semibold;
+
+		font-size: #{$base-font-size}px;
+		line-height: #{$base-line-height}px;
+
+		@at-root .Front-page & {
+			color: the_color(white);
+		}
+		@at-root .Restaurant-page & {
+			color: the_color(white);
+		}
+	}
+
+	&__column {
+		& > *:last-child {
+			@include margin(bottom 0);
+		}
+
+		strong {
+			@at-root .Front-page & {
+				color: the_color(white);
+			}
+			@at-root .Restaurant-page & {
+				color: the_color(white);
+			}
+		}
+	}
+
+	&__copyright {
+		@include margin(bottom 0);
+		strong {
+			@extend %text-transform-uppercase,
+				%font-family-body,
+				%font-style-normal,
+				%font-weight-semibold;
+
+			@at-root .Front-page & {
+				color: the_color(white);
+			}
+			@at-root .Restaurant-page & {
+				color: the_color(white);
+			}
+		}
+	}
+}

@@ -27,11 +27,12 @@ $color-variations: (
 		very-dark: #262626,
 	),
 	cyan: (
-		dark-moderate: #4e858e,
+		dark-moderate: #4b858e,
 		very-dark-desaturated: #26575c,
 	),
 	yellow: (
 		light-grayish: #d9cfb0,
+		grayish: #d8ceaf,
 	),
 	socials: (
 		facebook: #3b5998,
@@ -107,7 +108,7 @@ $font: (
 	 * @uses map-get( $font, styles ) to retrieve font style value
 	 * @type list
 	 */
-		styles: 'italic',
+		styles: italic normal,
 	/**
 	 * Font sizes
 	 *

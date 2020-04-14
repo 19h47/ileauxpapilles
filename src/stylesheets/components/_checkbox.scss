@@ -1,0 +1,43 @@
+/**
+ * Checkbox
+ *
+ *
+ *
+ */
+.Checkbox {
+	$this: &;
+
+	@extend .d-flex, .align-items-center;
+
+	&:focus {
+		outline: none;
+
+		button {
+			box-shadow: 0 0 0 3px rgba(the_color(white), 0.05);
+		}
+	}
+
+	button {
+		@extend %position-relative;
+		@include size($grid-gutter-width);
+		@include margin(right $grid-gutter-width);
+
+		background-color: rgba(the_color(white), 0.15);
+		transition: box-shadow 0.3s map-get($easings, ease-out-expo);
+
+		&::after {
+			@extend .d-block;
+			@include absolute(top 0 right 0 bottom 0 left 0);
+			@include margin(top auto right auto bottom auto left auto);
+			@include size($grid-gutter-width/2);
+
+			background-color: rgba(the_color(white), 0);
+			transition: background-color 0.3s map-get($easings, ease-out-expo);
+			content: '';
+
+			@at-root #{ $this }.is-selected button::after {
+				background-color: rgba(the_color(white), 1);
+			}
+		}
+	}
+}

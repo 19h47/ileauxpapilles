@@ -26,6 +26,20 @@
 	font-display: swap;
 }
 
+// Titillium semibold
+@font-face {
+	font-family: 'Titillium';
+	src: url('../../src/fonts/titillium/titillium-semibold.eot');
+	src: url('../../src/fonts/titillium/titillium-semibold.woff2') format('woff2'),
+		url('../../src/fonts/titillium/titillium-semibold.woff') format('woff'),
+		url('../../src/fonts/titillium/titillium-semibold.eot?#iefix') format('embedded-opentype'),
+		url('../../src/fonts/titillium/titillium-semibold.ttf') format('truetype'),
+		url('../../src/fonts/titillium/titillium-semibold.svg#titillium-semibold') format('svg');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+
 // Didot bold italic
 @font-face {
 	font-family: 'Didot';

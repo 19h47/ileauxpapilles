@@ -9,11 +9,34 @@
     bootstrap "^4.4.1"
     ress "2.0.4"
 
-"@19h47/prettier-config@19h47/prettier-config":
+"@19h47/checkbox@3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@19h47/checkbox/-/checkbox-3.0.1.tgz#bd9efcb61f834b539914659e746c03c4ad46a3e4"
+  integrity sha512-Qh5i/eSPfv23tPFy/pTO5NcSWiQvzmMfYSUYVAguVMATVYqR86kN8lzY2Td//NGZ08sTImNPW6smZarFlApDmQ==
+  dependencies:
+    "@19h47/keycode" "3.0.0"
+
+"@19h47/keycode@3.0.0", "@19h47/keycode@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@19h47/keycode/-/keycode-3.0.0.tgz#f5f7afcf7416106a6ca0ab2e323e5d01b7525441"
+  integrity sha512-NkImLtu8fud6fW93YkuXgZbXMa7IGeQsnLKLnOxNP0qJb/LQ7B+JUTRHVER+mWts/YCcuo1MQ5P/bFxBYAxLWA==
+
+"@19h47/prettier-config@19h47/prettier-config", "@19h47/prettier-config@github:19h47/prettier-config":
   version "0.0.0"
   resolved "https://codeload.github.com/19h47/prettier-config/tar.gz/6a2958d2dc1192829c403b3867b69437ef3c63ae"
   dependencies:
     prettier "^1.x.x"
+
+"@19h47/radiogroup@4.1.2":
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/@19h47/radiogroup/-/radiogroup-4.1.2.tgz#3654720d4844f7d20c801c59f0981eb4157debc9"
+  integrity sha512-+fKo67h2xeMYgE7dSsx9EqVEdN0UlXkD+wz7K8oyacI659k3NxE+ln4I3IsCsPCQ41xqg9WhfvUU8Of1DQBp0Q==
+  dependencies:
+    "@19h47/keycode" "^3.0.0"
+    "@19h47/prettier-config" "19h47/prettier-config"
+    "@babel/plugin-transform-runtime" "^7.8.3"
+    core-js "^3.6.4"
+    eslint-config-prettier "^6.10.1"
 
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.8.3":
   version "7.8.3"
@@ -594,7 +617,7 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.8.3"
 
-"@babel/plugin-transform-runtime@^7.9.0":
+"@babel/plugin-transform-runtime@^7.8.3", "@babel/plugin-transform-runtime@^7.9.0":
   version "7.9.0"
   resolved "https://registry.yarnpkg.com/@babel/plugin-transform-runtime/-/plugin-transform-runtime-7.9.0.tgz#45468c0ae74cc13204e1d3b1f4ce6ee83258af0b"
   integrity sha512-pUu9VSf3kI1OqbWINQ7MaugnitRss1z533436waNXp+0N3ur3zfut37sXiQMxkuCF4VUjwZucen/quskCh7NHw==
@@ -1814,7 +1837,7 @@ core-js-compat@^3.6.2:
     browserslist "^4.8.5"
     semver "7.0.0"
 
-core-js@^3.6.5:
+core-js@^3.6.4, core-js@^3.6.5:
   version "3.6.5"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.6.5.tgz#7395dc273af37fb2e50e9bd3d9fe841285231d1a"
   integrity sha512-vZVEEwZoIsI+vPEuoF9Iqf5H7/M3eeQqWlQnYa8FSKKePuYTf5MWnxb5SDAzCa60b3JBRS5g9b+Dq7b1y/RCrA==

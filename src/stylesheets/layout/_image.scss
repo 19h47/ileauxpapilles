@@ -1,0 +1,16 @@
+/**
+ * Image
+ *
+ *
+ *
+ */
+.Image {
+	@include margin(top $grid-gutter-width * 3 bottom $grid-gutter-width * 3);
+
+	img {
+		@include size(100%, auto);
+
+		object-fit: contain;
+		object-position: center;
+	}
+}

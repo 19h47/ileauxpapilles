@@ -53,7 +53,9 @@ Header
 			<div class="Site-container">
 				<div class="row">
 					<div class="col-12">
-						{% include 'svg/use.html.twig' with { icon: 'logo', classes: [ 'Hero__logo' ] } only %}
+						<div class="Hero__logo js-baseline">
+							{% include 'svg/use.html.twig' with { icon: 'logo' } only %}
+						</div>
 					</div>
 				</div>
 			</div>
@@ -62,19 +64,22 @@ Header
 				<div class="Site-container h-100">
 					<div class="row h-100 d-flex align-items-end">
 						<div class="col-4">
-							<h1 class="Page__title">{{ post.title }}</h1>
-							<p class="Page__subtitle">{{ post.subtitle }}</p>
+							<h1 class="Page__title{{ post.subtitle ? ' margin-0' : ' margin-bottom-5' -}}">{{- post.title -}}</h1>
+							{{ post.subtitle ? "<p class=\"Page__subtitle\">#{post.subtitel}</p>" }}
+
 							<p class="Page__introduction">
-								{{- post.introduction | raw | nl2br -}}
+								{{- post.introduction ? "#{post.introduction}<br><br>" | raw | nl2br -}}
 								{%- if phone_number -%}
-									<br><br><a href="tel:{{ phone_number | replace ( { ' ' : '' } ) }}" class="margin-bottom-0 margin-right-3 margin-left-auto">Réservation au <strong>{{- phone_number -}}</strong></a>
+									<a href="tel:{{ phone_number | replace ( { ' ' : '' } ) }}" class="margin-bottom-0 margin-right-3 margin-left-auto">Réservation au <strong>{{- phone_number -}}</strong></a>
 								{%- endif -%}
 							</p>
 						</div>
 
-						<div class="offset-1 col-7 h-100">
-							{% include 'partials/image.html.twig' with { image: post.thumbnail, classes: [ 'Page__thumbnail' ] } %}
-						</div>
+						{% if post.thumbnail %}
+							<div class="offset-1 col-7 h-100">
+								{% include 'partials/image.html.twig' with { image: post.thumbnail, classes: [ 'Page__thumbnail' ] } %}
+							</div>
+						{% endif %}
 					</div>
 				</div>
 			</footer>
@@ -91,10 +96,10 @@ Header
 		<div class="Site-container">
 			<div class="row">
 				<div class="col-7 offset-5">
-					{% include 'components/menu.html.twig' with { items: menus.menu.items } %}
+					{% include 'components/menu.html.twig' with { items: menus.menu.items, classes: [ 'Menu--header' ] } %}
 				</div>
 			</div>
 		</div>
 
-		<main id="{{ post.id ? "page-#{post.id}" : 'page' }}" class="page-content Page-wrapper" data-node-type="{{ post.node_type | default( 'DefaultPage' ) }}">
+		<main id="{{ post.id ? "page-#{post.id}" : 'page' }}" class="page-content Page-wrapper" data-node-type="{{ node_type | default( 'DefaultPage' ) }}">
 

@@ -7,9 +7,18 @@
  */
 .Page {
 	&__title {
-		@extend %margin-0;
-
 		color: the_color(cyan, dark-moderate);
+
+		@at-root .Producers-page & {
+			color: the_color(white);
+		}
+
+		@at-root .Front-page & {
+			color: the_color(yellow, grayish);
+		}
+		@at-root .Restaurant-page & {
+			color: the_color(yellow, grayish);
+		}
 	}
 
 	&__subtitle {
@@ -42,5 +51,13 @@
 
 	&__content {
 		@include padding(top $grid-gutter-width * 3 bottom $grid-gutter-width * 6);
+
+		& > *:first-child {
+			@include margin(top 0);
+		}
+
+		& > *:last-child {
+			@include margin(bottom 0);
+		}
 	}
 }

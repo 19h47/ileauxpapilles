@@ -84,6 +84,8 @@ class Theme {
 			}
 		}
 
+		include_once get_template_directory() . '/includes/template-functions.php';
+
 		$this->add_theme_supports();
 		$this->add_post_type_supports();
 		$this->remove_post_type_supports();
@@ -347,7 +349,8 @@ class Theme {
 	public function register_menus() {
 		register_nav_menus(
 			array(
-				'menu' => __( 'Menu', 'delileauxpapilles' ),
+				'menu'   => __( 'Menu', 'delileauxpapilles' ),
+				'footer' => __( 'Footer', 'delileauxpapilles' ),
 			)
 		);
 	}

@@ -12,13 +12,15 @@
 
 {# Content #}
 {% block content %}
-	<div class="Page__content">
-	{% for b in post.get_field( 'blocks' ) %}
-		{% if b is iterable %}
-			{% include "blocks/#{ b.acf_fc_layout }.html.twig" with { block: b, id: "#{ b.acf_fc_layout }-#{ loop.index }" } %}
-		{% endif %}
-	{% endfor %}
-	</div>
+	{% if post.get_field( 'blocks' ) %}
+		<div class="Page__content">
+			{% for b in post.get_field( 'blocks' ) %}
+				{% if b is iterable %}
+					{% include "blocks/#{ b.acf_fc_layout }.html.twig" with { block: b, id: "#{ b.acf_fc_layout }-#{ loop.index }" } %}
+				{% endif %}
+			{% endfor %}
+		</div>
+	{% endif %}
 {% endblock %}
 
 

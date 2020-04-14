@@ -6,4 +6,42 @@
  */
 .Form {
 	$this: &;
+
+	& > *:first-child {
+		@include margin(top 0);
+	}
+
+	& > *:last-child {
+		@include margin(bottom 0);
+	}
+
+	&__title {
+		color: the_color(cyan, dark-moderate);
+		line-height: #{$base-line-height * 2}px;
+	}
+
+	&__group {
+		@include margin(top $grid-gutter-width / 2 bottom $grid-gutter-width / 2);
+
+		& > *:first-child {
+			@include margin(top 0);
+		}
+
+		& > *:last-child {
+			@include margin(bottom 0);
+		}
+	}
+
+	&__fieldset {
+		@include padding(
+			top $grid-gutter-width right $grid-gutter-width bottom $grid-gutter-width left
+				$grid-gutter-width
+		);
+		box-shadow: inset 0 0 0 3px rgba(the_color(white), 0.15);
+	}
+
+	&__total {
+		@extend %text-align-right, %font-weight-semibold, %text-transform-uppercase;
+		@include letter-spacing(100);
+	}
 }

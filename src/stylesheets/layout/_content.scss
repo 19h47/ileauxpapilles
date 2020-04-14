@@ -16,4 +16,23 @@
 		@include margin(bottom $grid-gutter-width);
 		color: the_color(cyan, dark-moderate);
 	}
+
+	a {
+		@extend %font-weight-bold, %text-decoration-underline;
+	}
+
+	ul {
+		@include padding(left $grid-gutter-width);
+		@include margin(top $grid-gutter-width bottom $grid-gutter-width);
+		@extend %list-style-type-none;
+
+		li {
+			&:before {
+				content: '\2022';
+				color: the_color(cyan, dark-moderate);
+				display: inline-block;
+				width: 1em;
+			}
+		}
+	}
 }

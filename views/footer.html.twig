@@ -9,7 +9,47 @@ Footer
 			<footer class="Site-footer">
 				<div class="Site-container">
 					<div class="row">
-						<div class="col-12 col-md-5">
+						<div class="col-12 col-md-2">
+							{% include 'components/logo.html.twig' %}
+						</div>
+						<div class="col-12 col-md-3">
+							<div class="Site-footer__column">
+								<h3 class="Site-footer__title">Jours d’ouverture</h3>
+								<p>Le restaurant est actuellement ouvert, midi et soir, du jeudi au dimanche.</p>
+
+								<p>Le service débute à 12h15 le midi et à 19h30 le soir.</p>
+								{%- if phone_number -%}
+									<p><a href="tel:{{ phone_number | replace ( { ' ' : '' } ) }}" class="margin-bottom-0 margin-right-3 margin-left-auto">Réservation conseillée au <strong>{{- phone_number -}}</strong></a>.</p>
+								{% endif %}
+							</div>
+						</div>
+						<div class="col-12 col-md-3">
+							<div class="Site-footer__column">
+								<h3 class="Site-footer__title">Suivez-nous !</h3>
+								{% include 'components/socials.html.twig' with { feed: true } %}
+							</div>
+						</div>
+						<div class="col-12 col-md-3">
+							<div class="Site-footer__column">
+								<h3 class="Site-footer__title">Cadeau gourmand…</h3>
+								<p>Vous souhaitez faire (re)découvrir notre restaurant à votre famille ou vos ami(e)s ?</p>
+
+								<p>Nous éditons des bons cadeaux, en fonction de vos besoins.</p>
+
+								<p><a href=""><strong>Contactez-nous !</strong></a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="Site-container margin-top-6">
+					<div class="row">
+						<div class="col-12 col-md-6 offset-md-2">
+							{% include 'components/menu.html.twig' with { items: menus.footer.items } %}
+						</div>
+						<div class="col-12 col-md-4">
+							<p class="Site-footer__copyright">
+								Réalisé par <a href="http://inesa.fr/" target="_blank" rel="noopener"><strong>Inès A</strong></a> et <a href="https://19h47.fr/" target="_blank" rel="noopener"><strong>19h47</strong></a>
+							</p>
 						</div>
 					</div>
 				</div>

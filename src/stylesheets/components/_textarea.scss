@@ -1,20 +1,21 @@
 /**
- * Button
+ * Teaxtarea
  *
  *
- *
- * @package DLAP
  */
-.Button {
-	@extend %text-transform-uppercase, %font-weight-bold;
-	@include letter-spacing(100);
+.Textarea {
+	@extend %vertical-align-middle;
+	@include reset-placeholder(the_color(white));
 	@include padding(
 		top $grid-gutter-width / 2 right $grid-gutter-width bottom $grid-gutter-width / 2 left
 			$grid-gutter-width
 	);
+	@include size(100%, $grid-gutter-width * 8);
 
-	background-color: the_color(cyan, dark-moderate);
+	background-color: rgba(the_color(white), 0.15);
+	color: the_color(white);
 	transition: box-shadow 0.3s map-get($easings, ease-out-expo);
+	resize: none;
 
 	&:focus {
 		outline: none;

@@ -15,8 +15,7 @@ module.exports = {
 		'no-param-reassign': [
 			'error',
 			{
-				props: true,
-				ignorePropertyModificationsFor: ['state'],
+				props: false,
 			},
 		],
 		yoda: [2, 'always'],

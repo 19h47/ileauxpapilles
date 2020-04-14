@@ -12,6 +12,15 @@
 		@extend .d-inline-block;
 		@include size(108px, $grid-gutter-width * 2);
 
-		fill: the_color(white);
+		@at-root .Site-header & {
+			fill: the_color(white);
+		}
+
+		@at-root .Site-footer & {
+			fill: the_color(gray, very-dark);
+		}
+		@at-root .Front-page .Site-footer & {
+			fill: the_color(white);
+		}
 	}
 }

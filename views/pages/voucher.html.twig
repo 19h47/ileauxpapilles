@@ -1,0 +1,132 @@
+{#  #}
+{% extends 'index.html.twig' %}
+
+{% macro checkbox( id, label, name, value, price ) %}
+	<div id="{{ id }}" tabindex="0" class="Checkbox page-block" role="checkbox" aria-checked="false" data-node-type="CheckboxBlock">
+		<button type="button" tabindex="-1"></button>{{- label -}}
+		<span class="margin-left-auto">{{- price.label -}}</span>
+		<div style="display: none;">
+			<input name="menu[0][{{ name }}]" data-price="{{ price.value }}" value="{{ value ? 'true' : 'false' }}" type="checkbox">
+		</div>
+	</div>
+{% endmacro %}
+
+{% macro radio( checked, label, price, name, value ) %}
+	<div class="Radio{{ checked ? ' is-selected' }}" aria-checked="{{ checked ? 'true' : 'false' }}" tabindex="{{ checked ? '0' : '-1' }}" role="radio">
+		<span></span>{{- label -}}
+		{{ price ? "<span class=\"margin-left-auto\">#{price.label}</span>" }}
+		<input type="radio" name="menu[0][{{ name }}]" data-price="{{ price.value }}" value="{{ value }}"{{ checked ? ' checked' }} style="display: none;">
+	</div>
+{% endmacro %}
+
+{% block content %}
+	<div class="Page__content">
+		<div class="Site-container">
+			<div class="row">
+				<div class="col-6 offset-5">
+					<form class="Form" action="">
+						<div class="Form__group">
+							<h3 class="Form__title">De la part de…</h3>
+						</div>
+						<div class="Form__group">
+							<input class="Input" id="last_name" type="text" name="last_name" required placeholder="Nom *">
+						</div>
+						<div class="Form__group">
+							<input class="Input" id="first_names" type="text" name="first_names" required placeholder="Prénom(s) *">
+						</div>
+						<div class="Form__group">
+							<input class="Input" id="email" type="text" name="email" required placeholder="E-mail*">
+						</div>
+						<div class="Form__group">
+							<input class="Input" id="address" type="text" name="address" required placeholder="Adresse *">
+						</div>
+						<div class="Form__group">
+							<input class="Input" id="postal_code_city" type="text" name="postal_code_city" required placeholder="Code postal et ville *">
+						</div>
+						<div class="Form__group">
+							<h3 class="Form__title">Carte cadeau offerte à…</h3>
+						</div>
+						<div class="Form__group">
+							<input class="Input" id="names_first_names" type="text" name="names_first_names" required placeholder="Nom(s) et Prénom(s) *">
+						</div>
+						<div class="Form__group">
+							<h3 class="Form__title">Je souhaite recevoir le bon cadeau :</h3>
+						</div>
+
+						<div id="type" class="Form__group page-block margin-left-3" role="radiogroup" data-node-type="RadioGroupBlock">
+							{{ _self.radio( true, 'par mail (le bon sera à imprimer)', false, 'type', 'email' ) }}
+							{{ _self.radio( false, 'par courrier', false, 'type', 'mail' ) }}
+						</div>
+
+						<div class="Form__group">
+							<h3 class="Form__title">Je compose la carte-cadeau :</h3>
+						</div>
+
+						<div class="Form__group">
+							<div class="row align-items-center">
+								<div class="col-2">
+									<input class="Input w-100 js-person" min="1" step="1" type="number" name="number" value="1" required>
+								</div>
+								<div class="col-10">
+									<label for="number">Nombre de personnes invitées *</label>
+								</div>
+							</div>
+						</div>
+
+						<div class="js-template">
+							<div class="Form__group Form__fieldset">
+								<div id="menu_0" class="Form__group margin-bottom-3 page-block" role="radiogroup" data-node-type="RadioGroupBlock">
+									{{ _self.radio( true, 'Menu dégustation (Entrée/Plat/Dessert)', { label: '36,50 €', value: 36.50 }, 'menu', 'menu_degustation' ) }}
+									{{ _self.radio( false, 'Menu gourmand (Entrée/Plat/Fromage/Dessert)', { label: '41,50 €', value: 41.50 }, 'menu', 'menu_gourmand' ) }}
+								</div>
+
+								<div class="Form__group">
+									{{ _self.checkbox('checkbox_0', 'Cocktail apéritif', 'cocktail_aperitif', false, { label: '8,50 € / pers.', value: 8.5 }) }}
+								</div>
+								<div class="Form__group">
+									{{ _self.checkbox('checkbox_1', 'Champagne brut « Maison Piollot »', 'champagne_brut', false, { label: '11 € / pers.', value: 11 }) }}
+								</div>
+								<div class="Form__group">
+									{{ _self.checkbox('checkbox_2', 'Verre de vin', 'verre_de_vin', false, { label: '6,50 € / pers.', value: 6.5 }) }}
+								</div>
+								<div class="Form__group">
+									{{ _self.checkbox('checkbox_3', 'Accord Mets/vins (2 verres de vin, 1 boisson chaude)', 'accord_mets_vins', false, { label: '16 € / pers.', value: 16 }) }}
+								</div>
+							</div>
+						</div>
+
+						<div class="Form__group">
+							<div class="row align-items-center">
+								<div class="col-2 offset-8 Form__total">Total</div>
+								<div class="col-2 text-align-right"><span class="js-price">36,50</span> €</div>
+							</div>
+						</div>
+
+						<div class="Form__group">
+							<h3 class="Form__title">Précisions complémentaires à votre commande :</h3>
+						</div>
+
+						<div class="Form__group">
+							<textarea class="Textarea" name="message" id="" placeholder="Votre message"></textarea>
+						</div>
+
+						<div class="Form__group">
+							<p>En envoyant ce formulaire vous acceptez que les informations saisies soient utilisées dans le cadre du traitement de votre demande de réservation et des échanges par e-mail, courrier postal ou téléphone qui peuvent en découler et vous prenez connaissance de notre politique de confidentialité
+
+							<p><a class="text-decoration-underline" href=""><strong>Consultez notre politique de confidentialité.</strong></a></p>
+						</div>
+
+						<div class="Form__group margin-top-4">
+							<div class="row align-items-center">
+								<div class="col-4">
+									<button class="Button w-100" type="submit">Envoyer</button>
+								</div>
+							</div>
+						</div>
+
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

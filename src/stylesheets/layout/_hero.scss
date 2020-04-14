@@ -10,13 +10,23 @@
 	@include margin(top $grid-gutter-width * 2);
 
 	&__logo {
-		@include size(100%, $grid-gutter-width * 24);
-		@extend %position-relative, %Pointer-events-none;
-		@extend %vertical-align-middle;
-		@extend .d-inline-block;
+		svg {
+			@include size(100%, $grid-gutter-width * 24);
+			@extend %position-relative, %Pointer-events-none;
+			@extend %vertical-align-middle;
+			@extend .d-inline-block;
 
-		fill: the_color(white);
-		z-index: 2;
+			fill: the_color(white);
+			z-index: 2;
+
+			@at-root .Front-page & {
+				fill: the_color(yellow, grayish);
+			}
+
+			@at-root .Restaurant-page & {
+				fill: the_color(yellow, grayish);
+			}
+		}
 	}
 
 	&__footer {
@@ -30,5 +40,17 @@
 
 		border: none;
 		background-color: the_color(cyan, dark-moderate);
+
+		@at-root .Producers-page & {
+			background-color: the_color(white);
+		}
+
+		@at-root .Front-page & {
+			background-color: the_color(yellow, grayish);
+		}
+
+		@at-root .Restaurant-page & {
+			background-color: the_color(yellow, grayish);
+		}
 	}
 }

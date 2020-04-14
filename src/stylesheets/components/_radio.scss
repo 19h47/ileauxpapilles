@@ -1,0 +1,48 @@
+/**
+ * Radio
+ *
+ *
+ */
+.Radio {
+	$this: &;
+
+	@extend .d-flex, .align-items-center;
+	@include margin(top $grid-gutter-width / 4 bottom $grid-gutter-width / 4);
+
+	&:focus {
+		outline: none;
+
+		span:first-child {
+			box-shadow: 0 0 0 3px rgba(the_color(white), 0.05);
+		}
+	}
+
+	& > span:first-child {
+		@include size($grid-gutter-width);
+		@include margin(right $grid-gutter-width);
+		@extend .d-inline-block;
+		@extend %position-relative;
+
+		background-color: rgba(the_color(white), 0.15);
+		border-radius: $grid-gutter-width / 2;
+		transition: box-shadow 0.3s map-get($easings, ease-out-expo);
+
+		&::after {
+			@include absolute(top 0 right 0 bottom 0 left 0);
+			@include margin(top auto right auto bottom auto left auto);
+			@include size($grid-gutter-width / 2);
+			@include autoAlpha(0);
+			@extend .d-block;
+
+			border-radius: $grid-gutter-width / 4;
+			background-color: the_color(white);
+			transition: opacity 0.3s map-get($easings, ease-out-expo),
+				visibility 0.3s map-get($easings, ease-out-expo);
+			content: '';
+		}
+
+		@at-root #{ $this }.is-selected span::after {
+			@include autoAlpha(1);
+		}
+	}
+}

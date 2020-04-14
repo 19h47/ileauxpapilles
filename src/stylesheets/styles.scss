@@ -31,14 +31,15 @@
 
 // Layout
 @import 'layout/site', 'layout/header', 'layout/footer', 'layout/partners', 'layout/hero',
-	'layout/content', 'layout/map', 'layout/carousel';
+	'layout/content', 'layout/map', 'layout/carousel', 'layout/image';
 
 // Components
 @import 'components/logo', 'components/menu', 'components/guid', 'components/form',
-	'components/socials', 'components/button';
+	'components/socials', 'components/button', 'components/input', 'components/radio',
+	'components/checkbox', 'components/textarea';
 
 // Pages
-@import 'pages/page', 'pages/front-page';
+@import 'pages/page', 'pages/front-page', 'pages/producers';
 
 // Utilities.
 @import 'vendors/architecture-variables', '~@19h47/architecture/src/stylesheets/utilities/colors',

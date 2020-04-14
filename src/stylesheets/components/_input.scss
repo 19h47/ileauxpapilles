@@ -1,23 +1,26 @@
 /**
- * Button
+ * Input
  *
  *
- *
- * @package DLAP
  */
-.Button {
-	@extend %text-transform-uppercase, %font-weight-bold;
-	@include letter-spacing(100);
+.Input {
+	@include reset-placeholder(the_color(white));
 	@include padding(
 		top $grid-gutter-width / 2 right $grid-gutter-width bottom $grid-gutter-width / 2 left
 			$grid-gutter-width
 	);
 
-	background-color: the_color(cyan, dark-moderate);
+	background-color: rgba(the_color(white), 0.15);
 	transition: box-shadow 0.3s map-get($easings, ease-out-expo);
+	color: the_color(white);
+	width: 100%;
 
 	&:focus {
 		outline: none;
 		box-shadow: 0 0 0 3px rgba(the_color(white), 0.05);
+	}
+
+	&[type='number'] {
+		@include padding(right 0);
 	}
 }
