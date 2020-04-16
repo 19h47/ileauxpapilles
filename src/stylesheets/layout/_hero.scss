@@ -30,8 +30,10 @@
 	}
 
 	&__footer {
-		@include margin(top $grid-gutter-width * -8);
-		@include size(100%, $grid-gutter-width * 12);
+		@include media-breakpoint-up(md) {
+			@include margin(top $grid-gutter-width * -8);
+			@include size(100%, $grid-gutter-width * 12);
+		}
 	}
 
 	&__horizontal-line {
@@ -50,6 +52,10 @@
 		}
 
 		@at-root .Restaurant-page & {
+			background-color: the_color(yellow, grayish);
+		}
+
+		@at-root .Voucher-page & {
 			background-color: the_color(yellow, grayish);
 		}
 	}

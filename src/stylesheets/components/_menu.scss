@@ -24,6 +24,9 @@
 		@at-root .Restaurant-page .Site-footer & {
 			color: the_color(white);
 		}
+		@at-root .Voucher-page .Site-footer & {
+			color: the_color(white);
+		}
 
 		@at-root #{ $this }--header & {
 			@include padding(top $grid-gutter-width bottom $grid-gutter-width);
@@ -49,6 +52,9 @@
 				}
 
 				@at-root .Restaurant-page & {
+					background-color: the_color(yellow, grayish);
+				}
+				@at-root .Voucher-page & {
 					background-color: the_color(yellow, grayish);
 				}
 			}

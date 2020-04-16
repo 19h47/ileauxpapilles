@@ -32,6 +32,9 @@ Header
 
     <body class="{{ body_class }}{{ body_classes ? ( ' ' ~ body_classes | join( ' ' ) ) }}">
 		<div id="svg-sprite" class="d-none">{% include 'icons.svg' %}</div>
+
+		{% include 'components/cursor.html.twig' %}
+
 		<header class="Site-header">
 			<div class="Site-container h-100">
 				<div class="row h-100">
@@ -63,7 +66,7 @@ Header
 			<footer class="Hero__footer">
 				<div class="Site-container h-100">
 					<div class="row h-100 d-flex align-items-end">
-						<div class="col-4">
+						<div class="col-12 col-md-4{{ post.thumbnail ? ' margin-bottom-3 margin-bottom-md-0' }}">
 							<h1 class="Page__title{{ post.subtitle ? ' margin-0' : ' margin-bottom-5' -}}">{{- post.title -}}</h1>
 							{{ post.subtitle ? "<p class=\"Page__subtitle\">#{post.subtitel}</p>" }}
 
@@ -76,7 +79,7 @@ Header
 						</div>
 
 						{% if post.thumbnail %}
-							<div class="offset-1 col-7 h-100">
+							<div class="col-12 offset-md-1 col-md-7 h-100 margin-top-3 margin-top-md-0">
 								{% include 'partials/image.html.twig' with { image: post.thumbnail, classes: [ 'Page__thumbnail' ] } %}
 							</div>
 						{% endif %}
@@ -95,7 +98,7 @@ Header
 
 		<div class="Site-container">
 			<div class="row">
-				<div class="col-7 offset-5">
+				<div class="col-12 col-md-7 offset-md-5">
 					{% include 'components/menu.html.twig' with { items: menus.menu.items, classes: [ 'Menu--header' ] } %}
 				</div>
 			</div>

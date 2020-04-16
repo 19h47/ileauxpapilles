@@ -16,7 +16,12 @@
 		@at-root .Front-page & {
 			color: the_color(yellow, grayish);
 		}
+
 		@at-root .Restaurant-page & {
+			color: the_color(yellow, grayish);
+		}
+
+		@at-root .Voucher-page & {
 			color: the_color(yellow, grayish);
 		}
 	}

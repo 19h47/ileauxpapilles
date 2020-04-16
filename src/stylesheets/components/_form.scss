@@ -18,6 +18,10 @@
 	&__title {
 		color: the_color(cyan, dark-moderate);
 		line-height: #{$base-line-height * 2}px;
+
+		@at-root .Voucher-page & {
+			color: the_color(yellow, grayish);
+		}
 	}
 
 	&__group {

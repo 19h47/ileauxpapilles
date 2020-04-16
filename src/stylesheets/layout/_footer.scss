@@ -6,7 +6,7 @@
  * @package DLAP
  */
 .Site-footer {
-	@include padding(top $grid-gutter-width * 3 bottom $grid-gutter-width * 3);
+	@include padding(top $grid-gutter-width bottom $grid-gutter-width);
 
 	background-color: the_color(white);
 	color: the_color(gray, very-dark);
@@ -21,8 +21,12 @@
 		color: the_color(gray, very-light);
 	}
 
+	@include media-breakpoint-up(md) {
+		@include padding(top $grid-gutter-width * 3 bottom $grid-gutter-width * 3);
+	}
+
 	&__title {
-		@include margin(top $grid-gutter-width / 2 bottom $grid-gutter-width);
+		@include margin(bottom $grid-gutter-width / 2);
 		@include letter-spacing(100);
 		@extend %text-transform-uppercase,
 			%font-family-body,
@@ -38,9 +42,17 @@
 		@at-root .Restaurant-page & {
 			color: the_color(white);
 		}
+
+		@include media-breakpoint-up(md) {
+			@include margin(bottom $grid-gutter-width);
+		}
 	}
 
 	&__column {
+		& > *:first-child {
+			@include margin(top 0);
+		}
+
 		& > *:last-child {
 			@include margin(bottom 0);
 		}
@@ -52,6 +64,10 @@
 			@at-root .Restaurant-page & {
 				color: the_color(white);
 			}
+		}
+
+		@include media-breakpoint-up(md) {
+			@include margin(top $grid-gutter-width / 2);
 		}
 	}
 

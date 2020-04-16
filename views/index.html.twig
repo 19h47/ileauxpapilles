@@ -21,6 +21,8 @@
 			{% endfor %}
 		</div>
 	{% endif %}
+
+	{{ post.get_field( 'references' ) ? references }}
 {% endblock %}
 
 

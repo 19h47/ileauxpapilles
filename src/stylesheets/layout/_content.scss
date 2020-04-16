@@ -4,6 +4,8 @@
  *
  */
 .Content {
+	@include margin(top 3 * $grid-gutter-width bottom 3 * $grid-gutter-width);
+
 	& > *:first-child {
 		@include margin(top 0);
 	}
@@ -12,8 +14,18 @@
 		@include margin(bottom 0);
 	}
 
+	&__inner {
+		& > *:first-child {
+			@include margin(top 0);
+		}
+
+		& > *:last-child {
+			@include margin(bottom 0);
+		}
+	}
+
 	h3 {
-		@include margin(bottom $grid-gutter-width);
+		@include margin(top $grid-gutter-width * 2 bottom $grid-gutter-width);
 		color: the_color(cyan, dark-moderate);
 	}
 

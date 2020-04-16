@@ -2,7 +2,7 @@
  * Carousel
  *
  *
- * @package DLAP
+ *
  */
 .Carousel {
 	@extend %overflow-hidden;
@@ -11,9 +11,15 @@
 		overflow: visible;
 	}
 
-	// .Carousel__items
-	&__items {}
+	&__items {
+		@include margin(right $grid-gutter-width / -2 left $grid-gutter-width / -2);
+
+		@include size(auto, $grid-gutter-width * 24);
+	}
 
 	// .Carousel__item
-	&__item {}
+	&__item {
+		@include padding(right $grid-gutter-width / 2 left $grid-gutter-width / 2);
+		@include size(auto, 100%);
+	}
 }

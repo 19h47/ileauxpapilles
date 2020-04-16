@@ -7,6 +7,8 @@
 		"core-js": "^3.6.5",
 		"file-loader": "^6.0.0",
 		"flickity": "^2.2.1",
+		"flickity-imagesloaded": "^2.0.0",
+		"gsap": "^3.2.6",
 		"ress": "^2.0.4",
 		"starting-blocks": "^5.0.7"
 	},

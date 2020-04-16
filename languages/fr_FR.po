@@ -1,0 +1,280 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: De l'île aux papilles\n"
+"POT-Creation-Date: 2020-04-16 17:29+0200\n"
+"PO-Revision-Date: 2020-04-16 17:45+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+"X-Poedit-SearchPathExcluded-1: vendor\n"
+"X-Poedit-SearchPathExcluded-2: node_modules\n"
+
+#: includes/Managers/Customizer.php:40
+msgid "Contact"
+msgstr "Contact"
+
+#: includes/Managers/Customizer.php:41
+msgid "Contact settings"
+msgstr "Paramètre de contact"
+
+#: includes/Managers/Customizer.php:57
+msgid "Facebook"
+msgstr "Facebook"
+
+#: includes/Managers/Customizer.php:58
+msgid "Facebook URL"
+msgstr "URL du compte Facebook"
+
+#: includes/Managers/Customizer.php:76
+msgid "Phone number"
+msgstr "Numéro de téléphone"
+
+#: includes/Managers/Customizer.php:94
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: includes/Managers/Customizer.php:95
+msgid "LinkedIn URL"
+msgstr "URL du compte LinkedIn"
+
+#: includes/Managers/Customizer.php:113
+msgid "Latitude"
+msgstr "Latitude"
+
+#: includes/Managers/Customizer.php:131
+msgid "Longitude"
+msgstr "Longitude"
+
+#: includes/Managers/Customizer.php:149
+msgid "Address"
+msgstr "Adresse"
+
+#. translators: Publish box date format, see https://secure.php.net/date
+#: includes/Managers/PostTypes/Reference.php:42
+msgid "M j, Y @ H:i"
+msgstr "M j, Y @ H:i"
+
+#: includes/Managers/PostTypes/Reference.php:47
+#: includes/Managers/PostTypes/Reference.php:95
+msgid "View Reference"
+msgstr "Voir la référence"
+
+#: includes/Managers/PostTypes/Reference.php:53
+#: includes/Managers/PostTypes/Reference.php:59
+msgid "Preview Reference"
+msgstr ""
+
+#: includes/Managers/PostTypes/Reference.php:64
+#: includes/Managers/PostTypes/Reference.php:67
+#: includes/Managers/PostTypes/Reference.php:117
+msgid "Reference updated."
+msgstr ""
+
+#: includes/Managers/PostTypes/Reference.php:65
+msgid "Custom field updated."
+msgstr ""
+
+#: includes/Managers/PostTypes/Reference.php:66
+msgid "Custom field deleted."
+msgstr ""
+
+#. translators: %s: date and time of the revision
+#: includes/Managers/PostTypes/Reference.php:69
+#, php-format
+msgid "Reference restored to revision from %s."
+msgstr ""
+
+#: includes/Managers/PostTypes/Reference.php:70
+#: includes/Managers/PostTypes/Reference.php:113
+msgid "Reference published."
+msgstr "Référence mise en ligne."
+
+#: includes/Managers/PostTypes/Reference.php:71
+msgid "Reference saved."
+msgstr ""
+
+#: includes/Managers/PostTypes/Reference.php:72
+msgid "Reference submitted."
+msgstr ""
+
+#: includes/Managers/PostTypes/Reference.php:73
+#, php-format
+msgid "Reference scheduled for: %s."
+msgstr ""
+
+#: includes/Managers/PostTypes/Reference.php:74
+msgid "Reference draft updated."
+msgstr ""
+
+#: includes/Managers/PostTypes/Reference.php:89
+msgctxt "reference general name"
+msgid "References"
+msgstr "Références"
+
+#: includes/Managers/PostTypes/Reference.php:90
+msgctxt "reference singular name"
+msgid "Reference"
+msgstr "Reference"
+
+#: includes/Managers/PostTypes/Reference.php:91
+msgctxt "reference"
+msgid "Add New"
+msgstr "Ajouter"
+
+#: includes/Managers/PostTypes/Reference.php:92
+msgid "Add New References"
+msgstr ""
+
+#: includes/Managers/PostTypes/Reference.php:93
+msgid "Edit Reference"
+msgstr ""
+
+#: includes/Managers/PostTypes/Reference.php:94
+msgid "New Reference"
+msgstr ""
+
+#: includes/Managers/PostTypes/Reference.php:96
+msgid "View References"
+msgstr ""
+
+#: includes/Managers/PostTypes/Reference.php:97
+msgid "Search References"
+msgstr ""
+
+#: includes/Managers/PostTypes/Reference.php:98
+msgid "No references found."
+msgstr ""
+
+#: includes/Managers/PostTypes/Reference.php:99
+msgid "No references found in Trash."
+msgstr "Aucune référence trouvée dans la corbeille."
+
+#: includes/Managers/PostTypes/Reference.php:100
+msgid "Parent Reference:"
+msgstr ""
+
+#: includes/Managers/PostTypes/Reference.php:101
+msgid "All references"
+msgstr "Toutes les références"
+
+#: includes/Managers/PostTypes/Reference.php:102
+msgid "Reference Archives"
+msgstr ""
+
+#: includes/Managers/PostTypes/Reference.php:103
+msgid "Reference Attributes"
+msgstr ""
+
+#: includes/Managers/PostTypes/Reference.php:104
+msgid "Insert into reference"
+msgstr ""
+
+#: includes/Managers/PostTypes/Reference.php:105
+msgid "Uploaded to this reference"
+msgstr ""
+
+#: includes/Managers/PostTypes/Reference.php:106
+msgctxt "reference"
+msgid "Featured Image"
+msgstr "Image mise en avant"
+
+#: includes/Managers/PostTypes/Reference.php:107
+msgctxt "reference"
+msgid "Set featured image"
+msgstr "Définir l’image mise en avant"
+
+#: includes/Managers/PostTypes/Reference.php:108
+msgctxt "reference"
+msgid "Remove featured image"
+msgstr "Supprimer l’image mise en avant"
+
+#: includes/Managers/PostTypes/Reference.php:109
+msgctxt "reference"
+msgid "Use as featured image"
+msgstr ""
+
+#: includes/Managers/PostTypes/Reference.php:110
+msgid "Filter references list"
+msgstr ""
+
+#: includes/Managers/PostTypes/Reference.php:111
+msgid "References list navigation"
+msgstr ""
+
+#: includes/Managers/PostTypes/Reference.php:112
+msgid "References list"
+msgstr ""
+
+#: includes/Managers/PostTypes/Reference.php:114
+msgid "Reference published privately."
+msgstr ""
+
+#: includes/Managers/PostTypes/Reference.php:115
+msgid "Reference reverted to draft."
+msgstr ""
+
+#: includes/Managers/PostTypes/Reference.php:116
+msgid "Reference scheduled."
+msgstr ""
+
+#: includes/Managers/PostTypes/Reference.php:121
+msgid "Reference"
+msgstr ""
+
+#: includes/Managers/Theme.php:207
+msgid "Share on Twitter"
+msgstr "Partager sur Twitter"
+
+#: includes/Managers/Theme.php:214
+msgid "Share on Facebook"
+msgstr "Partager sur Facebook"
+
+#: includes/Managers/Theme.php:226
+msgid "Share on LinkedIn"
+msgstr "Partager sur LinkedIn"
+
+#: includes/Managers/Theme.php:352
+msgid "Menu"
+msgstr ""
+
+#: includes/Managers/Theme.php:353
+msgid "Footer"
+msgstr ""
+
+#: dist/js/vendors~block-2.bundle.js:10 dist/js/vendors~block-4.bundle.js:10
+msgid "hidden"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "De l'île aux papilles"
+msgstr "De l’île aux papilles"
+
+#. Theme URI of the plugin/theme
+msgid "http://www.ile-aux-papilles.fr/"
+msgstr "http://www.ile-aux-papilles.fr/"
+
+#. Description of the plugin/theme
+msgid "De l'île aux papilles theme."
+msgstr "Thème de De l’île aux papilles."
+
+#. Author of the plugin/theme
+msgid "Jérémy Levron"
+msgstr "Jérémy Levron"
+
+#. Author URI of the plugin/theme
+msgid "https://19h47.fr/"
+msgstr "https://19h47.fr/"

@@ -8,7 +8,7 @@
 
 namespace DLAP\Managers;
 
-use Timber\{ Menu };
+use Timber\{ Timber, Menu };
 use DLAP\{ Helpers };
 use Twig\{ TwigFunction };
 
@@ -250,6 +250,7 @@ class Theme {
 	public function add_to_context( array $context ) : array {
 		$context['feed_link']    = get_feed_link();
 		$context['phone_number'] = get_option( 'phone_number' );
+		$context['references']   = Timber::get_sidebar( 'component-references.php' );
 
 		return $context;
 	}

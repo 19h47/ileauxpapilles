@@ -1,0 +1,23 @@
+/**
+ * References
+ *
+ *
+ *
+ *
+ */
+.References {
+	@include padding(top 3 * $grid-gutter-width bottom 3 * $grid-gutter-width);
+
+	background-color: the_color(white);
+
+	&__item {
+		@extend .d-block;
+		@include margin(
+			top $grid-gutter-width / 2 right auto bottom $grid-gutter-width / 2 left auto
+		);
+		@include size(4 * $grid-gutter-width);
+
+		object-fit: contain;
+		object-position: center;
+	}
+}

@@ -8,6 +8,8 @@
 	@include margin(top $grid-gutter-width * 3 bottom $grid-gutter-width * 3);
 
 	img {
+		@extend .d-inline-block;
+		@extend %vertical-align-middle;
 		@include size(100%, auto);
 
 		object-fit: contain;
