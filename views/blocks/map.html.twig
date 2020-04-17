@@ -1,0 +1,14 @@
+{#
+
+Layouts: numbers
+
+ #}
+<div class="Map">
+	<div class="Site-container">
+		<div class="row">
+			<div class="col-12 offset-md-5 col-md-7">
+				{% include 'partials/map.html.twig' with { open: true, id: id ? "map-#{id}" : 'map' } %}
+			</div>
+		</div>
+	</div>
+</div>

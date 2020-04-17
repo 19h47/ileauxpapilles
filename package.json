@@ -9,6 +9,8 @@
 		"flickity": "^2.2.1",
 		"flickity-imagesloaded": "^2.0.0",
 		"gsap": "^3.2.6",
+		"image-webpack-loader": "^6.0.0",
+		"leaflet": "^1.6.0",
 		"ress": "^2.0.4",
 		"starting-blocks": "^5.0.7"
 	},

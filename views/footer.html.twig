@@ -10,7 +10,24 @@ Footer
 				<div class="Site-container">
 					<div class="row">
 						<div class="col-12 col-md-2">
-							{% include 'components/logo.html.twig' %}
+							{% include 'components/logo.html.twig' only %}
+						</div>
+					</div>
+				</div>
+				<div class="Site-container margin-top-md-6">
+					<div class="row">
+						<div class="col-12 col-md-3 margin-y-3 margin-y-md-0">
+							<div class="Site-footer__column">
+								<h3 class="Site-footer__title">Accès</h3>
+								<div class="Map">
+									{% include 'partials/map.html.twig' %}
+								</div>
+							</div>
+						</div>
+						<div class="col-12 col-md-3 margin-y-3 margin-y-md-0">
+							<div class="Site-footer__column">
+								<h3 class="Site-footer__title">Suivez-nous !</h3>
+							</div>
 						</div>
 						<div class="col-12 col-md-3 margin-y-3 margin-y-md-0">
 							<div class="Site-footer__column">
@@ -25,12 +42,6 @@ Footer
 						</div>
 						<div class="col-12 col-md-3 margin-y-3 margin-y-md-0">
 							<div class="Site-footer__column">
-								<h3 class="Site-footer__title">Suivez-nous !</h3>
-								{% include 'components/socials.html.twig' with { feed: true } %}
-							</div>
-						</div>
-						<div class="col-12 col-md-3 margin-y-3 margin-y-md-0">
-							<div class="Site-footer__column">
 								<h3 class="Site-footer__title">Cadeau gourmand…</h3>
 								<p>Vous souhaitez faire (re)découvrir notre restaurant à votre famille ou vos ami(e)s ?</p>
 
@@ -41,12 +52,12 @@ Footer
 						</div>
 					</div>
 				</div>
-				<div class="Site-container margin-top-md-7">
+				<div class="Site-container margin-top-md-6">
 					<div class="row">
-						<div class="col-12 col-md-6 offset-md-2 margin-y-3 margin-y-md-0">
+						<div class="col-12 col-md-6 margin-y-3 margin-y-md-0">
 							{% include 'components/menu.html.twig' with { items: menus.footer.items } %}
 						</div>
-						<div class="col-12 col-md-4 margin-top-3 margin-top-md-0">
+						<div class="col-12 col-md-6 margin-top-3 margin-top-md-0 text-align-md-right">
 							<p class="Site-footer__copyright">
 								Réalisé par <a href="http://inesa.fr/" target="_blank" rel="noopener"><strong>Inès A</strong></a> et <a href="https://19h47.fr/" target="_blank" rel="noopener"><strong>19h47</strong></a>
 							</p>

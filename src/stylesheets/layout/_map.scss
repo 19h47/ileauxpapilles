@@ -3,6 +3,17 @@
  *
  *
  *
- * @package DLAP
+ *
  */
-.Map {}
+.Map {
+	@include margin(top $grid-gutter-width * 3 bottom $grid-gutter-width * 3);
+
+	@at-root .Site-footer & {
+		@include margin(top 0 bottom 0);
+	}
+
+	&__container {
+		@extend %position-relative;
+		@include size(100%, $grid-gutter-width * 13);
+	}
+}

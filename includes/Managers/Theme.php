@@ -85,11 +85,13 @@ class Theme {
 		}
 
 		include_once get_template_directory() . '/includes/template-functions.php';
+		include_once get_template_directory() . '/includes/tinymce.php';
 
 		$this->add_theme_supports();
 		$this->add_post_type_supports();
-		$this->remove_post_type_supports();
 		$this->register_menus();
+
+		add_action( 'init', array( $this, 'remove_post_type_supports' ) );
 
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_style' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
@@ -305,6 +307,11 @@ class Theme {
 				'api_url'                => home_url( 'wp-json' ),
 				'current_url'            => get_permalink(),
 				'nonce'                  => wp_create_nonce( 'security' ),
+				'popupContent'           => nl2br( get_option( 'address' ) ),
+				'coordinates'            => array(
+					'latitude'  => get_option( 'latitude' ),
+					'longitude' => get_option( 'longitude' ),
+				),
 			)
 		);
 
