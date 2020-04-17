@@ -27,7 +27,7 @@ $color-variations: (
 		very-dark: #262626,
 	),
 	cyan: (
-		dark-moderate: #41737b,
+		dark-moderate: #4c8691,
 		very-dark-desaturated: #26575c,
 	),
 	yellow: (
@@ -175,8 +175,8 @@ $prototype-height: $prototype-height-unitless * 1px;
  */
 $spacers: (
 	0: 0,
-	1: 5,
-	2: 10,
+	1: $base-line-height * 0.5,
+	2: $base-line-height * 0.75,
 	3: $base-line-height,
 	4: $base-line-height * 1.5,
 	5: $base-line-height * 2,

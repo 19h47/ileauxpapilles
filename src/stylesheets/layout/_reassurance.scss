@@ -5,8 +5,6 @@
  *
  */
 .Reassurance {
-	@include margin(top $grid-gutter-width * 3 bottom $grid-gutter-width * 3);
-
 	&__item {
 		&__content {
 			@extend %text-align-center;

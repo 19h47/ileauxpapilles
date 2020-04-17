@@ -1,0 +1,45 @@
+/**
+ * Producers
+ *
+ *
+ *
+ *
+ */
+.Producers {
+	table {
+		border-collapse: collapse;
+
+		span {
+			@extend %white-space-break-spaces;
+		}
+
+		td {
+			height: $grid-gutter-width * 3;
+
+			@include padding(top $grid-gutter-width / 2 bottom $grid-gutter-width / 2);
+		}
+
+		td:nth-child(1),
+		td:nth-child(3) {
+			width: percentage(330 / 1076);
+		}
+
+		td:nth-child(2) {
+			width: percentage(220 / 1076);
+		}
+
+		td:nth-child(4) {
+			width: percentage(196 / 1076);
+		}
+
+		tr:nth-child(odd) {
+			background-color: rgba(the_color(white), 0.15);
+		}
+
+		a {
+			@extend %font-weight-bold, %text-decoration-underline;
+
+			color: the_color(yellow, soft);
+		}
+	}
+}

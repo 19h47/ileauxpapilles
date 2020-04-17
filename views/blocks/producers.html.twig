@@ -1,0 +1,21 @@
+{#  #}
+<div class="Producers Section">
+	<div class="Site-container">
+		<div class="row">
+			<div class="col-12 col-md-10 offset-md-1">
+				<table>
+					<tbody>
+						{% for item in block.items %}
+							<tr>
+								<td>{{- item.category ? "<strong class=\"padding-left-3 d-inline-block\">#{item.category}</strong>" | raw -}}</td>
+								<td>{{- item.label -}}</td>
+								<td>{{- item.title -}}{{- item.title and item.link.url ? '<br>' | raw -}}{{- item.link ? "<a href=\"#{item.link.url}\"#{item.link.target ? " target=\"_blank\""}>#{ item.link.title }</a>" -}}</td>
+								<td>{{- item.place ? "<span class=\"display-inline-block padding-right-3\">#{item.place}</span>" | raw -}}</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

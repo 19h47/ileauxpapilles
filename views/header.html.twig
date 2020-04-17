@@ -69,15 +69,15 @@ Header
 				<div class="Site-container h-100">
 					<div class="row h-100 d-flex align-items-end">
 						<div class="col-12 col-md-4{{ post.thumbnail ? ' margin-bottom-3 margin-bottom-md-0' }}">
-							<h1 class="Page__title{{ post.subtitle ? ' margin-0' : ' margin-bottom-5' -}}">{{- post.title -}}</h1>
-							{{ post.subtitle ? "<p class=\"Page__subtitle\">#{post.subtitel}</p>" }}
+							<h1 class="Page__title{{ post.get_field( 'hero' ).subtitle ? ' margin-0' : ' margin-bottom-5' -}}">{{- post.title -}}</h1>
+							{{ post.get_field( 'hero' ).subtitle ? "<p class=\"Page__subtitle\">#{post.subtitel}</p>" }}
 
-							<p class="Page__introduction">
-								{{- post.introduction ? "#{post.introduction}<br><br>" | raw | nl2br -}}
+							<div class="Page__introduction Wysiwyg">
+								{{- post.get_field( 'hero' ).introduction ? "#{post.get_field( 'hero' ).introduction}" | raw -}}
 								{%- if phone_number -%}
 									<a href="tel:{{ phone_number | replace ( { ' ' : '' } ) }}" class="margin-bottom-0 margin-right-3 margin-left-auto">Réservation au <strong>{{- phone_number -}}</strong></a>
 								{%- endif -%}
-							</p>
+							</div>
 						</div>
 
 						{% if post.thumbnail %}

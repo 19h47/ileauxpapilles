@@ -2,26 +2,16 @@
  *
  *
  *
+ *
+ *
  */
-.Content {
-	@include margin(top 3 * $grid-gutter-width bottom 3 * $grid-gutter-width);
-
+.Wysiwyg {
 	& > *:first-child {
 		@include margin(top 0);
 	}
 
 	& > *:last-child {
 		@include margin(bottom 0);
-	}
-
-	&__inner {
-		& > *:first-child {
-			@include margin(top 0);
-		}
-
-		& > *:last-child {
-			@include margin(bottom 0);
-		}
 	}
 
 	strong {
@@ -60,6 +50,16 @@
 				color: the_color(cyan, dark-moderate);
 				display: inline-block;
 				width: 1em;
+
+				@at-root .Restaurant-page & {
+					color: the_color(yellow, grayish);
+				}
+				@at-root .Voucher-page & {
+					color: the_color(yellow, grayish);
+				}
+				@at-root .Front-page & {
+					color: the_color(yellow, grayish);
+				}
 			}
 		}
 	}
