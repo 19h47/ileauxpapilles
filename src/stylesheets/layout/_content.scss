@@ -24,13 +24,29 @@
 		}
 	}
 
+	strong {
+		color: the_color(white);
+	}
+
 	h3 {
 		@include margin(top $grid-gutter-width * 2 bottom $grid-gutter-width);
 		color: the_color(cyan, dark-moderate);
+
+		@at-root .Restaurant-page & {
+			color: the_color(yellow, grayish);
+		}
+		@at-root .Voucher-page & {
+			color: the_color(yellow, grayish);
+		}
+		@at-root .Front-page & {
+			color: the_color(yellow, grayish);
+		}
 	}
 
 	a {
 		@extend %font-weight-bold, %text-decoration-underline;
+
+		color: the_color(white);
 	}
 
 	ul {

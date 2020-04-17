@@ -1,8 +1,12 @@
-{#  #}
-<div class="Image">
+{#
+
+Image
+
+#}
+<div class="Image{{ block.background_color != 'transparent' ? " background-color-#{ block.background_color } padding-y-6" }}">
 	<div class="Site-container">
 		<div class="row">
-			<div class="col-12">
+			<div class="col-12{{ block.background_color != 'transparent' ? ' col-md-8 offset-md-2' : ' col-md-10 offset-md-1' }}">
 				{% include 'partials/image.html.twig' with { image: block.image, classes: [ 'js-baseline' ] } %}
 			</div>
 		</div>

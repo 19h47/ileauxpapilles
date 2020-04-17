@@ -1,0 +1,25 @@
+/**
+ * Introduction
+ *
+ *
+ *
+ */
+.Introduction {
+	.Content__inner {
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			@extend %font-family-body, %font-style-normal;
+
+			color: the_color(white);
+		}
+
+		h2 {
+			font-size: $base-font-size-px * power($scale-factor, 1);
+			line-height: #{$base-line-height * 1}px;
+		}
+	}
+}
