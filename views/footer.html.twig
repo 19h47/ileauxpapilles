@@ -27,6 +27,17 @@ Footer
 						<div class="col-12 col-md-3 margin-y-3 margin-y-md-0">
 							<div class="Site-footer__column">
 								<h3 class="Site-footer__title">Suivez-nous !</h3>
+								<div
+									class="fb-page"
+									data-href="https://www.facebook.com/delileauxpapilles/"
+									data-tabs="timeline"
+									data-width="306"
+									data-height="312"
+									data-small-header="true"
+									data-adapt-container-width="true"
+									data-hide-cover="false"
+									data-show-facepile="false"
+								><blockquote cite="https://www.facebook.com/delileauxpapilles/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/delileauxpapilles/">De l&#039;île aux papilles</a></blockquote></div>
 							</div>
 						</div>
 						<div class="col-12 col-md-3 margin-y-3 margin-y-md-0">
@@ -52,8 +63,11 @@ Footer
 						</div>
 					</div>
 				</div>
-				<div class="Site-container margin-top-md-6">
+				<div class="Site-container margin-top-md-3">
 					<div class="row">
+						<div class="col-12 margin-bottom-md-3">
+							<hr class="Site-footer__horizontal-line">
+						</div>
 						<div class="col-12 col-md-6 margin-y-3 margin-y-md-0">
 							{% include 'components/menu.html.twig' with { items: menus.footer.items } %}
 						</div>
@@ -68,6 +82,7 @@ Footer
 		</main>
 
 		{{ wp_footer }}
+		<script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v6.0"></script>
 
     </body>
 </html>

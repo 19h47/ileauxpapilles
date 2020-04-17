@@ -1,0 +1,17 @@
+{#  #}
+<div class="Reassurance">
+	<div class="Site-container">
+		<div class="row">
+			{% for i in range( 0, 3 ) %}
+				{% if block[i] %}
+					<div class="col-12 col-md-3">
+						<div class="Reassurance__item">
+							{% include 'svg/use.html.twig' with { icon: block[i].icon | default( 'anchor' ) } only %}
+							<div class="Reassurance__item__content">{{ block[i].content }}</div>
+						</div>
+					</div>
+				{% endif %}
+			{% endfor %}
+		</div>
+	</div>
+</div>

@@ -31,13 +31,13 @@
 
 // Layout
 @import 'layout/site', 'layout/header', 'layout/footer', 'layout/partners', 'layout/hero',
-	'layout/content', 'layout/map', 'layout/carousel', 'layout/image', 'layout/references';
+	'layout/content', 'layout/map', 'layout/carousel', 'layout/image', 'layout/references',
+	'layout/reassurance';
 
 // Components
 @import 'components/logo', 'components/menu', 'components/guid', 'components/form',
 	'components/socials', 'components/button', 'components/input', 'components/radio',
-	'components/checkbox', 'components/textarea', 'components/cursor';
-
+	'components/cursor';
 // Pages
 @import 'pages/page', 'pages/front-page', 'pages/producers';
 

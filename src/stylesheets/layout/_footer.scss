@@ -15,6 +15,10 @@
 		background-color: the_color(gray, very-dark);
 		color: the_color(gray, very-light);
 	}
+	@at-root .Voucher-page & {
+		background-color: the_color(gray, very-dark);
+		color: the_color(gray, very-light);
+	}
 
 	@at-root .Front-page & {
 		background-color: the_color(gray, very-dark);
@@ -42,6 +46,9 @@
 		@at-root .Restaurant-page & {
 			color: the_color(white);
 		}
+		@at-root .Voucher-page & {
+			color: the_color(white);
+		}
 
 		@include media-breakpoint-up(md) {
 			@include margin(bottom $grid-gutter-width);
@@ -62,6 +69,9 @@
 				color: the_color(white);
 			}
 			@at-root .Restaurant-page & {
+				color: the_color(white);
+			}
+			@at-root .Voucher-page & {
 				color: the_color(white);
 			}
 		}
@@ -85,6 +95,27 @@
 			@at-root .Restaurant-page & {
 				color: the_color(white);
 			}
+			@at-root .Voucher-page & {
+				color: the_color(white);
+			}
+		}
+	}
+
+	&__horizontal-line {
+		@include margin(bottom -1.5px);
+		@include size(100%, 3px);
+
+		border: none;
+		background-color: the_color(gray, very-dark);
+
+		@at-root .Front-page & {
+			background-color: the_color(white);
+		}
+		@at-root .Voucher-page & {
+			background-color: the_color(white);
+		}
+		@at-root .Restaurant-page & {
+			background-color: the_color(white);
 		}
 	}
 }

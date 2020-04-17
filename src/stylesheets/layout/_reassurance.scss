@@ -1,0 +1,29 @@
+/**
+ *
+ *
+ *
+ *
+ */
+.Reassurance {
+	@include margin(top $grid-gutter-width * 3 bottom $grid-gutter-width * 3);
+
+	&__item {
+		&__content {
+			@extend %text-align-center;
+			@include margin(top $grid-gutter-width);
+		}
+
+		svg {
+			@include size(100%, $grid-gutter-width * 3);
+			@at-root .Front-page & {
+				fill: the_color(yellow, grayish);
+			}
+			@at-root .Voucher-page & {
+				fill: the_color(yellow, grayish);
+			}
+			@at-root .Restaurant-page & {
+				fill: the_color(yellow, grayish);
+			}
+		}
+	}
+}
