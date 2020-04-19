@@ -12,6 +12,10 @@ use Timber\{ Timber, Menu };
 use DLAP\{ GenerateGiftCoupon };
 use Twig\{ TwigFunction };
 
+$timber = new Timber();
+
+Timber::$dirname = array( 'views', 'templates', 'dist' );
+
 
 /**
  * Theme
@@ -25,8 +29,8 @@ class Theme {
 	 * @var    array
 	 */
 	private $theme_manifest;
-	
-	
+
+
 	/**
 	 * Runs initialization tasks.
 	 *
@@ -34,9 +38,9 @@ class Theme {
 	 */
 	public function run() : void {
 		$this->theme_manifest = get_theme_manifest();
-		
+
 		new GenerateGiftCoupon();
-	
+
 		add_filter( 'timber/twig', array( $this, 'add_to_twig' ) );
 		add_filter( 'timber_context', array( $this, 'add_socials_to_context' ) );
 		add_filter( 'timber_context', array( $this, 'add_manifest_to_context' ) );
@@ -48,11 +52,11 @@ class Theme {
 		add_action( 'after_setup_theme', array( $this, 'add_theme_textdomain' ) );
 		add_action( 'after_setup_theme', array( $this, 'remove_post_type_supports' ) );
 	}
-	
-	
+
+
 	/**
 	 * Add theme textdomain
-	 * 
+	 *
 	 * @return void
 	 */
 	public function add_theme_textdomain() : void {
@@ -208,7 +212,7 @@ class Theme {
 	/**
 	 * Add to context
 	 *
-	 * @param  array $context Timber context
+	 * @param  array $context Timber context.
 	 *
 	 * @return array
 	 */

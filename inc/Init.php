@@ -14,14 +14,14 @@ use DLAP\{ Setup, Plugins, Custom, Api };
  * Init
  */
 class Init {
-    
-    /**
+
+	/**
 	 * Store all the classes inside an array
-	 * 
+	 *
 	 * @return array Full list of classes
 	 */
 	public static function get_services() : array {
-		return [
+		return array(
 			Setup\Theme::class,
 			Setup\Enqueue::class,
 			Setup\WordPress::class,
@@ -33,13 +33,13 @@ class Init {
 			Api\Customizer::class,
 			Plugins\TinyMCE::class,
 			Plugins\Acf::class,
-		];
-    }
-    
+		);
+	}
 
-    /**
+
+	/**
 	 * Loop through the classes, initialize them, and call the run() method if it exists
-	 * 
+	 *
 	 * @return void
 	 */
 	public static function run_services() : void {
@@ -54,8 +54,8 @@ class Init {
 
 	/**
 	 * Initialize the class
-	 * 
-	 * @param  string $class class name from the services array
+	 *
+	 * @param  string $class class name from the services array.
 	 * @return object
 	 */
 	private static function instantiate( string $class ) : object {

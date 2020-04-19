@@ -27,7 +27,7 @@ function get_theme_manifest() {
  */
 function get_html_class( $class = '' ) : array {
 	$classes = array();
-	
+
 	if ( ! empty( $class ) ) {
 		if ( ! is_array( $class ) ) {
 			$class = preg_split( '#\s+#', $class );
@@ -39,7 +39,7 @@ function get_html_class( $class = '' ) : array {
 	}
 
 	$classes = array_map( 'esc_attr', $classes );
-	
+
 	/**
 	 * Filter the list of CSS html classes for the current post or page.
 	 *
@@ -56,7 +56,7 @@ function get_html_class( $class = '' ) : array {
  * Display the classes for the html element.
  *
  * @param string|array $class One or more classes to add to the class list.
- * 
+ *
  * @return string
  */
 function html_class( $class = '' ) : string {

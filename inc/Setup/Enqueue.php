@@ -1,7 +1,7 @@
-<?php
+<?php // phpcs:ignore
 /**
  * Enqueue
- * 
+ *
  * @package dlap
  */
 
@@ -12,8 +12,11 @@ use Dotenv\{ Dotenv };
 $dotenv = Dotenv::createImmutable( get_template_directory() );
 $dotenv->load();
 
+/**
+ * Enqueue
+ */
 class Enqueue {
-     	
+
 	/**
 	 * Runs initialization tasks.
 	 *
@@ -22,9 +25,9 @@ class Enqueue {
 	public function run() : void {
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_style' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
-    }
-    
-    /**
+	}
+
+	/**
 	 * Enqueue scripts
 	 *
 	 * @access public

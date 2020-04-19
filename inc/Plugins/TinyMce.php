@@ -1,4 +1,4 @@
-<?php
+<?php // phpcs:ignore
 /**
  * TinyMCE
  *
@@ -7,8 +7,11 @@
 
 namespace DLAP\Plugins;
 
+/**
+ * TinyMCE
+ */
 class TinyMCE {
-		
+
 	/**
 	 * Runs initialization tasks.
 	 *
@@ -23,7 +26,7 @@ class TinyMCE {
 	/**
 	 * Customize the default color palette for TinyMce editor
 	 *
-	 * @param  array $mceInit An array with TinyMCE config.
+	 * @param  array  $mceInit An array with TinyMCE config.
 	 * @param  string $editor_id Unique editor identifier, e.g. 'content'. Accepts 'classic-block' when called from block editor's Classic block.
 	 *
 	 * @return array $mceInit
@@ -35,14 +38,14 @@ class TinyMCE {
 				'cyan, dark moderate',
 			)
 		);
-	
-		$mceInit['textcolor_rows'] = 1;
-	
+
+		$mceInit['textcolor_rows'] = 1; // phpcs:ignore
+
 		return $mceInit; // phpcs:ignore
 	}
-	
-	
-	
+
+
+
 	/**
 	 * Remove color picker from TinyMCE
 	 *
@@ -57,15 +60,15 @@ class TinyMCE {
 	 * @see https://wordpress.stackexchange.com/a/272174/115070
 	 * @return array $plugins
 	 */
-	function remove_custom_colors( array $plugins, string $editor_id ) : array {
-	
+	public function remove_custom_colors( array $plugins, string $editor_id ) : array {
+
 		foreach ( $plugins as $key => $plugin ) {
 			if ( 'colorpicker' === $plugin ) {
 				unset( $plugins[ $key ] );
 				return $plugins;
 			}
 		}
-	
+
 		return $plugins;
 	}
 }
