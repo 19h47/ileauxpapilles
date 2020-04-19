@@ -12,11 +12,12 @@
 					{% for item in block.items %}
 						<img
 							class="Carousel__item js-item"
-							loading="eager"
+							loading="lazy"
 							src="{{ Image( item ).src }}"
 							alt="{{ Image( item ).alt }}"
 							width="{{ Image( item ).width }}"
 							height="{{ Image( item ).height }}"
+							srcset="{{ Image( item ).srcset }}"
 						>
 					{% endfor %}
 				</div>

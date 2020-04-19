@@ -98,6 +98,7 @@ module.exports = merge(common, {
 				'Restaurant-page',
 				'background-color-white',
 				'Single-coupon',
+				'picture',
 			],
 			whitelistPatternsChildren: [
 				/^Form/,

@@ -10,12 +10,12 @@
  #}
 {% if image %}
 	<picture>
-		<source srcset="{{ Image( image ).src | towebp }}" type="image/webp">
-		<source srcset="{{ Image( image ).src }}" type="{{ Image( image ).sizes.medium['mime-type'] }}">
+		<source srcset="{{ Image( image ).src( 'large' ) | towebp }}" type="image/webp">
+		<source srcset="{{ Image( image ).src( 'large' ) }}" type="{{ Image( image ).sizes.medium['mime-type'] }}">
 		<img
 		 	class="{{ classes ? classes | join( ' ' ) }}"
 			loading="{{ loading | default( 'lazy' ) }}"
-			src="{{ Image( image ).src }}"
+			src="{{ Image( image ).src( 'large' ) }}"
 			alt="{{ Image( image ).alt }}"
 			width="{{ Image( image ).width }}"
 			height="{{ Image( image ).height }}"

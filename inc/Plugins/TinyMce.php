@@ -18,9 +18,8 @@ class TinyMCE {
 	 * @return void
 	 */
 	public function run() : void {
-		add_filter( 'tiny_mce_before_init', array( $this, 'add_colors', 10, 2 ) );
-		add_filter( 'tiny_mce_plugins', array( $this, 'remove_custom_colors', 10, 2 ) );
-
+		add_filter( 'tiny_mce_before_init', array( $this, 'add_colors' ), 10, 2 );
+		add_filter( 'tiny_mce_plugins', array( $this, 'remove_custom_colors' ), 10, 2 );
 	}
 
 	/**
@@ -31,7 +30,7 @@ class TinyMCE {
 	 *
 	 * @return array $mceInit
 	 */
-	function add_colors( array $mceInit, string $editor_id ) : array { // phpcs:ignore
+	public function add_colors( array $mceInit, string $editor_id ) : array { // phpcs:ignore
 		$mceInit['textcolor_map'] = wp_json_encode( // phpcs:ignore
 			array(
 				'4b858e',

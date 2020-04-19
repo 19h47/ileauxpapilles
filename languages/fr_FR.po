@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: De l'île aux papilles\n"
-"POT-Creation-Date: 2020-04-16 17:29+0200\n"
-"PO-Revision-Date: 2020-04-16 17:45+0200\n"
+"POT-Creation-Date: 2020-04-19 17:52+0200\n"
+"PO-Revision-Date: 2020-04-19 18:22+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -22,242 +22,522 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 "X-Poedit-SearchPathExcluded-1: vendor\n"
 "X-Poedit-SearchPathExcluded-2: node_modules\n"
+"X-Poedit-SearchPathExcluded-3: dist\n"
 
-#: includes/Managers/Customizer.php:40
+#: inc/Api/Customizer.php:40
 msgid "Contact"
 msgstr "Contact"
 
-#: includes/Managers/Customizer.php:41
+#: inc/Api/Customizer.php:41
 msgid "Contact settings"
 msgstr "Paramètre de contact"
 
-#: includes/Managers/Customizer.php:57
+#: inc/Api/Customizer.php:57
 msgid "Facebook"
 msgstr "Facebook"
 
-#: includes/Managers/Customizer.php:58
+#: inc/Api/Customizer.php:58
 msgid "Facebook URL"
 msgstr "URL du compte Facebook"
 
-#: includes/Managers/Customizer.php:76
+#: inc/Api/Customizer.php:76
 msgid "Phone number"
 msgstr "Numéro de téléphone"
 
-#: includes/Managers/Customizer.php:94
+#: inc/Api/Customizer.php:94
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: includes/Managers/Customizer.php:95
+#: inc/Api/Customizer.php:95
 msgid "LinkedIn URL"
 msgstr "URL du compte LinkedIn"
 
-#: includes/Managers/Customizer.php:113
+#: inc/Api/Customizer.php:113
 msgid "Latitude"
 msgstr "Latitude"
 
-#: includes/Managers/Customizer.php:131
+#: inc/Api/Customizer.php:131
 msgid "Longitude"
 msgstr "Longitude"
 
-#: includes/Managers/Customizer.php:149
+#: inc/Api/Customizer.php:149
 msgid "Address"
 msgstr "Adresse"
 
+#: inc/Setup/Menus.php:33
+msgid "Menu"
+msgstr "Menu"
+
+#: inc/Setup/Menus.php:34
+msgid "Footer"
+msgstr "Pied de page"
+
 #. translators: Publish box date format, see https://secure.php.net/date
-#: includes/Managers/PostTypes/Reference.php:42
+#: inc/Setup/PostTypes/Coupon.php:58 inc/Setup/PostTypes/Reference.php:166
 msgid "M j, Y @ H:i"
 msgstr "M j, Y @ H:i"
 
-#: includes/Managers/PostTypes/Reference.php:47
-#: includes/Managers/PostTypes/Reference.php:95
+#: inc/Setup/PostTypes/Coupon.php:63 inc/Setup/PostTypes/Coupon.php:111
+msgid "View Coupon"
+msgstr "Voir le coupon"
+
+#: inc/Setup/PostTypes/Coupon.php:69 inc/Setup/PostTypes/Coupon.php:75
+msgid "Preview Coupon"
+msgstr "Prévisualiser le coupon"
+
+#: inc/Setup/PostTypes/Coupon.php:80 inc/Setup/PostTypes/Coupon.php:83
+#: inc/Setup/PostTypes/Coupon.php:133
+msgid "Coupon updated."
+msgstr "Coupon mis à jour."
+
+#: inc/Setup/PostTypes/Coupon.php:81 inc/Setup/PostTypes/Reference.php:189
+msgid "Custom field updated."
+msgstr "Champ personnalisé mis à jour."
+
+#: inc/Setup/PostTypes/Coupon.php:82 inc/Setup/PostTypes/Reference.php:190
+msgid "Custom field deleted."
+msgstr "Champ personnalisé supprimé."
+
+#. translators: %s: date and time of the revision
+#: inc/Setup/PostTypes/Coupon.php:85
+#, php-format
+msgid "Coupon restored to revision from %s."
+msgstr "Coupon rétabli à partir de la révision du %s."
+
+#: inc/Setup/PostTypes/Coupon.php:86 inc/Setup/PostTypes/Coupon.php:129
+msgid "Coupon published."
+msgstr "Coupon mis en ligne."
+
+#: inc/Setup/PostTypes/Coupon.php:87
+msgid "Coupon saved."
+msgstr "Coupon enregistré."
+
+#: inc/Setup/PostTypes/Coupon.php:88
+msgid "Coupon submitted."
+msgstr "Coupon envoyé."
+
+#: inc/Setup/PostTypes/Coupon.php:89
+#, php-format
+msgid "Coupon scheduled for: %s."
+msgstr "Coupon programmé pour le %s."
+
+#: inc/Setup/PostTypes/Coupon.php:90
+msgid "Coupon draft updated."
+msgstr "Le brouillon du coupon a été mis à jour."
+
+#: inc/Setup/PostTypes/Coupon.php:105
+msgctxt "coupon general name"
+msgid "Coupons"
+msgstr "Coupons"
+
+#: inc/Setup/PostTypes/Coupon.php:106
+msgctxt "coupon singular name"
+msgid "Coupon"
+msgstr "Coupon"
+
+#: inc/Setup/PostTypes/Coupon.php:107
+msgctxt "coupon"
+msgid "Add New"
+msgstr "Ajouter"
+
+#: inc/Setup/PostTypes/Coupon.php:108
+msgid "Add New Coupons"
+msgstr "Ajouter un nouveau coupon"
+
+#: inc/Setup/PostTypes/Coupon.php:109
+msgid "Edit Coupon"
+msgstr "Modifier le coupon"
+
+#: inc/Setup/PostTypes/Coupon.php:110
+msgid "New Coupon"
+msgstr "Nouveau coupon"
+
+#: inc/Setup/PostTypes/Coupon.php:112
+msgid "View Coupons"
+msgstr "Voir les coupons"
+
+#: inc/Setup/PostTypes/Coupon.php:113
+msgid "Search Coupons"
+msgstr "Rechercher dans les coupons"
+
+#: inc/Setup/PostTypes/Coupon.php:114
+msgid "No coupons found."
+msgstr "Aucun coupon trouvé."
+
+#: inc/Setup/PostTypes/Coupon.php:115
+msgid "No coupons found in Trash."
+msgstr "Aucun coupon trouvé dans la corbeille."
+
+#: inc/Setup/PostTypes/Coupon.php:116
+msgid "Parent Coupon:"
+msgstr "Coupon parent :"
+
+#: inc/Setup/PostTypes/Coupon.php:117
+msgid "All coupons"
+msgstr "Tous les coupons"
+
+#: inc/Setup/PostTypes/Coupon.php:118
+msgid "Coupon Archives"
+msgstr "Archives des coupons"
+
+#: inc/Setup/PostTypes/Coupon.php:119
+msgid "Coupon Attributes"
+msgstr "Attributs de coupon"
+
+#: inc/Setup/PostTypes/Coupon.php:120
+msgid "Insert into coupon"
+msgstr "Insérer dans le coupon"
+
+#: inc/Setup/PostTypes/Coupon.php:121
+msgid "Uploaded to this coupon"
+msgstr "Téléversés sur ce coupon"
+
+#: inc/Setup/PostTypes/Coupon.php:122
+msgctxt "coupon"
+msgid "Featured Image"
+msgstr "Image mise en avant"
+
+#: inc/Setup/PostTypes/Coupon.php:123
+msgctxt "coupon"
+msgid "Set featured image"
+msgstr "Définir l’image mise en avant"
+
+#: inc/Setup/PostTypes/Coupon.php:124
+msgctxt "coupon"
+msgid "Remove featured image"
+msgstr "Supprimer l’image mise en avant"
+
+#: inc/Setup/PostTypes/Coupon.php:125
+msgctxt "coupon"
+msgid "Use as featured image"
+msgstr "Utiliser comme image mise en avant"
+
+#: inc/Setup/PostTypes/Coupon.php:126
+msgid "Filter coupons list"
+msgstr "Filtrer la liste des coupons"
+
+#: inc/Setup/PostTypes/Coupon.php:127
+msgid "Coupons list navigation"
+msgstr "Navigation de la liste des coupons"
+
+#: inc/Setup/PostTypes/Coupon.php:128
+msgid "Coupons list"
+msgstr "Liste des coupons"
+
+#: inc/Setup/PostTypes/Coupon.php:130
+msgid "Coupon published privately."
+msgstr "Coupon mis en ligne en privé."
+
+#: inc/Setup/PostTypes/Coupon.php:131
+msgid "Coupon reverted to draft."
+msgstr "Coupon reconverti en brouillon."
+
+#: inc/Setup/PostTypes/Coupon.php:132
+msgid "Coupon scheduled."
+msgstr "Coupon planifié."
+
+#: inc/Setup/PostTypes/Coupon.php:137
+msgid "Coupon"
+msgstr "Coupon"
+
+#: inc/Setup/PostTypes/Partner.php:68
+msgctxt "partner type generale name"
+msgid "Partners"
+msgstr "Partenaires"
+
+#: inc/Setup/PostTypes/Partner.php:69
+msgctxt "partner type singular name"
+msgid "Partner"
+msgstr "Partenaire"
+
+#: inc/Setup/PostTypes/Partner.php:70
+msgctxt "partner type"
+msgid "Add New"
+msgstr "Ajouter"
+
+#: inc/Setup/PostTypes/Partner.php:71
+msgid "Add New Partner"
+msgstr "Ajouter"
+
+#: inc/Setup/PostTypes/Partner.php:72
+msgid "Edit Partner"
+msgstr "Modifier le partenaire"
+
+#: inc/Setup/PostTypes/Partner.php:73
+msgid "New Partner"
+msgstr "Nouveau partenaire"
+
+#: inc/Setup/PostTypes/Partner.php:74
+msgid "View Partners"
+msgstr "Voir les partenaires"
+
+#: inc/Setup/PostTypes/Partner.php:75
+msgid "View Partner"
+msgstr "Voir le partenaire"
+
+#: inc/Setup/PostTypes/Partner.php:76
+msgid "Search Partners"
+msgstr "Rechercher dans les partenaires"
+
+#: inc/Setup/PostTypes/Partner.php:77
+msgid "No partners found."
+msgstr "Aucun partenaire trouvé."
+
+#: inc/Setup/PostTypes/Partner.php:78
+msgid "No partners found in Trash."
+msgstr "Aucun partenaire trouvé dans la corbeille."
+
+#: inc/Setup/PostTypes/Partner.php:79
+msgid "Parent Partner:"
+msgstr "Partenaire parent :"
+
+#: inc/Setup/PostTypes/Partner.php:80
+msgid "All Partners"
+msgstr "Tous les partenaires"
+
+#: inc/Setup/PostTypes/Partner.php:81
+msgid "Partner Archives"
+msgstr "Archives des partenaires"
+
+#: inc/Setup/PostTypes/Partner.php:82
+msgid "Partner Attributes"
+msgstr "Attributs de partenaire"
+
+#: inc/Setup/PostTypes/Partner.php:83
+msgid "Insert into partner"
+msgstr "Insérer dans le partenaire"
+
+#: inc/Setup/PostTypes/Partner.php:84
+msgid "Uploaded to this partner"
+msgstr "Téléversés sur ce partenaire"
+
+#: inc/Setup/PostTypes/Partner.php:85
+msgctxt "partner"
+msgid "Featured Image"
+msgstr "Image mise en avant"
+
+#: inc/Setup/PostTypes/Partner.php:86
+msgctxt "partner"
+msgid "Set featured image"
+msgstr "Définir l’image mise en avant"
+
+#: inc/Setup/PostTypes/Partner.php:87
+msgctxt "partner"
+msgid "Remove featured image"
+msgstr "Supprimer l’image mise en avant"
+
+#: inc/Setup/PostTypes/Partner.php:88
+msgctxt "partner"
+msgid "Use as featured image"
+msgstr "Utiliser comme image mise en avant"
+
+#: inc/Setup/PostTypes/Partner.php:89
+msgid "Partners list navigation"
+msgstr "Navigation de la liste des partenaires"
+
+#: inc/Setup/PostTypes/Partner.php:90
+msgid "Partners list"
+msgstr "Liste des partenaires"
+
+#: inc/Setup/PostTypes/Partner.php:91
+msgid "Partner published."
+msgstr "Partenaire mis en ligne."
+
+#: inc/Setup/PostTypes/Partner.php:92
+msgid "Partner published privately."
+msgstr "Partenaire mis en ligne en privé."
+
+#: inc/Setup/PostTypes/Partner.php:93
+msgid "Partner reverted to draft."
+msgstr "Partenaire reconverti en brouillon."
+
+#: inc/Setup/PostTypes/Partner.php:94
+msgid "Partner scheduled."
+msgstr "Partenaire planifiée."
+
+#: inc/Setup/PostTypes/Partner.php:95
+msgid "Partner updated."
+msgstr "Partenaire mis à jour."
+
+#: inc/Setup/PostTypes/Partner.php:99
+msgctxt "partner slug"
+msgid "partner"
+msgstr "partenaire"
+
+#: inc/Setup/PostTypes/Partner.php:107
+msgid "Partners"
+msgstr "Partenaires"
+
+#: inc/Setup/PostTypes/Partner.php:181 inc/Setup/PostTypes/Reference.php:112
+msgid "Thumbnail"
+msgstr "Miniature"
+
+#: inc/Setup/PostTypes/Reference.php:171 inc/Setup/PostTypes/Reference.php:219
 msgid "View Reference"
 msgstr "Voir la référence"
 
-#: includes/Managers/PostTypes/Reference.php:53
-#: includes/Managers/PostTypes/Reference.php:59
+#: inc/Setup/PostTypes/Reference.php:177 inc/Setup/PostTypes/Reference.php:183
 msgid "Preview Reference"
-msgstr ""
+msgstr "Prévisualiser la référence"
 
-#: includes/Managers/PostTypes/Reference.php:64
-#: includes/Managers/PostTypes/Reference.php:67
-#: includes/Managers/PostTypes/Reference.php:117
+#: inc/Setup/PostTypes/Reference.php:188 inc/Setup/PostTypes/Reference.php:191
+#: inc/Setup/PostTypes/Reference.php:241
 msgid "Reference updated."
-msgstr ""
-
-#: includes/Managers/PostTypes/Reference.php:65
-msgid "Custom field updated."
-msgstr ""
-
-#: includes/Managers/PostTypes/Reference.php:66
-msgid "Custom field deleted."
-msgstr ""
+msgstr "Référence mise à jour."
 
 #. translators: %s: date and time of the revision
-#: includes/Managers/PostTypes/Reference.php:69
+#: inc/Setup/PostTypes/Reference.php:193
 #, php-format
 msgid "Reference restored to revision from %s."
-msgstr ""
+msgstr "Référence rétablie à partir de la révision du %s."
 
-#: includes/Managers/PostTypes/Reference.php:70
-#: includes/Managers/PostTypes/Reference.php:113
+#: inc/Setup/PostTypes/Reference.php:194 inc/Setup/PostTypes/Reference.php:237
 msgid "Reference published."
 msgstr "Référence mise en ligne."
 
-#: includes/Managers/PostTypes/Reference.php:71
+#: inc/Setup/PostTypes/Reference.php:195
 msgid "Reference saved."
-msgstr ""
+msgstr "Référence enregistrée."
 
-#: includes/Managers/PostTypes/Reference.php:72
+#: inc/Setup/PostTypes/Reference.php:196
 msgid "Reference submitted."
-msgstr ""
+msgstr "Référence envoyée."
 
-#: includes/Managers/PostTypes/Reference.php:73
+#: inc/Setup/PostTypes/Reference.php:197
 #, php-format
 msgid "Reference scheduled for: %s."
-msgstr ""
+msgstr "Référence programmée pour le %s."
 
-#: includes/Managers/PostTypes/Reference.php:74
+#: inc/Setup/PostTypes/Reference.php:198
 msgid "Reference draft updated."
-msgstr ""
+msgstr "Le brouillon de la référence a été mis à jour."
 
-#: includes/Managers/PostTypes/Reference.php:89
+#: inc/Setup/PostTypes/Reference.php:213
 msgctxt "reference general name"
 msgid "References"
 msgstr "Références"
 
-#: includes/Managers/PostTypes/Reference.php:90
+#: inc/Setup/PostTypes/Reference.php:214
 msgctxt "reference singular name"
 msgid "Reference"
 msgstr "Reference"
 
-#: includes/Managers/PostTypes/Reference.php:91
+#: inc/Setup/PostTypes/Reference.php:215
 msgctxt "reference"
 msgid "Add New"
 msgstr "Ajouter"
 
-#: includes/Managers/PostTypes/Reference.php:92
+#: inc/Setup/PostTypes/Reference.php:216
 msgid "Add New References"
-msgstr ""
+msgstr "Ajouter une nouvelle référence"
 
-#: includes/Managers/PostTypes/Reference.php:93
+#: inc/Setup/PostTypes/Reference.php:217
 msgid "Edit Reference"
-msgstr ""
+msgstr "Modifier la référence"
 
-#: includes/Managers/PostTypes/Reference.php:94
+#: inc/Setup/PostTypes/Reference.php:218
 msgid "New Reference"
-msgstr ""
+msgstr "Nouvelle référence"
 
-#: includes/Managers/PostTypes/Reference.php:96
+#: inc/Setup/PostTypes/Reference.php:220
 msgid "View References"
-msgstr ""
+msgstr "Voir les références"
 
-#: includes/Managers/PostTypes/Reference.php:97
+#: inc/Setup/PostTypes/Reference.php:221
 msgid "Search References"
-msgstr ""
+msgstr "Rechercher dans les références"
 
-#: includes/Managers/PostTypes/Reference.php:98
+#: inc/Setup/PostTypes/Reference.php:222
 msgid "No references found."
-msgstr ""
+msgstr "Aucune référence trouvée."
 
-#: includes/Managers/PostTypes/Reference.php:99
+#: inc/Setup/PostTypes/Reference.php:223
 msgid "No references found in Trash."
 msgstr "Aucune référence trouvée dans la corbeille."
 
-#: includes/Managers/PostTypes/Reference.php:100
+#: inc/Setup/PostTypes/Reference.php:224
 msgid "Parent Reference:"
-msgstr ""
+msgstr "Référence parente :"
 
-#: includes/Managers/PostTypes/Reference.php:101
+#: inc/Setup/PostTypes/Reference.php:225
 msgid "All references"
 msgstr "Toutes les références"
 
-#: includes/Managers/PostTypes/Reference.php:102
+#: inc/Setup/PostTypes/Reference.php:226
 msgid "Reference Archives"
-msgstr ""
+msgstr "Archives des références"
 
-#: includes/Managers/PostTypes/Reference.php:103
+#: inc/Setup/PostTypes/Reference.php:227
 msgid "Reference Attributes"
-msgstr ""
+msgstr "Attributs de référence"
 
-#: includes/Managers/PostTypes/Reference.php:104
+#: inc/Setup/PostTypes/Reference.php:228
 msgid "Insert into reference"
-msgstr ""
+msgstr "Insérer dans la référence"
 
-#: includes/Managers/PostTypes/Reference.php:105
+#: inc/Setup/PostTypes/Reference.php:229
 msgid "Uploaded to this reference"
-msgstr ""
+msgstr "Téléversés sur cette référence"
 
-#: includes/Managers/PostTypes/Reference.php:106
+#: inc/Setup/PostTypes/Reference.php:230
 msgctxt "reference"
 msgid "Featured Image"
 msgstr "Image mise en avant"
 
-#: includes/Managers/PostTypes/Reference.php:107
+#: inc/Setup/PostTypes/Reference.php:231
 msgctxt "reference"
 msgid "Set featured image"
 msgstr "Définir l’image mise en avant"
 
-#: includes/Managers/PostTypes/Reference.php:108
+#: inc/Setup/PostTypes/Reference.php:232
 msgctxt "reference"
 msgid "Remove featured image"
 msgstr "Supprimer l’image mise en avant"
 
-#: includes/Managers/PostTypes/Reference.php:109
+#: inc/Setup/PostTypes/Reference.php:233
 msgctxt "reference"
 msgid "Use as featured image"
-msgstr ""
+msgstr "Utiliser comme image mise en avant"
 
-#: includes/Managers/PostTypes/Reference.php:110
+#: inc/Setup/PostTypes/Reference.php:234
 msgid "Filter references list"
-msgstr ""
+msgstr "Filtrer la liste des références"
 
-#: includes/Managers/PostTypes/Reference.php:111
+#: inc/Setup/PostTypes/Reference.php:235
 msgid "References list navigation"
-msgstr ""
+msgstr "Navigation de la liste des références"
 
-#: includes/Managers/PostTypes/Reference.php:112
+#: inc/Setup/PostTypes/Reference.php:236
 msgid "References list"
-msgstr ""
+msgstr "Liste des références"
 
-#: includes/Managers/PostTypes/Reference.php:114
+#: inc/Setup/PostTypes/Reference.php:238
 msgid "Reference published privately."
-msgstr ""
+msgstr "Référence mise en ligne en privé."
 
-#: includes/Managers/PostTypes/Reference.php:115
+#: inc/Setup/PostTypes/Reference.php:239
 msgid "Reference reverted to draft."
-msgstr ""
+msgstr "Référence reconvertie en brouillon."
 
-#: includes/Managers/PostTypes/Reference.php:116
+#: inc/Setup/PostTypes/Reference.php:240
 msgid "Reference scheduled."
-msgstr ""
+msgstr "Référence planifiée."
 
-#: includes/Managers/PostTypes/Reference.php:121
+#: inc/Setup/PostTypes/Reference.php:245
 msgid "Reference"
-msgstr ""
+msgstr "Référence"
 
-#: includes/Managers/Theme.php:207
+#: inc/Setup/Theme.php:176
 msgid "Share on Twitter"
 msgstr "Partager sur Twitter"
 
-#: includes/Managers/Theme.php:214
+#: inc/Setup/Theme.php:183
 msgid "Share on Facebook"
 msgstr "Partager sur Facebook"
 
-#: includes/Managers/Theme.php:226
+#: inc/Setup/Theme.php:195
 msgid "Share on LinkedIn"
 msgstr "Partager sur LinkedIn"
-
-#: includes/Managers/Theme.php:352
-msgid "Menu"
-msgstr ""
-
-#: includes/Managers/Theme.php:353
-msgid "Footer"
-msgstr ""
-
-#: dist/js/vendors~block-2.bundle.js:10 dist/js/vendors~block-4.bundle.js:10
-msgid "hidden"
-msgstr ""
 
 #. Theme Name of the plugin/theme
 msgid "De l'île aux papilles"
