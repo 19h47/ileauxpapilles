@@ -2,7 +2,7 @@
 /**
  * Reference
  *
- * @package MDRSE
+ * @package DLAP
  */
 
 namespace DLAP\Managers\PostTypes;
@@ -24,10 +24,25 @@ class Reference {
 		add_action( 'init', array( $this, 'register_post_type' ), 10, 0 );
 		add_action( 'admin_head', array( $this, 'css' ) );
 		add_action( 'save_post_reference', array( $this, 'save' ), 10, 3 );
+		add_action( 'template_redirect', array( $this, 'hide' ) );
 
 		add_filter( 'post_updated_messages', array( $this, 'updated_messages' ), 10, 1 );
 		add_action( 'manage_reference_posts_custom_column', array( $this, 'render_custom_columns' ), 10, 2 );
 		add_filter( 'manage_reference_posts_columns', array( $this, 'add_custom_columns' ) );
+	}
+
+
+	/**
+	 * Hide
+	 *
+	 * @return void
+	 */
+	public function hide() {
+
+		if ( is_singular( 'reference' ) ) {
+			wp_safe_redirect( home_url( '/' ) );
+			exit;
+		}
 	}
 
 	/**
@@ -230,8 +245,7 @@ class Reference {
 			'label'               => __( 'Reference', 'delileauxpapilles' ),
 			'labels'              => $labels,
 			'supports'            => array( 'title', 'thumbnail' ),
-			'taxonomies'          => array(),
-			'public'              => true,
+			'public'              => false,
 			'show_ui'             => true,
 			'show_in_menu'        => true,
 			'menu_position'       => 5,
@@ -239,11 +253,11 @@ class Reference {
 			'show_in_admin_bar'   => true,
 			'show_in_nav_menus'   => true,
 			'can_export'          => true,
-			'has_archive'         => true,
+			'has_archive'         => false,
 			'exclude_from_search' => true,
 			'publicly_queryable'  => true,
 			'map_meta_cap'        => true,
-			'show_in_rest'        => true,
+			'show_in_rest'        => false,
 		);
 		register_post_type( 'reference', $args );
 	}

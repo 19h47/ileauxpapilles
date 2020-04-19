@@ -6,7 +6,9 @@
  * @package DLAP
  */
 .Site-header {
-	height: $grid-gutter-width * 3;
+	@include media-breakpoint-up(md) {
+		height: $grid-gutter-width * 3;
+	}
 
 	strong {
 		color: the_color(white);

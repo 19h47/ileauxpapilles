@@ -30,7 +30,7 @@ export default class MapBlock extends AbstractBlock {
 
 		const marker = L.marker([latitude, longitude], { icon: customIcon });
 
-		const tileLayer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+		const tileLayer = L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
 			attribution: '© OpenStreetMap contributors',
 			maxZoom: 19,
 		});

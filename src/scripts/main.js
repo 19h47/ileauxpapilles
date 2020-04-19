@@ -2,7 +2,7 @@ import StartingBlocks, { polyfills } from 'starting-blocks';
 
 import WebpackAsyncBlockBuilder from 'services/WebpackAsyncBlockBuilder';
 
-import VoucherPage from 'pages/VoucherPage';
+import GiftCouponPage from 'pages/GiftCouponPage';
 
 import Guid from 'common/Guid';
 import Baseline from 'common/Baseline';
@@ -34,7 +34,7 @@ const production = 'production' !== process.env.NODE_ENV;
 
 	startingBlocks.provider('BlockBuilder', WebpackAsyncBlockBuilder);
 
-	startingBlocks.instanceFactory('VoucherPage', c => new VoucherPage(c));
+	startingBlocks.instanceFactory('GiftCouponPage', c => new GiftCouponPage(c));
 
 	startingBlocks.boot();
 })();

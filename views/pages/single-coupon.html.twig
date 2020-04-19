@@ -1,0 +1,91 @@
+{#
+
+Gift coupon
+
+#}
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html {{ html_class( 'ie9 no-js no-touch' ) }} {{ site.language_attributes }}>
+<![endif]-->
+<!--[if !(IE 9)]><!-->
+<html {{ site.language_attributes }} {{ html_class( 'no-js no-touch' ) }}>
+<!--<![endif]-->
+
+	<head>
+
+		<meta charset="{{ site.charset }}">
+		<link rel="profile" href="http://gmpg.org/xfn/11">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
+
+		{{ wp_head }}
+
+		{# {% include 'components/gtag.html.twig' with { id: 'UA-153672608-1' } %} #}
+
+    </head>
+
+	<body class="{{ body_class }}{{ body_classes ? ( ' ' ~ body_classes | join( ' ' ) ) }}">
+		<div id="svg-sprite" class="d-none">{% include 'icons.svg' %}</div>
+
+		<main id="{{ post.id ? "page-#{post.id}" : 'page' }}" class="page-content Page-wrapper" data-node-type="{{ node_type | default( 'DefaultPage' ) }}">
+
+			<header class="Single-coupon__header">
+				<div class="Site-container">
+					<div class="row">
+						<div class="col-3">
+							<div class="Single-coupon__icon">
+								{% include 'svg/use.html.twig' with { icon: 'aperitif' } %}
+							</div>
+						</div>
+						<div class="col-4">
+							<h1 class="Single-coupon__title">Bon cadeau<br>Repas au restaurant</h1>
+						</div>
+						<div class="col-5">
+							<div class="Single-coupon__logo">
+								{% include 'svg/use.html.twig' with { icon: 'logo' } %}
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+
+			<div class="Single-coupon__from-to">
+				<div class="Site-container">
+					<div class="row">
+						<div class="col-6">
+							Pour <strong>{{- post.get_field( 'menu' ).names_first_names -}}</strong>
+						</div>
+						<div class="col-6">De la part de <strong>{{- post.last_name }} {{ post.first_names -}}</strong></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="Site-container"><div class="row"><div class="col-12"><hr class="Single-coupon__horizontal-line"></div></div></div>
+			<div class="Single-coupon__content">
+				<div class="Site-container">
+					<div class="row">
+						<div class="col-12">
+							<div class="color-cyan-dark-moderate">
+								D’ici au {{ post.post_date | date_modify( '+1 year' ) | date( 'l j F Y' ) }}<br>
+								vous êtes invités à déguster un <strong>repas</strong> pour <strong>{{ post.get_field( 'menu' ).number }} personnes :</strong><br>
+								<br>
+								<strong>{{- post.get_field( 'menu' ).drinks ? post.get_field( 'menu' ).drinks | map( drink => drink.label ) | join( ' / ' ) ~ ' + ' }}{{ post.get_field( 'menu' ).type.label -}}</strong><br>
+								<br>
+								au restaurant De l’île aux Papilles<br>
+								<em>Pensez à réserver !</em>
+							</div>
+							<br>
+							<br>
+							<em>{{ site.link | replace( { 'http://' : '' }, { 'https://' : '' } ) }} // {{ phone_number }}</em><br>
+							<em>À l’angle de la place Camille Mémain à Saint-Pierrer d’Oléron</em>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="Site-container"><div class="row"><div class="col-12"><hr class="Single-coupon__horizontal-line"></div></div></div>
+		</main>
+
+		{{ wp_footer }}
+
+    </body>
+</html>

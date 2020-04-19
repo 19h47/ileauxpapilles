@@ -6,6 +6,8 @@
  */
 .Reassurance {
 	&__item {
+		@extend %margin-y-3, %margin-y-md-0;
+
 		&__content {
 			@extend %text-align-center;
 			@include margin(top $grid-gutter-width);
@@ -13,6 +15,9 @@
 
 		svg {
 			@include size(100%, $grid-gutter-width * 3);
+			@extend .d-inline-block;
+			@extend %vertical-align-middle;
+
 			@at-root .Front-page & {
 				fill: the_color(yellow, grayish);
 			}

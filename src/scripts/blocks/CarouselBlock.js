@@ -1,6 +1,7 @@
 import { AbstractBlock } from 'starting-blocks';
-import Flickity from 'flickity';
 import { gsap } from 'gsap';
+
+const Flickity = require('flickity');
 
 require('flickity-imagesloaded');
 
@@ -78,10 +79,11 @@ export default class CarouselBlock extends AbstractBlock {
 			pageDots: false,
 			prevNextButtons: false,
 			cellSelector: '.js-item',
-			draggable: true,
+			// draggable: true,
 			freeScroll: true,
 			imagesLoaded: true,
 			contain: true,
+			cellAlign: 'left',
 		};
 
 		this.carousel = new Flickity(this.$items, this.options);

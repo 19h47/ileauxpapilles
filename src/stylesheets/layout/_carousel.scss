@@ -14,7 +14,11 @@
 	&__items {
 		@include margin(right $grid-gutter-width / -2 left $grid-gutter-width / -2);
 
-		@include size(auto, $grid-gutter-width * 24);
+		@include size(auto, $grid-gutter-width * 12);
+
+		@include media-breakpoint-up(md) {
+			@include size(auto, $grid-gutter-width * 24);
+		}
 	}
 
 	// .Carousel__item

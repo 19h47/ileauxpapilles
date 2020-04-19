@@ -11,7 +11,7 @@
 
 	&__logo {
 		svg {
-			@include size(100%, $grid-gutter-width * 24);
+			@include size(100%, $grid-gutter-width * 12);
 			@extend %position-relative, %Pointer-events-none;
 			@extend %vertical-align-middle;
 			@extend .d-inline-block;
@@ -28,6 +28,14 @@
 			}
 			@at-root .Voucher-page & {
 				fill: the_color(yellow, grayish);
+			}
+
+			@include media-breakpoint-up(sm) {
+				@include size(100%, $grid-gutter-width * 16);
+			}
+
+			@include media-breakpoint-up(md) {
+				@include size(100%, $grid-gutter-width * 24);
 			}
 		}
 	}

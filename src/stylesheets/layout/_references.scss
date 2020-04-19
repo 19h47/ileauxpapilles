@@ -19,5 +19,9 @@
 
 		object-fit: contain;
 		object-position: center;
+
+		@include media-breakpoint-up(md) {
+			@include margin(top 0 bottom 0);
+		}
 	}
 }

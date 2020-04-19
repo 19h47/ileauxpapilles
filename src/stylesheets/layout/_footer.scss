@@ -102,7 +102,7 @@
 	}
 
 	&__horizontal-line {
-		@include margin(bottom -1.5px);
+		@include margin(bottom -3px);
 		@include size(100%, 3px);
 
 		border: none;

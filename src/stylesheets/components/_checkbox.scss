@@ -24,6 +24,7 @@
 
 		background-color: rgba(the_color(white), 0.15);
 		transition: box-shadow 0.3s map-get($easings, ease-out-expo);
+		min-width: $grid-gutter-width;
 
 		&::after {
 			@extend .d-block;

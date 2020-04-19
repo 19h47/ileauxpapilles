@@ -19,17 +19,19 @@
 			@include padding(top $grid-gutter-width / 2 bottom $grid-gutter-width / 2);
 		}
 
-		td:nth-child(1),
-		td:nth-child(3) {
-			width: percentage(330 / 1076);
-		}
+		@include media-breakpoint-up(md) {
+			td:nth-child(1),
+			td:nth-child(3) {
+				width: percentage(330 / 1076);
+			}
 
-		td:nth-child(2) {
-			width: percentage(220 / 1076);
-		}
+			td:nth-child(2) {
+				width: percentage(220 / 1076);
+			}
 
-		td:nth-child(4) {
-			width: percentage(196 / 1076);
+			td:nth-child(4) {
+				width: percentage(196 / 1076);
+			}
 		}
 
 		tr:nth-child(odd) {

@@ -9,8 +9,12 @@
 namespace DLAP\Managers;
 
 use Timber\{ Timber, Menu };
-use DLAP\{ Helpers };
+use DLAP\{ Helpers, GenerateGiftCoupon };
 use Twig\{ TwigFunction };
+use Dotenv\{ Dotenv };
+
+$dotenv = Dotenv::createImmutable( get_template_directory() );
+$dotenv->load();
 
 /**
  * Theme
@@ -86,6 +90,9 @@ class Theme {
 
 		include_once get_template_directory() . '/includes/template-functions.php';
 		include_once get_template_directory() . '/includes/tinymce.php';
+		include_once get_template_directory() . '/includes/acf.php';
+
+		new GenerateGiftCoupon();
 
 		$this->add_theme_supports();
 		$this->add_post_type_supports();
@@ -253,6 +260,7 @@ class Theme {
 		$context['feed_link']    = get_feed_link();
 		$context['phone_number'] = get_option( 'phone_number' );
 		$context['references']   = Timber::get_sidebar( 'component-references.php' );
+		$context['partners']     = Timber::get_sidebar( 'component-partners.php' );
 
 		return $context;
 	}
@@ -286,13 +294,16 @@ class Theme {
 	 */
 	public function enqueue_scripts() : void {
 		wp_deregister_script( 'wp-embed' );
-		wp_deregister_script( 'jquery' );
 
-		wp_register_script(
+		if ( 'true' === getenv( 'PRODUCTION' ) ) {
+			wp_deregister_script( 'jquery' );
+		}
+
+		wp_register_script( // phpcs:ignore
 			"{$this->theme_name}-main",
 			get_template_directory_uri() . '/' . $this->get_theme_manifest()['main.js'],
 			array(),
-			$this->get_theme_version(),
+			false,
 			true
 		);
 
@@ -338,11 +349,11 @@ class Theme {
 		}
 
 		// Theme stylesheet.
-		wp_register_style(
+		wp_register_style( // phpcs:ignore
 			$this->theme_name . '-main',
 			get_template_directory_uri() . '/' . $this->get_theme_manifest()['main.css'],
 			$webfonts,
-			$this->get_theme_version()
+			false
 		);
 
 		wp_enqueue_style( "$this->theme_name-main" );

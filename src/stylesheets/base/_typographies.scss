@@ -8,10 +8,15 @@ h1,
 .h1 {
 	@extend %font-weight-bold, %font-style-italic, %font-family-title;
 
-	font-size: $base-font-size-px * power($scale-factor, 3);
-	line-height: #{$base-line-height * 3}px;
+	font-size: $base-font-size-px * power($scale-factor, 2);
+	line-height: #{$base-line-height * 2}px;
 
 	@include margin(top #{$base-line-height}px bottom #{$base-line-height * 2}px);
+
+	@include media-breakpoint-up(sm) {
+		font-size: $base-font-size-px * power($scale-factor, 3);
+		line-height: #{$base-line-height * 3}px;
+	}
 }
 
 h2,

@@ -7,12 +7,28 @@
 .Form {
 	$this: &;
 
+	transition: opacity 0.3s map-get($easings, ease-out-expo);
+
 	& > *:first-child {
 		@include margin(top 0);
 	}
 
 	& > *:last-child {
 		@include margin(bottom 0);
+	}
+
+	&--loading {
+		@extend %Pointer-events-none;
+
+		opacity: 0.8;
+	}
+
+	&--success {
+		button[type='submit'] {
+			@extend %Pointer-events-none;
+
+			opacity: 0.8;
+		}
 	}
 
 	&__title {
@@ -47,5 +63,20 @@
 	&__total {
 		@extend %text-align-right, %font-weight-semibold, %text-transform-uppercase;
 		@include letter-spacing(100);
+	}
+
+	&__message {
+		@include margin(
+			top $grid-gutter-width / 2 bottom $grid-gutter-width / 2 left $grid-gutter-width
+		);
+
+		&--success {
+			@include margin(left 0);
+			@extend .d-none;
+		}
+
+		@at-root #{ $this }--success &--success {
+			@extend .d-block;
+		}
 	}
 }

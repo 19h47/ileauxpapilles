@@ -15,79 +15,103 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 const PurgecssPlugin = require('purgecss-webpack-plugin');
 
-module.exports = merge(
-    common,
-    {
-        output: {
-            filename: 'js/[name].[chunkhash:8].js'
-        },
-        mode: 'production',
-        devtool: false,
-        watch: false,
-        module: {
-            rules: [{
-                test: /\.scss$/,
-                exclude: /node_modules/,
-                use: [{
-                    loader: MiniCssExtractPlugin.loader,
-                    options: {
-                        publicPath: '../',
-                    },
-                },
-                {
-                    loader: 'css-loader',
-                    options: {
-                        sourceMap: false,
-                    },
-                },
-                {
-                    loader: 'postcss-loader',
-                    options: {
-                        sourceMap: false,
-                    },
-                },
-                {
-                    loader: 'sass-loader',
-                    options: {
-						sassOptions: Object.assign({
-                        	sourceMap: false,
-							precision: 10
-						})
-                    },
-                }]
-            }],
-        },
-        plugins: [
-			new CleanWebpackPlugin(),
-			new MiniCssExtractPlugin({
-				filename: 'css/main.[chunkhash:8].css'
-			}),
-			new CompressionPlugin(),
-			new PurgecssPlugin({
-				paths: glob.sync(path.join(__dirname, '..', 'views/**/*.html.twig')),
-				whitelist: [
-					'Archive',
-					'Page',
-					'Front-page',
-					'is-disabled',
-					'is-off',
-					'is-focus',
-					'is-current',
-					'is-selected',
-					'is-loading',
-					'is-active',
-					'is-in-view',
-					'is-selected',
-					'has-background',
-					'menu--is-open',
-					'Menu--footer',
-					'menu-mobile--is-open',
-					'iframe',
-					'input',
-					'button'
+module.exports = merge(common, {
+	output: {
+		filename: 'js/[name].[chunkhash:8].js',
+	},
+	mode: 'production',
+	devtool: false,
+	watch: false,
+	module: {
+		rules: [
+			{
+				test: /\.scss$/,
+				exclude: /node_modules/,
+				use: [
+					{
+						loader: MiniCssExtractPlugin.loader,
+						options: {
+							publicPath: '../',
+						},
+					},
+					{
+						loader: 'css-loader',
+						options: {
+							sourceMap: false,
+						},
+					},
+					{
+						loader: 'postcss-loader',
+						options: {
+							sourceMap: false,
+						},
+					},
+					{
+						loader: 'sass-loader',
+						options: {
+							sassOptions: Object.assign({
+								sourceMap: false,
+								precision: 10,
+							}),
+						},
+					},
 				],
-				whitelistPatternsChildren: [/^Form/, /^leaflet-/, /^tippy-/, /^wp-block-/, /^flickity-/, /^wpcf7-/, /^Form__list/, /^Share__link--/, /^noUi/, /^Calendar/, /^grecaptcha/]
-			}),
-        ]
-    },
-);
+			},
+		],
+	},
+	plugins: [
+		new CleanWebpackPlugin(),
+		new MiniCssExtractPlugin({
+			filename: 'css/main.[chunkhash:8].css',
+		}),
+		new CompressionPlugin(),
+		new PurgecssPlugin({
+			paths: glob.sync(path.join(__dirname, '..', 'views/**/*.html.twig')),
+			whitelist: [
+				'Archive',
+				'Page',
+				'Front-page',
+				'is-disabled',
+				'is-off',
+				'is-focus',
+				'is-current',
+				'is-selected',
+				'is-loading',
+				'is-active',
+				'is-in-view',
+				'is-selected',
+				'has-error',
+				'has-background',
+				'menu--is-open',
+				'Menu--footer',
+				'menu-mobile--is-open',
+				'iframe',
+				'input',
+				'button',
+				'background-color-cyan-very-dark-desaturated',
+				'color-gray-very-light',
+				'Gift-coupon-page',
+				'Menus-page',
+				'background-color-gray-very-dark',
+				'Producers-page',
+				'background-color-cyan-dark-moderate',
+				'Restaurant-page',
+				'background-color-white',
+				'Single-coupon',
+			],
+			whitelistPatternsChildren: [
+				/^Form/,
+				/^leaflet-/,
+				/^tippy-/,
+				/^wp-block-/,
+				/^flickity-/,
+				/^wpcf7-/,
+				/^Form__list/,
+				/^Share__link--/,
+				/^noUi/,
+				/^Calendar/,
+				/^grecaptcha/,
+			],
+		}),
+	],
+});

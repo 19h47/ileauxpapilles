@@ -40,15 +40,15 @@ Header
 		<header class="Site-header">
 			<div class="Site-container h-100">
 				<div class="row h-100">
-					<div class="col-12 d-flex align-items-center">
+					<div class="col-12 d-flex flex-column flex-md-row align-items-center">
 						{% include 'components/logo.html.twig' %}
-						<p class="margin-bottom-0 margin-left-3">Restaurant à <strong>Saint-Pierre-d'Oléron</strong>, Place Camille Mémain, ouvert <strong>midi</strong> et <strong>soir</strong>, du <strong>jeudi</strong> au <strong>dimanche</strong></p>
+						<p class="text-align-center text-align-md-left margin-bottom-0 margin-left-md-3">Restaurant à <strong>Saint-Pierre-d'Oléron</strong>, Place Camille Mémain, ouvert <strong>midi</strong> et <strong>soir</strong>, du <strong>jeudi</strong> au <strong>dimanche</strong>.</p>
 
 						{%- if phone_number -%}
-							<a href="tel:{{ phone_number | replace ( { ' ' : '' } ) }}" class="margin-bottom-0 margin-right-3 margin-left-auto">Réservation au <strong>{{- phone_number -}}</strong></a>
+							<a href="tel:{{ phone_number | replace ( { ' ' : '' } ) }}" class="margin-bottom-0 margin-right-md-3 margin-left-md-auto">Réservation au <strong>{{- phone_number -}}</strong></a>
 						{%- endif -%}
 
-						{% include 'components/socials.html.twig' with { classes: [ phone_number ?: 'margin-left-auto' ], feed: true } %}
+						{% include 'components/socials.html.twig' with { classes: [ phone_number ? false : [ 'margin-left-auto' ] ], feed: true } %}
 					</div>
 				</div>
 			</div>
@@ -58,8 +58,8 @@ Header
 			<div class="Site-container">
 				<div class="row">
 					<div class="col-12">
-						<div class="Hero__logo js-baseline">
-							{% include 'svg/use.html.twig' with { icon: 'logo' } only %}
+						<div class="Hero__logo">
+							{% include 'svg/use.html.twig' with { attributes: { height: '576px', width: '1296px' }, icon: 'logo' } only %}
 						</div>
 					</div>
 				</div>

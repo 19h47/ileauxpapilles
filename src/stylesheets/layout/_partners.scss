@@ -5,4 +5,32 @@
  * @package DLAP
  */
 .Partners {
+	@include padding(top $grid-gutter-width * 3 bottom $grid-gutter-width * 3);
+
+	background-color: the_color(white);
+
+	&__title {
+		color: the_color(cyan, dark-moderate);
+
+		@at-root .Restaurant-page & {
+			color: the_color(yellow, grayish);
+		}
+		@at-root .Voucher-page & {
+			color: the_color(yellow, grayish);
+		}
+		@at-root .Front-page & {
+			color: the_color(yellow, grayish);
+		}
+	}
+
+	&__item {
+		@extend .d-block;
+		@include margin(
+			top $grid-gutter-width / 2 right auto bottom $grid-gutter-width / 2 left auto
+		);
+		@include size(3 * $grid-gutter-width);
+
+		object-fit: contain;
+		object-position: center;
+	}
 }

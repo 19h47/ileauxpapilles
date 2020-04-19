@@ -22,6 +22,8 @@ add_action(
 			new Managers\WordPress(),
 			new Managers\Customizer(),
 			new Managers\PostTypes\Reference(),
+			new Managers\PostTypes\Coupon(),
+			new Managers\PostTypes\Partner(),
 		);
 
 		$theme_manager = new Managers\Theme( wp_get_theme()->Name, wp_get_theme()->Version, $managers );

@@ -47,13 +47,17 @@
 	}
 
 	&__thumbnail {
-		@include size(100%);
+		@include size(100%, $grid-gutter-width * 8);
 		@extend .d-inline-block;
 		@extend %vertical-align-middle, %position-relative;
 
 		object-fit: cover;
 		object-position: center;
 		z-index: 1;
+
+		@include media-breakpoint-up(md) {
+			@include size(100%);
+		}
 	}
 
 	&__content {

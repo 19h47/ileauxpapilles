@@ -1,23 +1,34 @@
+/* global delileauxpapilles */
 import { AbstractPage } from 'starting-blocks';
+import Bouncer from 'formbouncerjs';
+
+const { ajax_url: ajaxUrl, nonce } = delileauxpapilles;
+
+const remove = target => target.classList.remove('Form--loading');
 
 /**
- * Destination page
+ * Gift coupon page
  *
- * @extends {VoucherPage}
+ * @extends {GiftCouponPage}
  * @class
  */
-export default class VoucherPage extends AbstractPage {
+export default class GiftCouponPage extends AbstractPage {
 	constructor(container) {
-		super(container, 'VoucherPage');
+		super(container, 'GiftCouponPage');
+
+		this.bouncer = null;
+		this.url = `${ajaxUrl}?action=request_gift_coupon&nonce=${nonce}`;
 
 		this.updatePrice = this.updatePrice.bind(this);
 	}
 
 	async init() {
+		this.$form = this.rootElement.querySelector('form');
 		this.$person = this.rootElement.querySelector('.js-person');
+		this.$price = this.rootElement.querySelector('.js-price');
 		this.$template = this.rootElement.querySelector('.js-template');
 		this.$radioGroup = this.$template.querySelector('[data-node-type="RadioGroupBlock"]');
-		this.$price = this.rootElement.querySelector('.js-price');
+		this.$total = this.rootElement.querySelector('.js-total');
 
 		this.checkboxes = [...this.$template.querySelectorAll('[data-node-type="CheckboxBlock"]')];
 
@@ -27,7 +38,26 @@ export default class VoucherPage extends AbstractPage {
 		this.index = 0;
 		this.price = 0;
 
+		this.initPlugins();
+
 		await super.init();
+	}
+
+	initPlugins() {
+		this.bouncer = new Bouncer('form', {
+			fieldClass: 'has-error',
+			errorClass: 'Form__message',
+			messages: {
+				missingValue: {
+					default: "Veuillez remplir ce champ s'il vous plaît.",
+				},
+				patternMismatch: {
+					email: 'Veuillez entrer une adresse email valide.',
+					default: 'Veuillez correspondre au format attendu.',
+				},
+			},
+			disableSubmit: true,
+		});
 	}
 
 	initEvents() {
@@ -51,6 +81,25 @@ export default class VoucherPage extends AbstractPage {
 
 			return true;
 		});
+
+		document.addEventListener('bouncerFormValid', () => {
+			const form = new FormData(this.$form);
+			this.$form.classList.add('Form--loading');
+
+			fetch(this.url, {
+				method: 'POST',
+				body: form,
+			})
+				.then(() => {
+					remove(this.$form);
+					this.$form.classList.add('Form--success');
+				})
+				.catch(error => {
+					console.log(error.message);
+					remove(this.$form);
+					this.$form.classList.add('Form--error');
+				});
+		});
 	}
 
 	updatePrice() {
@@ -60,7 +109,6 @@ export default class VoucherPage extends AbstractPage {
 			const $input = $checkbox.querySelector('input[type="checkbox"]');
 			const price = parseFloat($input.getAttribute('data-price'));
 
-			console.log($input.checked);
 			if (true === JSON.parse($input.getAttribute('checked'))) {
 				this.price += price * this.person;
 			}
@@ -78,6 +126,14 @@ export default class VoucherPage extends AbstractPage {
 			return true;
 		});
 
-		this.$price.innerHTML = this.price.toFixed(2).toString().replace('.', ',');
+		this.renderPrice(this.price);
+	}
+
+	renderPrice(price) {
+		this.$price.innerHTML = price
+			.toFixed(2)
+			.toString()
+			.replace('.', ',');
+		this.$total.value = price.toFixed(2);
 	}
 }

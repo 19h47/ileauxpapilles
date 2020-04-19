@@ -23,4 +23,7 @@
 	&[type='number'] {
 		@include padding(right 0);
 	}
+
+	&.has-error {
+	}
 }
