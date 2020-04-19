@@ -50,7 +50,7 @@ class Theme {
 		add_action( 'after_setup_theme', array( $this, 'add_theme_supports' ) );
 		add_action( 'after_setup_theme', array( $this, 'add_post_type_supports' ) );
 		add_action( 'after_setup_theme', array( $this, 'add_theme_textdomain' ) );
-		add_action( 'after_setup_theme', array( $this, 'remove_post_type_supports' ) );
+		add_action( 'init', array( $this, 'remove_post_type_supports' ) );
 	}
 
 
