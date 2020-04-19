@@ -14,8 +14,11 @@
 	],
 	"autoload": {
 		"psr-4": {
-			"DLAP\\": "includes/"
-		}
+			"DLAP\\": "./inc"
+		},
+		"files": [
+			"./inc/helpers.php"
+		]
 	},
 	"require-dev": {
 		"squizlabs/php_codesniffer": "^3.5",

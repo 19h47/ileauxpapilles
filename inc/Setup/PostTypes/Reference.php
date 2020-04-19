@@ -2,10 +2,10 @@
 /**
  * Reference
  *
- * @package DLAP
+ * @package dlap
  */
 
-namespace DLAP\Managers\PostTypes;
+namespace DLAP\Setup\PostTypes;
 
 use WP_Post;
 

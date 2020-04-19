@@ -6,7 +6,7 @@
  * @subpackage UNI/Managers/WordPress
  */
 
-namespace DLAP\Managers;
+namespace DLAP\Setup;
 
 /**
  * WordPress
@@ -18,7 +18,7 @@ class WordPress {
 	 *
 	 * @return void
 	 */
-	public function run() {
+	public function run() : void {
 		add_action( 'wp_loaded', array( $this, 'cleanup' ), 1 );
 
 		add_filter( 'pre_get_shortlink', '__return_empty_string' );
@@ -34,7 +34,7 @@ class WordPress {
 	 * @see    http://wordpress.stackexchange.com/questions/185577/disable-emojicons-introduced-with-wp-4-2
 	 * @return void
 	 */
-	public function cleanup() {
+	public function cleanup() : void {
 		remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
 		remove_action( 'admin_print_styles', 'print_emoji_styles' );
 		remove_action( 'wp_head', 'print_emoji_detection_script', 7 );

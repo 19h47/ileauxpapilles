@@ -2,7 +2,7 @@
 /**
  * Template Name: Menus
  *
- * @package DLAP
+ * @package dlap
  */
 
 use Timber\{ Timber, Post };

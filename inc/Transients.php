@@ -2,7 +2,7 @@
 /**
  * Class Transients
  *
- * @package DLAP
+ * @package dlap
  * @subpackage DLAP/Transients
  */
 

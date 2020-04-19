@@ -3,12 +3,12 @@
  * Customizer
  *
  * @category Customizer
- * @package  DLAP
+ * @package  dlap
  * @author   Jérémy Levron <jeremylevron@19h47.fr> (https://19h47.fr)
  * @license  http://opensource.org/licenses/gpl-license.php GNU Public License
  */
 
-namespace DLAP\Managers;
+namespace DLAP\Api;
 
 use WP_Customize_Manager;
 

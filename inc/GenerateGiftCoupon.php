@@ -41,8 +41,8 @@ class GenerateGiftCoupon {
 		add_action( 'wp_ajax_nopriv_request_gift_coupon', array( $this, 'ajax' ) );
 		add_action( 'wp_ajax_request_gift_coupon', array( $this, 'ajax' ) );
 
-		$this->drinks = json_decode( file_get_contents( get_template_directory() . '/includes/data/drinks.json' ), true ); // phpcs:ignore
-		$this->types = json_decode( file_get_contents( get_template_directory() . '/includes/data/types.json' ), true ); // phpcs:ignore
+		$this->drinks = json_decode( file_get_contents( get_template_directory() . '/inc/data/drinks.json' ), true ); // phpcs:ignore
+		$this->types = json_decode( file_get_contents( get_template_directory() . '/inc/data/types.json' ), true ); // phpcs:ignore
 	}
 
 

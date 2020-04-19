@@ -2,10 +2,10 @@
 /**
  * Coupon
  *
- * @package DLAP
+ * @package dlap
  */
 
-namespace DLAP\Managers\PostTypes;
+namespace DLAP\Setup\PostTypes;
 
 /**
  * Coupon
