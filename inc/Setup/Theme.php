@@ -46,75 +46,8 @@ class Theme {
 		add_filter( 'timber_context', array( $this, 'add_manifest_to_context' ) );
 		add_filter( 'timber_context', array( $this, 'add_menus_to_context' ) );
 		add_filter( 'timber_context', array( $this, 'add_to_context' ) );
-
-		add_action( 'after_setup_theme', array( $this, 'add_theme_supports' ) );
-		add_action( 'after_setup_theme', array( $this, 'add_post_type_supports' ) );
-		add_action( 'after_setup_theme', array( $this, 'add_theme_textdomain' ) );
-		add_action( 'init', array( $this, 'remove_post_type_supports' ) );
 	}
 
-
-	/**
-	 * Add theme textdomain
-	 *
-	 * @return void
-	 */
-	public function add_theme_textdomain() : void {
-		load_theme_textdomain( 'delileauxpapilles', get_template_directory() . '/languages' );
-	}
-
-
-	/**
-	 * Add theme supports
-	 *
-	 * @return void
-	 */
-	public function add_theme_supports() : void {
-		add_theme_support( 'title-tag' );
-
-		/*
-		 * Enable support for Post Thumbnails on posts and pages.
-		 *
-		 * @see https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-		 */
-		add_theme_support( 'post-thumbnails' );
-		add_theme_support( 'menus' );
-
-		/*
-		 * Switch default core markup for search form, comment form, and comments
-		 * to output valid HTML5.
-		 */
-		add_theme_support(
-			'html5',
-			array(
-				'search-form',
-				'comment-form',
-				'comment-list',
-				'gallery',
-				'caption',
-			)
-		);
-	}
-
-
-	/**
-	 * Add post type supports
-	 *
-	 * @return void
-	 */
-	public function add_post_type_supports() : void {
-		add_post_type_support( 'page', 'excerpt' );
-	}
-
-
-	/**
-	 * Remove post type supports
-	 *
-	 * @return void
-	 */
-	public function remove_post_type_supports() : void {
-		remove_post_type_support( 'page', 'editor' );
-	}
 
 	/**
 	 * Add to Twig
@@ -217,10 +150,30 @@ class Theme {
 	 * @return array
 	 */
 	public function add_to_context( array $context ) : array {
-		$context['feed_link']    = get_feed_link();
-		$context['phone_number'] = get_option( 'phone_number' );
-		$context['references']   = Timber::get_sidebar( 'component-references.php' );
-		$context['partners']     = Timber::get_sidebar( 'component-partners.php' );
+		$context['feed_link']              = get_feed_link();
+		$context['phone_number']           = get_option( 'phone_number' );
+		$context['address']                = get_option( 'address' );
+		$context['latitude']               = get_option( 'latitude' );
+		$context['longitude']              = get_option( 'longitude' );
+		$context['alert_message']          = get_option( 'alert_message' );
+		$context['legal_notice_permalink'] = get_permalink( get_theme_mod( 'legal_notice_permalink' ) );
+		$context['gift_coupon_permalink']  = get_permalink( get_theme_mod( 'gift_coupon_permalink' ) );
+
+		$context['footer_primary']   = Timber::get_widgets( 'footer_primary' );
+		$context['footer_secondary'] = Timber::get_widgets( 'footer_secondary' );
+
+		$context['references'] = Timber::get_sidebar( 'component-references.php' );
+		$context['partners']   = Timber::get_sidebar( 'component-partners.php' );
+
+		$context['placeholders'] = array(
+			'last_name'                => _x( 'Last name', 'placeholders', 'delileauxpapilles' ),
+			'first_names'              => _x( 'First name(s)', 'placeholders', 'delileauxpapilles' ),
+			'email'                    => _x( 'E-mail', 'placeholders', 'delileauxpapilles' ),
+			'address'                  => _x( 'Address', 'placeholders', 'delileauxpapilles' ),
+			'postal_code_and_city'     => _x( 'Postal code and city', 'placeholders', 'delileauxpapilles' ),
+			'lastnames_and_firstnames' => _x( 'Lastname(s) and firstname(s)', 'placeholders', 'delileauxpapilles' ),
+			'your_message'             => _x( 'Your message', 'placeholders', 'delileauxpapilles' ),
+		);
 
 		return $context;
 	}

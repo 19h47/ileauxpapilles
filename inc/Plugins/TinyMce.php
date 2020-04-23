@@ -20,6 +20,7 @@ class TinyMCE {
 	public function run() : void {
 		add_filter( 'tiny_mce_before_init', array( $this, 'add_colors' ), 10, 2 );
 		add_filter( 'tiny_mce_plugins', array( $this, 'remove_custom_colors' ), 10, 2 );
+		add_filter( 'tiny_mce_before_init', array( $this, 'block_formats' ) );
 	}
 
 	/**
@@ -69,6 +70,18 @@ class TinyMCE {
 		}
 
 		return $plugins;
+	}
+
+
+	/**
+	 * Block formats
+	 *
+	 * @return array $settings
+	 */
+	public function block_formats( $settings ) {
+		$settings['block_formats'] = 'Paragraph=p;Heading 3=h3;Heading 4=h4;Heading 5=h5;Heading 6=h6;Preformatted=pre;';
+
+		return $settings;
 	}
 }
 

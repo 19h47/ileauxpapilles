@@ -7,55 +7,82 @@
 
 @import 'base/fonts';
 
-@import '~ress/ress', '~flickity/css/flickity', '~leaflet/dist/leaflet.css';
+@import '~ress/ress';
+@import '~flickity/css/flickity';
+@import '~leaflet/dist/leaflet.css';
 
 // Functions
 @import '~@19h47/architecture/src/stylesheets/abstracts/functions';
 
 // Mixins.
-@import '~@19h47/architecture/src/stylesheets/abstracts/mixins/auto-alpha',
-	'~@19h47/architecture/src/stylesheets/abstracts/mixins/create-class-color',
-	'~@19h47/architecture/src/stylesheets/abstracts/mixins/font',
-	'~@19h47/architecture/src/stylesheets/abstracts/mixins/letter-spacing',
-	'~@19h47/architecture/src/stylesheets/abstracts/mixins/margin',
-	'~@19h47/architecture/src/stylesheets/abstracts/mixins/padding',
-	'~@19h47/architecture/src/stylesheets/abstracts/mixins/position',
-	'~@19h47/architecture/src/stylesheets/abstracts/mixins/power',
-	'~@19h47/architecture/src/stylesheets/abstracts/mixins/reset-placeholder',
-	'~@19h47/architecture/src/stylesheets/abstracts/mixins/size';
+@import '~@19h47/architecture/src/stylesheets/abstracts/mixins/auto-alpha';
+@import '~@19h47/architecture/src/stylesheets/abstracts/mixins/create-class-color';
+@import '~@19h47/architecture/src/stylesheets/abstracts/mixins/font';
+@import '~@19h47/architecture/src/stylesheets/abstracts/mixins/letter-spacing';
+@import '~@19h47/architecture/src/stylesheets/abstracts/mixins/margin';
+@import '~@19h47/architecture/src/stylesheets/abstracts/mixins/padding';
+@import '~@19h47/architecture/src/stylesheets/abstracts/mixins/position';
+@import '~@19h47/architecture/src/stylesheets/abstracts/mixins/power';
+@import '~@19h47/architecture/src/stylesheets/abstracts/mixins/reset-placeholder';
+@import '~@19h47/architecture/src/stylesheets/abstracts/mixins/size';
 
+// Placeholders
 @import '~@19h47/architecture/src/stylesheets/abstracts/placeholders';
 
 // Base stuff
-@import 'base/base', 'base/typographies';
+@import 'base/base';
+@import 'base/typographies';
 
 // Layout
-@import 'layout/site', 'layout/header', 'layout/footer', 'layout/partners', 'layout/hero',
-	'layout/map', 'layout/carousel', 'layout/image', 'layout/references', 'layout/reassurance',
-	'layout/introduction', 'layout/section', 'layout/producers';
+@import 'layout/site';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/partners';
+@import 'layout/hero';
+@import 'layout/map';
+@import 'layout/carousel';
+@import 'layout/image';
+@import 'layout/references';
+@import 'layout/reassurance';
+@import 'layout/introduction';
+@import 'layout/section';
+@import 'layout/producers';
+@import 'layout/gallery';
 
 // Components
-@import 'components/logo', 'components/menu', 'components/guid', 'components/form',
-	'components/socials', 'components/button', 'components/input', 'components/radio',
-	'components/cursor', 'components/wysiwyg', 'components/textarea', 'components/checkbox';
+@import 'components/menu';
+@import 'components/guid';
+@import 'components/form';
+@import 'components/socials';
+@import 'components/button';
+@import 'components/input';
+@import 'components/radio';
+@import 'components/cursor';
+@import 'components/wysiwyg';
+@import 'components/textarea';
+@import 'components/checkbox';
 // Pages
-@import 'pages/page', 'pages/front-page', 'pages/producers', 'pages/single-coupon';
+@import 'pages/page';
+@import 'pages/front-page';
+@import 'pages/producers';
+@import 'pages/single-coupon';
 
 // Utilities.
-@import 'vendors/architecture-variables', '~@19h47/architecture/src/stylesheets/utilities/colors',
-	'~@19h47/architecture/src/stylesheets/utilities/cursors',
-	// 	'~@19h47/architecture/src/stylesheets/utilities/displays',
-		'~@19h47/architecture/src/stylesheets/utilities/floats',
-	'~@19h47/architecture/src/stylesheets/utilities/fonts',
-	'~@19h47/architecture/src/stylesheets/utilities/margins',
-	'~@19h47/architecture/src/stylesheets/utilities/overflows',
-	'~@19h47/architecture/src/stylesheets/utilities/paddings',
-	'~@19h47/architecture/src/stylesheets/utilities/positions',
-	'~@19h47/architecture/src/stylesheets/utilities/sizes',
-	'~@19h47/architecture/src/stylesheets/utilities/text-aligns',
-	'~@19h47/architecture/src/stylesheets/utilities/text-decorations',
-	'~@19h47/architecture/src/stylesheets/utilities/text-transforms',
-	'~@19h47/architecture/src/stylesheets/utilities/vertical-aligns',
-	// 	'~@19h47/architecture/src/stylesheets/utilities/visibilities',
-		'~@19h47/architecture/src/stylesheets/utilities/white-spaces',
-	'~@19h47/architecture/src/stylesheets/utilities/lists';
+@import 'vendors/architecture-variables';
+@import '~@19h47/architecture/src/stylesheets/utilities/colors';
+@import '~@19h47/architecture/src/stylesheets/utilities/cursors';
+// 	@import '~@19h47/architecture/src/stylesheets/utilities/displays';
+@import '~@19h47/architecture/src/stylesheets/utilities/floats';
+@import '~@19h47/architecture/src/stylesheets/utilities/fonts';
+@import '~@19h47/architecture/src/stylesheets/utilities/margins';
+@import '~@19h47/architecture/src/stylesheets/utilities/overflows';
+@import '~@19h47/architecture/src/stylesheets/utilities/paddings';
+@import '~@19h47/architecture/src/stylesheets/utilities/positions';
+@import '~@19h47/architecture/src/stylesheets/utilities/sizes';
+@import '~@19h47/architecture/src/stylesheets/utilities/text-aligns';
+@import '~@19h47/architecture/src/stylesheets/utilities/text-decorations';
+@import '~@19h47/architecture/src/stylesheets/utilities/text-transforms';
+@import '~@19h47/architecture/src/stylesheets/utilities/vertical-aligns';
+//  @import	'~@19h47/architecture/src/stylesheets/utilities/visibilities';
+@import '~@19h47/architecture/src/stylesheets/utilities/white-spaces';
+@import '~@19h47/architecture/src/stylesheets/utilities/lists';

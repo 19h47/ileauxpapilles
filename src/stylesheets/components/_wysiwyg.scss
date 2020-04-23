@@ -20,7 +20,7 @@
 
 	h3 {
 		@include margin(top $grid-gutter-width * 2 bottom $grid-gutter-width);
-		color: the_color(cyan, dark-moderate);
+		color: the_color(white);
 
 		@at-root .Restaurant-page & {
 			color: the_color(yellow, grayish);
@@ -69,6 +69,14 @@
 
 		td {
 			border: none;
+		}
+
+		tr {
+			height: $grid-gutter-width * 2;
+
+			@include media-breakpoint-up(md) {
+				height: auto;
+			}
 		}
 	}
 }

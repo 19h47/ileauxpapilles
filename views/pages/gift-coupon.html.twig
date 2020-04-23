@@ -7,8 +7,11 @@ Gift coupon
 
 {% macro checkbox( id, label, name, value, price ) %}
 	<div id="{{ id }}" tabindex="0" class="Checkbox page-block " role="checkbox" aria-checked="false" data-node-type="CheckboxBlock">
-		<button type="button" tabindex="-1"></button>{{- label -}}
-		<span class="margin-left-auto white-space-nowrap">{{- price.label -}}</span>
+		<button type="button" tabindex="-1"></button>
+		<span class="d-flex flex-column flex-md-row w-100">
+			{{- label -}}
+			<span class="margin-left-md-auto white-space-nowrap">{{- price.label -}}</span>
+		</span>
 		<div class="d-none">
 			<input id="{{ name }}" name="{{ name }}" data-price="{{ price.value }}" value="{{ value }}" type="checkbox">
 		</div>
@@ -17,9 +20,12 @@ Gift coupon
 
 {% macro radio( checked, label, price, name, value ) %}
 	<div class="Radio{{ checked ? ' is-selected' }}" aria-checked="{{ checked ? 'true' : 'false' }}" tabindex="{{ checked ? '0' : '-1' }}" role="radio">
-		<span></span>{{- label -}}
-		{{ price ? "<span class=\"margin-left-auto white-space-nowrap\">#{price.label}</span>" }}
-		<input id="{{ name }}" type="radio" name="{{ name }}" data-price="{{ price.value }}" value="{{ value }}"{{ checked ? ' checked' }} style="display: none;">
+		<span></span>
+		<span class="d-flex flex-column flex-md-row w-100">
+			{{- label -}}
+			{{ price ? "<span class=\"margin-left-md-auto white-space-nowrap\">#{price.label}</span>" }}
+		</span>
+		<input id="{{ name }}[{{ value }}]" type="radio" name="{{ name }}" data-price="{{ price.value }}" value="{{ value }}"{{ checked ? ' checked' }} style="display: none;">
 	</div>
 {% endmacro %}
 
@@ -27,8 +33,9 @@ Gift coupon
 	<div class="Page__content">
 		<div class="Site-container">
 			<div class="row">
-				<div class="col-12 col-md-3 offset-md-1">
+				<div class="col-12 col-md-4 col-hd-3 offset-hd-1">
 					<div class="Wysiwyg">
+						<p class="d-md-none">En fonction de vos envies, de votre budget et des préférences de vos invités, composez votre carte cadeau sur-mesure et faîtes plaisir à vos invités !</p>
 						<p>
 						<strong>Comment commander une carte cadeau ?</strong><br>
 						1 - Remplissez le formulaire ci-contre<br>
@@ -38,32 +45,33 @@ Gift coupon
 						</p>
 					</div>
 				</div>
-				<div class="col-12 col-md-6 offset-md-1">
+
+				<div class="col-12 col-md-7 col-hd-6 offset-md-1">
 					<form class="Form" action="" method="post">
-						<div class="Form__group">
+						<div class="Form__group d-none d-md-block">
 							<p>En fonction de vos envies, de votre budget et des préférences de vos invités, composez votre carte cadeau sur-mesure et faîtes plaisir à vos invités !</p>
 						</div>
 						<div class="Form__group"><h3 class="Form__title">De la part de…</h3></div>
 						<div class="Form__group">
-							<input class="Input" id="last_name" type="text" name="last_name" required placeholder="Nom *">
+							<input class="Input" id="last_name" type="text" name="last_name" required placeholder="{{ placeholders.last_name }} *">
 						</div>
 						<div class="Form__group">
-							<input class="Input" id="first_names" type="text" name="first_names" required placeholder="Prénom(s) *">
+							<input class="Input" id="first_names" type="text" name="first_names" required placeholder="{{ placeholders.first_names }} *">
 						</div>
 						<div class="Form__group">
-							<input class="Input" id="email" type="email" name="email" required placeholder="E-mail*">
+							<input class="Input" id="email" type="email" name="email" required placeholder="{{ placeholders.email }} *">
 						</div>
 						<div class="Form__group">
-							<input class="Input" id="address" type="text" name="address" required placeholder="Adresse *">
+							<input class="Input" id="address" type="text" name="address" required placeholder="{{ placeholders.address }} *">
 						</div>
 						<div class="Form__group">
-							<input class="Input" id="postal_code_city" type="text" name="postal_code_city" required placeholder="Code postal et ville *">
+							<input class="Input" id="postal_code_city" type="text" name="postal_code_city" required placeholder="{{ placeholders.postal_code_and_city }} *">
 						</div>
 						<div class="Form__group">
-							<h3 class="Form__title">Carte cadeau offerte à…</h3>
+							<h3 class="Form__title">{{- __( 'Gift card offered to…', 'delileauxpapilles' ) -}}</h3>
 						</div>
 						<div class="Form__group">
-							<input class="Input" id="menu[names_first_names]" type="text" name="menu[names_first_names]" required placeholder="Nom(s) et Prénom(s) *">
+							<input class="Input" id="menu[names_first_names]" type="text" name="menu[names_first_names]" required placeholder="{{ placeholders.lastnames_and_firstnames }} *">
 						</div>
 						<div class="Form__group">
 							<h3 class="Form__title">Je souhaite recevoir le bon cadeau :</h3>
@@ -75,7 +83,7 @@ Gift coupon
 						</div>
 
 						<div class="Form__group">
-							<h3 class="Form__title">Je compose la carte-cadeau :</h3>
+							<h3 class="Form__title">{{- __( 'I compose the gift card:', 'delileauxpapilles' ) -}}</h3>
 						</div>
 
 						<div class="Form__group">
@@ -84,7 +92,7 @@ Gift coupon
 									<input id="menu-number" class="Input w-100 js-person" min="1" step="1" type="number" name="menu[number]" value="1" required>
 								</div>
 								<div class="col-8 col-md-10">
-									<label for="number">Nombre de personnes invitées *</label>
+									<label for="number">{{- __( 'Number of people invited', 'delileauxpapilles' ) }}&nbsp;*</label>
 								</div>
 							</div>
 						</div>
@@ -113,7 +121,7 @@ Gift coupon
 
 						<div class="Form__group">
 							<div class="row align-items-center">
-								<div class="col-6 col-md-2 offset-md-8 Form__total">Total</div>
+								<div class="col-6 col-md-2 offset-md-8 Form__total">{{ __( 'Total', 'delileauxpapilles' ) }}</div>
 								<div class="col-6 col-md-2 text-align-right"><span class="js-price">36,50</span> €</div>
 								<input class="js-total" type="hidden" name="total" value="36.50">
 							</div>
@@ -124,13 +132,13 @@ Gift coupon
 						</div>
 
 						<div class="Form__group">
-							<textarea class="Textarea" name="message" id="message" placeholder="Votre message"></textarea>
+							<textarea class="Textarea" name="message" id="message" placeholder="{{ placeholders.your_message }}"></textarea>
 						</div>
 
 						<div class="Form__group">
 							<p>En envoyant ce formulaire vous acceptez que les informations saisies soient utilisées dans le cadre du traitement de votre demande de réservation et des échanges par e-mail, courrier postal ou téléphone qui peuvent en découler et vous prenez connaissance de notre politique de confidentialité
 
-							<p><a class="text-decoration-underline" href=""><strong>Consultez notre politique de confidentialité.</strong></a></p>
+							<p><a class="text-decoration-underline" href="{{ legal_notice_permalink }}"><strong>Consultez notre politique de confidentialité.</strong></a></p>
 						</div>
 
 						<div class="Form__group">
@@ -142,7 +150,7 @@ Gift coupon
 						<div class="Form__group margin-top-4">
 							<div class="row align-items-center">
 								<div class="col-12 col-md-4">
-									<button class="Button w-100" type="submit">Envoyer</button>
+									<button class="Button w-100" type="submit">{{- __( 'Send', 'delileauxpapilles' ) -}}</button>
 								</div>
 							</div>
 						</div>

@@ -37,15 +37,19 @@ Header
 
 		<div id="fb-root"></div>
 
-		<header class="Site-header">
+		<header class="Site-header margin-bottom-3 margin-bottom-md-0">
 			<div class="Site-container h-100">
 				<div class="row h-100">
 					<div class="col-12 d-flex flex-column flex-md-row align-items-center">
-						{% include 'components/logo.html.twig' %}
-						<p class="text-align-center text-align-md-left margin-bottom-0 margin-left-md-3">Restaurant à <strong>Saint-Pierre-d'Oléron</strong>, Place Camille Mémain, ouvert <strong>midi</strong> et <strong>soir</strong>, du <strong>jeudi</strong> au <strong>dimanche</strong>.</p>
+
+						{%- if alert_message -%}
+							<p class="text-align-center text-align-md-left margin-top-3 margin-top-md-0 margin-bottom-0">
+								{{- alert_message -}}
+							</p>
+						{%- endif -%}
 
 						{%- if phone_number -%}
-							<a href="tel:{{ phone_number | replace ( { ' ' : '' } ) }}" class="margin-bottom-0 margin-right-md-3 margin-left-md-auto">Réservation au <strong>{{- phone_number -}}</strong></a>
+							<a href="tel:{{ phone_number | replace ( { ' ' : '' } ) }}" class="margin-bottom-0 margin-right-md-3 margin-left-md-auto"><strong>{{- phone_number -}}</strong></a>
 						{%- endif -%}
 
 						{% include 'components/socials.html.twig' with { classes: [ phone_number ? false : [ 'margin-left-auto' ] ], feed: true } %}
@@ -58,9 +62,9 @@ Header
 			<div class="Site-container">
 				<div class="row">
 					<div class="col-12">
-						<div class="Hero__logo">
+						<a class="Hero__logo js-baseline" href="{{ site.link }}">
 							{% include 'svg/use.html.twig' with { attributes: { height: '576px', width: '1296px' }, icon: 'logo' } only %}
-						</div>
+						</a>
 					</div>
 				</div>
 			</div>
@@ -68,20 +72,22 @@ Header
 			<footer class="Hero__footer">
 				<div class="Site-container h-100">
 					<div class="row h-100 d-flex align-items-end">
-						<div class="col-12 col-md-4{{ post.thumbnail ? ' margin-bottom-3 margin-bottom-md-0' }}">
-							<h1 class="Page__title{{ post.get_field( 'hero' ).subtitle ? ' margin-0' : ' margin-bottom-5' -}}">{{- post.title -}}</h1>
+						<div class="order-2 order-md-1 col-12 col-md-4{{ post.thumbnail ? ' margin-top-3 margin-top-md-0' }}">
+							<h1 class="Page__title{{ post.get_field( 'hero' ).subtitle ? ' margin-0' : post.get_field( 'hero' ).introduction ? ' margin-bottom-5' : ' margin-0' -}}">{{- post.title -}}</h1>
 							{{ post.get_field( 'hero' ).subtitle ? "<p class=\"Page__subtitle\">#{post.subtitel}</p>" }}
 
-							<div class="Page__introduction Wysiwyg">
-								{{- post.get_field( 'hero' ).introduction ? "#{post.get_field( 'hero' ).introduction}" | raw -}}
-								{%- if phone_number -%}
-									<a href="tel:{{ phone_number | replace ( { ' ' : '' } ) }}" class="margin-bottom-0 margin-right-3 margin-left-auto">Réservation au <strong>{{- phone_number -}}</strong></a>
-								{%- endif -%}
-							</div>
+							{% if post.get_field( 'hero' ).introduction %}
+								<div class="Page__introduction Wysiwyg">
+									{{- post.get_field( 'hero' ).introduction | raw -}}
+									{%- if phone_number -%}
+										<a href="tel:{{ phone_number | replace ( { ' ' : '' } ) }}" class="margin-bottom-0 margin-right-3 margin-left-auto">Réservation au <strong>{{- phone_number -}}</strong></a>
+									{%- endif -%}
+								</div>
+							{% endif %}
 						</div>
 
 						{% if post.thumbnail %}
-							<div class="col-12 offset-md-1 col-md-7 h-100 margin-top-3 margin-top-md-0">
+							<div class="order-1 order-md-2 col-12 offset-md-1 col-md-7 h-100">
 								{% include 'partials/image.html.twig' with { image: post.thumbnail, classes: [ 'Page__thumbnail' ] } %}
 							</div>
 						{% endif %}
@@ -100,7 +106,7 @@ Header
 
 		<div class="Site-container">
 			<div class="row">
-				<div class="col-12 col-md-7 offset-md-5">
+				<div class="col-12 col-hd-7 offset-hd-5">
 					{% include 'components/menu.html.twig' with { items: menus.menu.items, classes: [ 'Menu--header' ] } %}
 				</div>
 			</div>

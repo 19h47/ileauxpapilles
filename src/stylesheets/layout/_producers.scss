@@ -15,6 +15,7 @@
 
 		td {
 			height: $grid-gutter-width * 3;
+			min-width: $grid-gutter-width * 6;
 
 			@include padding(top $grid-gutter-width / 2 bottom $grid-gutter-width / 2);
 		}

@@ -105,8 +105,13 @@ class GenerateGiftCoupon {
 
 		$context['post'] = $data;
 
+
 		foreach ( $data['menu']['drinks'] as $key => $value ) {
-			$context['post']['menu']['drinks'][ $key ] = $this->drinks[ $key ];
+			if ( false !== $value ) {
+				$context['post']['menu']['drinks'][ $key ] = $this->drinks[ $key ];
+			} else {
+				unset( $context['post']['menu']['drinks'][ $key ] );
+			}
 		}
 
 		$context['post']['menu']['type'] = $this->types[ $data['menu']['type'] ];

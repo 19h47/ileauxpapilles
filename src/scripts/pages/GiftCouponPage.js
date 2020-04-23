@@ -120,7 +120,7 @@ export default class GiftCouponPage extends AbstractPage {
 			const price = parseFloat($input.getAttribute('data-price'));
 
 			if (true === $input.checked) {
-				this.price += price;
+				this.price += price * this.person;
 			}
 
 			return true;

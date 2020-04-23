@@ -32,7 +32,7 @@
 	}
 
 	&__title {
-		color: the_color(cyan, dark-moderate);
+		color: the_color(white);
 		line-height: #{$base-line-height * 2}px;
 
 		@at-root .Voucher-page & {

@@ -9,17 +9,14 @@
  # @package DLAP
  #}
 {% if image %}
-	<picture>
-		<source srcset="{{ Image( image ).src( 'large' ) | towebp }}" type="image/webp">
-		<source srcset="{{ Image( image ).src( 'large' ) }}" type="{{ Image( image ).sizes.medium['mime-type'] }}">
-		<img
-		 	class="{{ classes ? classes | join( ' ' ) }}"
-			loading="{{ loading | default( 'lazy' ) }}"
-			src="{{ Image( image ).src( 'large' ) }}"
-			alt="{{ Image( image ).alt }}"
-			width="{{ Image( image ).width }}"
-			height="{{ Image( image ).height }}"
-			{{ attributes ? attributes | map( ( value, key ) => "#{key}=\"#{value}\"" ) | join( ' ' )  | raw }}
-		>
-	</picture>
+	<img
+		class="{{ classes ? classes | join( ' ' ) }}"
+		loading="{{ loading | default( 'lazy' ) }}"
+		src="{{ Image( image ).src }}"
+		alt="{{ Image( image ).alt }}"
+		width="{{ Image( image ).width }}"
+		height="{{ Image( image ).height }}"
+		srcset="{{ Image( image ).srcset }}"
+		{{ attributes ? attributes | map( ( value, key ) => "#{key}=\"#{value}\"" ) | join( ' ' )  | raw }}
+	>
 {% endif %}

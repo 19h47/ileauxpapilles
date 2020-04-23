@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: De l'île aux papilles\n"
-"POT-Creation-Date: 2020-04-19 17:52+0200\n"
-"PO-Revision-Date: 2020-04-19 18:22+0200\n"
+"POT-Creation-Date: 2020-04-23 15:08+0200\n"
+"PO-Revision-Date: 2020-04-23 15:08+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -63,6 +63,21 @@ msgstr "Longitude"
 #: inc/Api/Customizer.php:149
 msgid "Address"
 msgstr "Adresse"
+
+#: inc/Api/Customizer.php:170
+msgctxt "Customizer"
+msgid "Legal Notice Page"
+msgstr "Page des mentions légales"
+
+#: inc/Api/Customizer.php:189
+msgctxt "Customizer"
+msgid "Gift Coupon Page"
+msgstr "Page du formulaire de coupon"
+
+#: inc/Api/Customizer.php:208
+msgctxt "Customizer"
+msgid "Alert Message"
+msgstr "Message d’alerte"
 
 #: inc/Setup/Menus.php:33
 msgid "Menu"
@@ -527,17 +542,100 @@ msgstr "Référence planifiée."
 msgid "Reference"
 msgstr "Référence"
 
-#: inc/Setup/Theme.php:176
+#: inc/Setup/Sidebars.php:32
+msgid "Footer Primary"
+msgstr "Première zone du pied de page"
+
+#: inc/Setup/Sidebars.php:42
+msgid "Footer Secondary"
+msgstr "Seconde zone du pied de page"
+
+#: inc/Setup/Theme.php:109
 msgid "Share on Twitter"
 msgstr "Partager sur Twitter"
 
-#: inc/Setup/Theme.php:183
+#: inc/Setup/Theme.php:116
 msgid "Share on Facebook"
 msgstr "Partager sur Facebook"
 
-#: inc/Setup/Theme.php:195
+#: inc/Setup/Theme.php:128
 msgid "Share on LinkedIn"
 msgstr "Partager sur LinkedIn"
+
+#: inc/Setup/Theme.php:169
+msgctxt "placeholders"
+msgid "Last name"
+msgstr "Nom"
+
+#: inc/Setup/Theme.php:170
+msgctxt "placeholders"
+msgid "First name(s)"
+msgstr "Prénom(s)"
+
+#: inc/Setup/Theme.php:171
+msgctxt "placeholders"
+msgid "E-mail"
+msgstr "E-mail"
+
+#: inc/Setup/Theme.php:172
+msgctxt "placeholders"
+msgid "Address"
+msgstr "Adresse"
+
+#: inc/Setup/Theme.php:173
+msgctxt "placeholders"
+msgid "Postal code and city"
+msgstr "Code postal et ville"
+
+#: inc/Setup/Theme.php:174
+msgctxt "placeholders"
+msgid "Lastname(s) and firstname(s)"
+msgstr "Nom(s) et prénom(s)"
+
+#: inc/Setup/Theme.php:175
+msgctxt "placeholders"
+msgid "Your message"
+msgstr "Votre message"
+
+#: views/footer.html.twig:14
+msgid "Access"
+msgstr "Accès"
+
+#: views/footer.html.twig:22
+msgid "Follow us!"
+msgstr "Suivez-nous !"
+
+#: views/footer.html.twig:41
+msgid "Reservation recommended on"
+msgstr "Réservation conseillée au"
+
+#: views/footer.html.twig:48
+msgid "Contact us!"
+msgstr "Contactez-nous !"
+
+#: views/pages/gift-coupon.html.twig:71
+msgid "Gift card offered to…"
+msgstr "Carte cadeau offerte à…"
+
+#: views/pages/gift-coupon.html.twig:86
+msgid "I compose the gift card:"
+msgstr "Je compose la carte-cadeau :"
+
+#: views/pages/gift-coupon.html.twig:95
+msgid "Number of people invited"
+msgstr "Nombre de personnes invitées"
+
+#: views/pages/gift-coupon.html.twig:124
+msgid "Total"
+msgstr "Total"
+
+#: views/pages/gift-coupon.html.twig:153
+msgid "Send"
+msgstr "Envoyer"
+
+#: views/partials/popupcontent.html.twig:4
+msgid "Route"
+msgstr "Itinéraire"
 
 #. Theme Name of the plugin/theme
 msgid "De l'île aux papilles"

@@ -152,5 +152,62 @@ class Customizer {
 				'settings' => 'address',
 			)
 		);
+
+		//
+		$wp_customize->add_setting(
+			'legal_notice_permalink',
+			array(
+				'capability'        => 'edit_theme_options',
+				'sanitize_callback' => 'absint',
+			)
+		);
+
+		$wp_customize->add_control(
+			'legal_notice_permalink',
+			array(
+				'type'    => 'dropdown-pages',
+				'section' => 'contact',
+				'label'   => _x( 'Legal Notice Page', 'Customizer', 'delileauxpapilles' ),
+				'settings' => 'legal_notice_permalink',
+			)
+		);
+
+		//
+		$wp_customize->add_setting(
+			'gift_coupon_permalink',
+			array(
+				'capability'        => 'edit_theme_options',
+				'sanitize_callback' => 'absint',
+			)
+		);
+
+		$wp_customize->add_control(
+			'gift_coupon_permalink',
+			array(
+				'type'     => 'dropdown-pages',
+				'section'  => 'contact',
+				'label'    => _x( 'Gift Coupon Page', 'Customizer', 'delileauxpapilles' ),
+				'settings' => 'gift_coupon_permalink',
+			)
+		);
+
+		// Alert Message.
+		$wp_customize->add_setting(
+			'alert_message',
+			array(
+				'type'      => 'option',
+				'transport' => 'postMessage',
+			)
+		);
+
+		$wp_customize->add_control(
+			'alert_message',
+			array(
+				'type'     => 'textarea',
+				'section'  => 'contact',
+				'label'    => _x( 'Alert Message', 'Customizer', 'delileauxpapilles' ),
+				'settings' => 'alert_message',
+			)
+		);
 	}
 }

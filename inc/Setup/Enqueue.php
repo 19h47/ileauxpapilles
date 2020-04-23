@@ -7,6 +7,7 @@
 
 namespace DLAP\Setup;
 
+use Timber\{ Timber };
 use Dotenv\{ Dotenv };
 
 $dotenv = Dotenv::createImmutable( get_template_directory() );
@@ -60,7 +61,7 @@ class Enqueue {
 				'api_url'                => home_url( 'wp-json' ),
 				'current_url'            => get_permalink(),
 				'nonce'                  => wp_create_nonce( 'security' ),
-				'popupContent'           => nl2br( get_option( 'address' ) ),
+				'popupContent'           => Timber::compile( 'partials/popupcontent.html.twig', Timber::get_context() ),
 				'coordinates'            => array(
 					'latitude'  => get_option( 'latitude' ),
 					'longitude' => get_option( 'longitude' ),

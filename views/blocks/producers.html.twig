@@ -7,10 +7,10 @@
 					<tbody>
 						{% for item in block.items %}
 							<tr>
-								<td>{{- item.category ? "<strong class=\"padding-left-3 d-inline-block\">#{item.category}</strong>" | raw -}}</td>
-								<td>{{- item.label -}}</td>
-								<td>{{- item.title -}}{{- item.title and item.link.url ? '<br>' | raw -}}{{- item.link ? "<a href=\"#{item.link.url}\"#{item.link.target ? " target=\"_blank\""}>#{ item.link.title }</a>" -}}</td>
-								<td>{{- item.place ? "<span class=\"display-inline-block padding-right-3\">#{item.place}</span>" | raw -}}</td>
+								<td><div class="margin-x-3">{{- item.category ? "<strong>#{item.category}</strong>" | raw -}}</div></td>
+								<td><div class="margin-x-3 margin-x-md-0">{{- item.label -}}</div></td>
+								<td><div class="margin-x-3 margin-x-md-0">{{- item.title -}}{{- item.title and item.link.url ? '<br>' | raw -}}{{- item.link ? "<a href=\"#{item.link.url}\"#{item.link.target ? " target=\"_blank\""}>#{ item.link.title }</a>" -}}</div></td>
+								<td><div class="margin-x-3 margin-left-md-0">{{- item.place ? "#{item.place}" | raw -}}</div></td>
 							</tr>
 						{% endfor %}
 					</tbody>

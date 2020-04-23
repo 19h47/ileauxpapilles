@@ -26,13 +26,15 @@ export default class MapBlock extends AbstractBlock {
 		const customIcon = L.icon({
 			iconUrl: `${templateDirectoryUri}/dist/img/svg/marker.svg`,
 			iconSize: [32, 41],
+			iconAnchor: [16, 41],
+			popupAnchor: [0, -30],
 		});
 
 		const marker = L.marker([latitude, longitude], { icon: customIcon });
 
-		const tileLayer = L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
-			attribution: '© OpenStreetMap contributors',
-			maxZoom: 19,
+		const tileLayer = L.tileLayer('http://{s}.google.com/vt/lyrs=p&x={x}&y={y}&z={z}', {
+			maxZoom: 20,
+			subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
 		});
 
 		this.map = this.initMap();
@@ -52,7 +54,7 @@ export default class MapBlock extends AbstractBlock {
 	initMap() {
 		return L.map(this.rootElement, {
 			center: [latitude, longitude],
-			zoom: 12,
+			zoom: 15,
 			zoomControl: true,
 			scrollWheelZoom: false,
 		});

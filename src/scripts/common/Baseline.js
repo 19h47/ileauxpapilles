@@ -1,3 +1,5 @@
+const imagesLoaded = require('imagesloaded');
+
 const baseline = 24;
 
 export default class Baseline {
@@ -12,7 +14,7 @@ export default class Baseline {
 		this.ratio = rect.width / rect.height;
 
 		window.addEventListener('resize', this.resize);
-		this.resize();
+		imagesLoaded(this.$element, this.resize);
 	}
 
 	resize() {

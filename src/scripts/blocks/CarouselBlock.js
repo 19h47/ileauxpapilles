@@ -1,5 +1,6 @@
 import { AbstractBlock } from 'starting-blocks';
 import { gsap } from 'gsap';
+import mediaBreakpointUp from 'utils/mediaBreakpointUp';
 
 const Flickity = require('flickity');
 
@@ -35,29 +36,33 @@ export default class CarouselBlock extends AbstractBlock {
 
 		this.initPlugins();
 
-		requestAnimationFrame(this.render);
+		if (mediaBreakpointUp('md')) {
+			requestAnimationFrame(this.render);
+		}
 	}
 
 	initEvents() {
 		super.initEvents();
 
-		window.addEventListener('mousemove', event => {
-			this.clientX = event.clientX;
-			this.clientY = event.clientY;
-		});
+		if (mediaBreakpointUp('md')) {
+			window.addEventListener('mousemove', event => {
+				this.clientX = event.clientX;
+				this.clientY = event.clientY;
+			});
 
-		this.carousel.on('dragMove', event => {
-			this.clientX = event.clientX;
-			this.clientY = event.clientY;
-		});
+			this.carousel.on('dragMove', event => {
+				this.clientX = event.clientX;
+				this.clientY = event.clientY;
+			});
 
-		this.$items.addEventListener('mouseenter', () => gsap.to(this.$cursor, { scale: 1 }));
-		this.$items.addEventListener('mouseleave', () => gsap.to(this.$cursor, { scale: 0 }));
+			this.$items.addEventListener('mouseenter', () => gsap.to(this.$cursor, { scale: 1 }));
+			this.$items.addEventListener('mouseleave', () => gsap.to(this.$cursor, { scale: 0 }));
 
-		this.carousel.on('dragStart', this.down);
-		this.carousel.on('pointerDown', this.down);
-		this.carousel.on('dragEnd', this.up);
-		this.carousel.on('pointerUp', this.up);
+			this.carousel.on('dragStart', this.down);
+			this.carousel.on('pointerDown', this.down);
+			this.carousel.on('dragEnd', this.up);
+			this.carousel.on('pointerUp', this.up);
+		}
 	}
 
 	render() {

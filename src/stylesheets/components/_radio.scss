@@ -23,6 +23,8 @@
 		@extend .d-inline-block;
 		@extend %position-relative;
 
+		min-width: $grid-gutter-width;
+
 		background-color: rgba(the_color(white), 0.15);
 		border-radius: $grid-gutter-width / 2;
 		transition: box-shadow 0.3s map-get($easings, ease-out-expo);

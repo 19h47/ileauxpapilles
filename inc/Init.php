@@ -23,9 +23,12 @@ class Init {
 	public static function get_services() : array {
 		return array(
 			Setup\Theme::class,
+			Setup\Sidebars::class,
 			Setup\Enqueue::class,
 			Setup\WordPress::class,
 			Setup\Menus::class,
+			Setup\Supports::class,
+			Setup\Textdomain::class,
 			Setup\PostTypes\Reference::class,
 			Setup\PostTypes\Coupon::class,
 			Setup\PostTypes\Partner::class,
