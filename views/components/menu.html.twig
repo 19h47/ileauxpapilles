@@ -1,18 +1,39 @@
 {#
+
 @file views/components/menu.html.twig
 @param arr items
 @author Jérémy Levron <jeremylevron@19h47.fr> (https://19h47.fr)
-@package prh
+@package delileauxpapilles
 
 #}
 {% if items is iterable %}
-	<ul class="Menu{{ classes ? ' ' ~ classes | join( ' ' ) }}" itemscope itemtype="http://schema.org/SiteNavigationElement">
-		{% for item in items %}
-			<li class="Menu__item" itemprop="name">
-				<a class="Menu__link{{ item.current ? ' is-active' }}" href="{{ item.url }}" itemprop="url"{{ item.target ? " target=\"#{item.target}\"" }}>
-					{{- item.title -}}
-				</a>
-			</li>
-		{% endfor %}
-	</ul>
+	<nav{{ accordion ? ' id="menu-accordion"' | raw }} class="Menu{{ classes ? ' ' ~ classes | join( ' ' ) }}{{ accordion ? ' page-block' }}"{{ accordion ? ' data-node-type="AccordionBlock" data-accordion-desktop="false"' }}>
+
+		{% if accordion %}
+		   <div
+				class="d-flex flex-column flex-md-row w-100 js-accordion-panel"
+				data-accordion-open="false"
+				data-accordion-deselect="true"
+			>
+				<button class="Menu__button js-accordion-header" type="button" aria-expanded="false" aria-controls="menu-items">{{- __( 'Menu' ) -}}</button>
+
+				<div
+    				id="menu-items"
+    				class="js-accordion-body w-100"
+					role="region"
+    			>
+		{% endif %}
+
+			<ul class="Menu__items{{ accordion ? ' js-accordion-inner' }}" itemscope itemtype="http://schema.org/SiteNavigationElement">
+				{% for item in items %}
+					<li class="Menu__item" itemprop="name">
+						<a class="Menu__link{{ item.current ? ' is-active' }}" href="{{ item.url }}" itemprop="url"{{ item.target ? " target=\"#{item.target}\"" }}>
+							{{- item.title -}}
+						</a>
+					</li>
+				{% endfor %}
+			</ul>
+
+		{{ accordion ? '</div></div>' }}
+	</nav>
 {% endif %}

@@ -49,7 +49,7 @@ Header
 						{%- endif -%}
 
 						{%- if phone_number -%}
-							<a href="tel:{{ phone_number | replace ( { ' ' : '' } ) }}" class="margin-bottom-0 margin-right-md-3 margin-left-md-auto"><strong>{{- phone_number -}}</strong></a>
+							<a href="tel:{{ phone_number | replace ( { ' ' : '' } ) }}" class="margin-bottom-0 margin-right-md-3 margin-left-md-auto{{ alert_message ? '' : ' margin-top-3 margin-top-md-0' }}"><strong>{{- phone_number -}}</strong></a>
 						{%- endif -%}
 
 						{% include 'components/socials.html.twig' with { classes: [ phone_number ? false : [ 'margin-left-auto' ] ], feed: true } %}
@@ -62,7 +62,7 @@ Header
 			<div class="Site-container">
 				<div class="row">
 					<div class="col-12">
-						<a class="Hero__logo js-baseline" href="{{ site.link }}">
+						<a class="Hero__logo js-baseline" href="{{ site.link }}" aria-label="{{ site.description }}">
 							{% include 'svg/use.html.twig' with { attributes: { height: '576px', width: '1296px' }, icon: 'logo' } only %}
 						</a>
 					</div>
@@ -104,13 +104,13 @@ Header
 			</div>
 		</div>
 
-		<div class="Site-container">
-			<div class="row">
-				<div class="col-12 col-hd-7 offset-hd-5">
-					{% include 'components/menu.html.twig' with { items: menus.menu.items, classes: [ 'Menu--header' ] } %}
-				</div>
-			</div>
-		</div>
 
 		<main id="{{ post.id ? "page-#{post.id}" : 'page' }}" class="page-content Page-wrapper" data-node-type="{{ node_type | default( 'DefaultPage' ) }}">
+			<div class="Site-container">
+				<div class="row">
+					<div class="col-12 col-md-10 offset-md-1 col-hd-7 offset-hd-5">
+						{% include 'components/menu.html.twig' with { items: menus.menu.items, accordion: true, classes: [ 'Menu--header' ] } %}
+					</div>
+				</div>
+			</div>
 

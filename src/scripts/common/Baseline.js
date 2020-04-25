@@ -10,11 +10,14 @@ export default class Baseline {
 	}
 
 	init() {
-		const rect = this.$element.getBoundingClientRect();
-		this.ratio = rect.width / rect.height;
-
 		window.addEventListener('resize', this.resize);
-		imagesLoaded(this.$element, this.resize);
+
+		imagesLoaded(this.$element, () => {
+			const rect = this.$element.getBoundingClientRect();
+
+			this.ratio = rect.width / rect.height;
+			this.resize();
+		});
 	}
 
 	resize() {

@@ -7,7 +7,9 @@
  */
 .Page {
 	&__title {
-		color: the_color(cyan, dark-moderate);
+		@extend %text-align-center, %text-align-md-left;
+
+		color: the_color(white);
 
 		@at-root .Producers-page & {
 			color: the_color(white);

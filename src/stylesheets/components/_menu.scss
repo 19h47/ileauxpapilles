@@ -8,17 +8,29 @@
 .Menu {
 	$this: &;
 
-	@extend .d-flex, .flex-row, .justify-content-between;
-	@extend %list-style-type-none, %font-weight-semibold, %text-transform-uppercase;
-	@include letter-spacing(100);
+	@extend .d-flex, .flex-row;
+	@extend %font-weight-semibold;
 
 	&--header {
-		@include padding(top $grid-gutter-width / 2);
 		@extend .flex-column, .flex-md-row;
+	}
 
-		@include media-breakpoint-up(md) {
-			@include padding(top 0);
-		}
+	[role='region'] {
+		transition: max-height 0.3s map-get($easings, ease-out-expo);
+	}
+
+	&__button {
+		@include padding(top $grid-gutter-width / 2 bottom $grid-gutter-width / 2);
+		@include margin(left auto);
+		@include letter-spacing(100);
+		@extend %text-transform-uppercase;
+		@extend .d-md-none;
+	}
+
+	&__items {
+		@extend .d-flex, .flex-column, .flex-md-row, .justify-content-between;
+		@extend %list-style-type-none, %text-transform-uppercase;
+		@include letter-spacing(100);
 	}
 
 	&__link {

@@ -33,7 +33,8 @@ Gift coupon
 	<div class="Page__content">
 		<div class="Site-container">
 			<div class="row">
-				<div class="col-12 col-md-4 col-hd-3 offset-hd-1">
+
+				<div class="col-12 col-md-3 offset-md-1">
 					<div class="Wysiwyg">
 						<p class="d-md-none">En fonction de vos envies, de votre budget et des préférences de vos invités, composez votre carte cadeau sur-mesure et faîtes plaisir à vos invités !</p>
 						<p>
@@ -46,7 +47,7 @@ Gift coupon
 					</div>
 				</div>
 
-				<div class="col-12 col-md-7 col-hd-6 offset-md-1">
+				<div class="col-12 col-md-6 offset-md-1">
 					<form class="Form" action="" method="post">
 						<div class="Form__group d-none d-md-block">
 							<p>En fonction de vos envies, de votre budget et des préférences de vos invités, composez votre carte cadeau sur-mesure et faîtes plaisir à vos invités !</p>
@@ -74,7 +75,7 @@ Gift coupon
 							<input class="Input" id="menu[names_first_names]" type="text" name="menu[names_first_names]" required placeholder="{{ placeholders.lastnames_and_firstnames }} *">
 						</div>
 						<div class="Form__group">
-							<h3 class="Form__title">Je souhaite recevoir le bon cadeau :</h3>
+							<h3 class="Form__title">{{- __( 'I wish to receive the gift voucher:' ) -}}</h3>
 						</div>
 
 						<div id="type" class="Form__group page-block margin-left-3" role="radiogroup" data-node-type="RadioGroupBlock">
@@ -157,6 +158,7 @@ Gift coupon
 
 					</form>
 				</div>
+
 			</div>
 		</div>
 	</div>

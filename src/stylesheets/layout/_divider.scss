@@ -1,0 +1,14 @@
+/**
+ * Divider
+ *
+ *
+ *
+ *
+ *
+ *
+ */
+.Divider {
+	svg {
+		@include size(100%, $grid-gutter-width * 4);
+	}
+}

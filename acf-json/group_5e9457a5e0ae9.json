@@ -669,6 +669,33 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_5ea405295f6f0": {
+                    "key": "layout_5ea405295f6f0",
+                    "name": "divider",
+                    "label": "Diviseur",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5ea405315f6f1",
+                            "label": "Diviseur",
+                            "name": "",
+                            "type": "message",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "Insère un diviseur.",
+                            "new_lines": "wpautop",
+                            "esc_html": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Ajouter un bloc",
@@ -731,5 +758,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1587638470
+    "modified": 1587807580
 }

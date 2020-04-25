@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: De l'île aux papilles\n"
-"POT-Creation-Date: 2020-04-23 15:08+0200\n"
-"PO-Revision-Date: 2020-04-23 15:08+0200\n"
+"POT-Creation-Date: 2020-04-25 11:30+0200\n"
+"PO-Revision-Date: 2020-04-25 11:30+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -616,6 +616,10 @@ msgstr "Contactez-nous !"
 #: views/pages/gift-coupon.html.twig:71
 msgid "Gift card offered to…"
 msgstr "Carte cadeau offerte à…"
+
+#: views/pages/gift-coupon.html.twig:77
+msgid "I wish to receive the gift voucher:"
+msgstr "Je souhaite recevoir le bon cadeau :"
 
 #: views/pages/gift-coupon.html.twig:86
 msgid "I compose the gift card:"
