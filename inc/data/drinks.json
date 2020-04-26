@@ -1,6 +1,1 @@
-{
-	"cocktail_aperitif": "Cocktail apéritif",
-	"champagne_brut_maison_piollot": "Champagne brut « Maison Piollot »",
-	"verre_de_vin": "Verre de vin",
-	"accord_mets_vins_2_verres_de_vin_1_boisson_chaude": "Accord Mets/vins (2 verres de vin, 1 boisson chaude)"
-}
+[{"value":"cocktail_aperitif","label":"Cocktail ap\u00e9ritif","price":"8.50"},{"value":"champagne_brut_maison_piollot","label":"Champagne brut \u00ab Maison Piollot \u00bb","price":"11"},{"value":"verre_de_vin","label":"Verre de vin","price":"6.50"},{"value":"accord_mets_vins_2_verres_de_vin_1_boisson_chaude","label":"Accord Mets\/vins (2 verres de vin, 1 boisson chaude)","price":"16"}]

@@ -166,14 +166,17 @@ class Theme {
 		$context['partners']   = Timber::get_sidebar( 'component-partners.php' );
 
 		$context['placeholders'] = array(
-			'last_name'                => _x( 'Last name', 'placeholders', 'delileauxpapilles' ),
-			'first_names'              => _x( 'First name(s)', 'placeholders', 'delileauxpapilles' ),
-			'email'                    => _x( 'E-mail', 'placeholders', 'delileauxpapilles' ),
-			'address'                  => _x( 'Address', 'placeholders', 'delileauxpapilles' ),
-			'postal_code_and_city'     => _x( 'Postal code and city', 'placeholders', 'delileauxpapilles' ),
-			'lastnames_and_firstnames' => _x( 'Lastname(s) and firstname(s)', 'placeholders', 'delileauxpapilles' ),
-			'your_message'             => _x( 'Your message', 'placeholders', 'delileauxpapilles' ),
+			'last_name'                => _x( 'Last name', 'gift coupon', 'delileauxpapilles' ),
+			'first_names'              => _x( 'First name(s)', 'gift coupon', 'delileauxpapilles' ),
+			'email'                    => _x( 'E-mail', 'gift coupon', 'delileauxpapilles' ),
+			'address'                  => _x( 'Address', 'gift coupon', 'delileauxpapilles' ),
+			'postal_code_and_city'     => _x( 'Postal code and city', 'gift coupon', 'delileauxpapilles' ),
+			'lastnames_and_firstnames' => _x( 'Lastname(s) and firstname(s)', 'gift coupon', 'delileauxpapilles' ),
+			'your_message'             => _x( 'Your message', 'gift coupon', 'delileauxpapilles' ),
 		);
+
+		$context['coupon_fields']['drinks'] = get_field( 'drinks', 'coupon-options' );
+		$context['coupon_fields']['type']   = get_field( 'type', 'coupon-options' );
 
 		return $context;
 	}

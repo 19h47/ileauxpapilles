@@ -79,4 +79,22 @@
 			}
 		}
 	}
+
+	blockquote {
+		@include padding(
+			top $grid-gutter-width right $grid-gutter-width bottom $grid-gutter-width left
+				$grid-gutter-width
+		);
+
+		& > *:first-child {
+			@include margin(top 0);
+		}
+
+		& > *:last-child {
+			@include margin(bottom 0);
+		}
+
+		background-color: the_color(cyan, dark-moderate);
+		color: the_color(white);
+	}
 }

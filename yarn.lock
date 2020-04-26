@@ -2,12 +2,12 @@
 # yarn lockfile v1
 
 
-"@19h47/accordion@^4.2.6":
-  version "4.2.6"
-  resolved "https://registry.yarnpkg.com/@19h47/accordion/-/accordion-4.2.6.tgz#78ee819b6db9ddf47b7491a57d39d4d794419f28"
-  integrity sha512-RCMmm05wfLXNG1N8Yn9MdaZPJoZDQZoD+Ly+DKQSp5+Zz+zfZ2pLqgzhkChNSOugplG1rp3gs1/0bJVMQsx7uw==
+"@19h47/accordion@^4.2.7":
+  version "4.2.7"
+  resolved "https://registry.yarnpkg.com/@19h47/accordion/-/accordion-4.2.7.tgz#96ee00f4c85cda8ce8eb6b2f9d90cf343e7e693a"
+  integrity sha512-oqNncg8LTp2M1iobpjDb/CpFB0vOdInFOEOzR2eOdk6CfXZBWPH+xWPCjNcAF00S+2oSDgpCzF1KDOAOBq3Gpw==
   dependencies:
-    core-js "^3.6.4"
+    core-js "^3.6.5"
 
 "@19h47/architecture@19h47/architecture":
   version "4.0.5"
@@ -28,22 +28,22 @@
   resolved "https://registry.yarnpkg.com/@19h47/keycode/-/keycode-3.0.0.tgz#f5f7afcf7416106a6ca0ab2e323e5d01b7525441"
   integrity sha512-NkImLtu8fud6fW93YkuXgZbXMa7IGeQsnLKLnOxNP0qJb/LQ7B+JUTRHVER+mWts/YCcuo1MQ5P/bFxBYAxLWA==
 
-"@19h47/prettier-config@19h47/prettier-config":
+"@19h47/prettier-config@19h47/prettier-config", "@19h47/prettier-config@github:19h47/prettier-config":
   version "0.0.0"
+  uid "6a2958d2dc1192829c403b3867b69437ef3c63ae"
   resolved "https://codeload.github.com/19h47/prettier-config/tar.gz/6a2958d2dc1192829c403b3867b69437ef3c63ae"
   dependencies:
     prettier "^1.x.x"
 
-"@19h47/radiogroup@4.1.3":
-  version "4.1.3"
-  resolved "https://registry.yarnpkg.com/@19h47/radiogroup/-/radiogroup-4.1.3.tgz#451b862037cd8d3af346ec041f5465d97551f1c5"
-  integrity sha512-raYm/8boiLuinBbEIyGX0/JnMBPfpQyrvEovPIffUV+2jQ7Tj/h/nXmPdzZLGAEb+c/Z129p0rHPhbNZUw4d9w==
+"@19h47/radiogroup@4.2.5":
+  version "4.2.5"
+  resolved "https://registry.yarnpkg.com/@19h47/radiogroup/-/radiogroup-4.2.5.tgz#8d910369b047b49a869fa5a18c87d5d5f41d0ac8"
+  integrity sha512-dBL6wx+c12DrjGBy5TVxQLQHGzMnxCnSQQJgGZMu4kfrWDG4Zv2vQm5DBNV6i5yVAMJsIjMkzlOMiDEY0BIfBA==
   dependencies:
     "@19h47/keycode" "^3.0.0"
     "@19h47/prettier-config" "19h47/prettier-config"
     "@babel/plugin-transform-runtime" "^7.8.3"
     core-js "^3.6.4"
-    eslint-config-prettier "^6.10.1"
 
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.8.3":
   version "7.8.3"
@@ -3002,13 +3002,6 @@ eslint-config-airbnb-base@^14.1.0:
     confusing-browser-globals "^1.0.9"
     object.assign "^4.1.0"
     object.entries "^1.1.1"
-
-eslint-config-prettier@^6.10.1:
-  version "6.10.1"
-  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-6.10.1.tgz#129ef9ec575d5ddc0e269667bf09defcd898642a"
-  integrity sha512-svTy6zh1ecQojvpbJSgH3aei/Rt7C6i090l5f2WQ4aB05lYHeZIR1qL4wZyyILTbtmnbHP5Yn8MrsOJMGa8RkQ==
-  dependencies:
-    get-stdin "^6.0.0"
 
 eslint-config-prettier@^6.11.0:
   version "6.11.0"

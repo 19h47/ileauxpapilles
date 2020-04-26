@@ -18,38 +18,26 @@ class Acf {
 	 * @return void
 	 */
 	public function run() : void {
-		add_filter( 'acf/load_field/key=field_5e99e4d9fe4af', array( $this, 'acf_load_field_drinks' ) );
-		add_filter( 'acf/load_field/key=field_5e99e47c3461d', array( $this, 'acf_load_field_type' ) );
+		// on init and not on acf/init because of custom post type register
+		add_action( 'init', array( $this, 'add_coupon_options_page' ), 0 );
 	}
 
 	/**
-	 * ACF load field drinks
+	 * Add coupon options page
 	 *
-	 * @param  array $field The field array containing all settings.
-	 * @return array $field
+	 * @return void
 	 */
-	public function acf_load_field_drinks( array $field ) : array {
-		$drinks = get_template_directory() . '/inc/data/drinks.json';
-
-		$field['choices'] = json_decode( file_get_contents( $drinks ), true ); // phpcs:ignore
-
-		return $field;
-	}
-
-
-	/**
-	 * ACF load field type
-	 *
-	 * @param  array $field The field array containing all settings.
-	 *
-	 * @return array $field
-	 */
-	public function acf_load_field_type( array $field ) : array {
-		$types = get_template_directory() . '/inc/data/types.json';
-
-		$field['choices'] = json_decode( file_get_contents( $types ), true ); // phpcs:ignore
-
-		return $field;
+	public function add_coupon_options_page() {
+		acf_add_options_sub_page(
+			array(
+				'menu_title'  => _x( 'Settings', 'gift coupon', 'delileauxpapilles' ),
+				'page_title'  => _x( 'Coupon Settings', 'gift coupon', 'delileauxpapilles' ),
+				'menu_slug'   => 'settings',
+				'parent_slug' => 'edit.php?post_type=coupon',
+				'capability'  => 'edit_posts',
+				'post_id'     => 'coupon-options',
+			)
+		);
 	}
 }
 

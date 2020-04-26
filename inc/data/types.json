@@ -1,4 +1,1 @@
-{
-	"menu_degustation": "Menu dégustation (Entrée/Plat/Dessert)",
-	"menu_gourmand": "Menu gourmand (Entrée/Plat/Fromage/Dessert)"
-}
+[{"value":"menu_degustation","label":"Menu d\u00e9gustation (Entr\u00e9e\/Plat\/Dessert)","price":"36.50"},{"value":"menu_gourmand","label":"Menu gourmand (Entr\u00e9e\/Plat\/Fromage\/Dessert)","price":"41.50"}]

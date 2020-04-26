@@ -25,7 +25,7 @@ Footer
 									data-href="https://www.facebook.com/delileauxpapilles/"
 									data-tabs="timeline"
 									data-width="612"
-									data-height="{{ 8 * 24 }}"
+									data-height="{{ 10 * 24 }}"
 									data-small-header="true"
 									data-adapt-container-width="true"
 									data-hide-cover="false"
@@ -34,19 +34,10 @@ Footer
 							</div>
 						</div>
 						<div class="col-12 col-md-3 margin-y-3 margin-y-md-0">
-							<div class="Site-footer__column">
-								{{ footer_primary }}
-
-								{%- if phone_number -%}
-									<p><a href="tel:{{ phone_number | replace ( { ' ' : '' } ) }}">{{- __( 'Reservation recommended on', 'delileauxpapilles' ) -}}&nbsp;<strong>{{- phone_number -}}</strong></a>.</p>
-								{% endif %}
-							</div>
+							<div class="Site-footer__column">{{- footer_primary -}}</div>
 						</div>
 						<div class="col-12 col-md-3 margin-y-3 margin-y-md-0">
-							<div class="Site-footer__column">
-								{{ footer_secondary }}
-								<p><a href="{{ gift_coupon_permalink }}"><strong>{{- __( 'Contact us!', 'delileauxpapilles' ) -}}</strong></a></p>
-							</div>
+							<div class="Site-footer__column">{{- footer_secondary -}}</div>
 						</div>
 					</div>
 				</div>

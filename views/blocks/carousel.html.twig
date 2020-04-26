@@ -10,7 +10,7 @@
 			<div class="col-12">
 				<div class="Carousel__items js-items">
 					{% for item in block.items %}
-						{% include 'partials/image.html.twig' with { image: item, classes: [ 'Carousel__item', 'js-item' ] } %}
+						{% include 'partials/image.html.twig' with { loading: 'eager', image: item, classes: [ 'Carousel__item', 'js-item' ] } %}
 					{% endfor %}
 				</div>
 			</div>

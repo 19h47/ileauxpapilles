@@ -39,6 +39,7 @@ export default class GiftCouponPage extends AbstractPage {
 		this.price = 0;
 
 		this.initPlugins();
+		this.updatePrice();
 
 		await super.init();
 	}

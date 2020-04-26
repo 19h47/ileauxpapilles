@@ -52,7 +52,7 @@ Gift coupon
 						<div class="Form__group d-none d-md-block">
 							<p>En fonction de vos envies, de votre budget et des préférences de vos invités, composez votre carte cadeau sur-mesure et faîtes plaisir à vos invités !</p>
 						</div>
-						<div class="Form__group"><h3 class="Form__title">De la part de…</h3></div>
+						<div class="Form__group"><h3 class="Form__title">{{- _x( 'From…', 'gift coupon', 'delileauxpapilles' ) -}}</h3></div>
 						<div class="Form__group">
 							<input class="Input" id="last_name" type="text" name="last_name" required placeholder="{{ placeholders.last_name }} *">
 						</div>
@@ -69,22 +69,22 @@ Gift coupon
 							<input class="Input" id="postal_code_city" type="text" name="postal_code_city" required placeholder="{{ placeholders.postal_code_and_city }} *">
 						</div>
 						<div class="Form__group">
-							<h3 class="Form__title">{{- __( 'Gift card offered to…', 'delileauxpapilles' ) -}}</h3>
+							<h3 class="Form__title">{{- _x( 'Gift card offered to…', 'gift coupon', 'delileauxpapilles' ) -}}</h3>
 						</div>
 						<div class="Form__group">
 							<input class="Input" id="menu[names_first_names]" type="text" name="menu[names_first_names]" required placeholder="{{ placeholders.lastnames_and_firstnames }} *">
 						</div>
 						<div class="Form__group">
-							<h3 class="Form__title">{{- __( 'I wish to receive the gift voucher:' ) -}}</h3>
+							<h3 class="Form__title">{{- _x( 'I wish to receive the gift voucher:', 'gift coupon', 'delileauxpapilles' ) -}}</h3>
 						</div>
 
 						<div id="type" class="Form__group page-block margin-left-3" role="radiogroup" data-node-type="RadioGroupBlock">
-							{{- _self.radio( true, 'par mail (le bon sera à imprimer)', false, 'type', 'email' ) -}}
-							{{- _self.radio( false, 'par courrier', false, 'type', 'mail' ) -}}
+							{{- _self.radio( true, _x( 'by email (the voucher will be printed)', 'gift coupon', 'delileauxpapilles' ), false, 'type', 'email' ) -}}
+							{{- _self.radio( false, _x( 'by mail', 'gift coupon', 'delileauxpapilles' ), false, 'type', 'mail' ) -}}
 						</div>
 
 						<div class="Form__group">
-							<h3 class="Form__title">{{- __( 'I compose the gift card:', 'delileauxpapilles' ) -}}</h3>
+							<h3 class="Form__title">{{- _x( 'I compose the gift card:', 'gift coupon', 'delileauxpapilles' ) -}}</h3>
 						</div>
 
 						<div class="Form__group">
@@ -93,7 +93,7 @@ Gift coupon
 									<input id="menu-number" class="Input w-100 js-person" min="1" step="1" type="number" name="menu[number]" value="1" required>
 								</div>
 								<div class="col-8 col-md-10">
-									<label for="number">{{- __( 'Number of people invited', 'delileauxpapilles' ) }}&nbsp;*</label>
+									<label for="number">{{- _x( 'Number of people invited', 'gift coupon', 'delileauxpapilles' ) }}&nbsp;*</label>
 								</div>
 							</div>
 						</div>
@@ -101,30 +101,25 @@ Gift coupon
 						<div class="js-template">
 							<div class="Form__group Form__fieldset">
 								<div id="menu_0" class="Form__group margin-bottom-3 page-block" role="radiogroup" data-node-type="RadioGroupBlock">
-									{{- _self.radio( true, 'Menu dégustation (Entrée/Plat/Dessert)', { label: '36,50 €', value: 36.50 }, 'menu[type]', 'menu_degustation' ) -}}
-									{{- _self.radio( false, 'Menu gourmand (Entrée/Plat/Fromage/Dessert)', { label: '41,50 €', value: 41.50 }, 'menu[type]', 'menu_gourmand' ) -}}
+									{% for type in coupon_fields.type %}
+										{{- _self.radio( loop.first, type.label, { label: type.price ~ ' €', value: type.price }, 'menu[type]', type.value ) -}}
+									{% endfor %}
 								</div>
 
-								<div class="Form__group">
-									{{- _self.checkbox('menu-cocktail-aperitif', 'Cocktail apéritif', 'menu[cocktail_aperitif]', 'cocktail_aperitif', { label: '8,50 € / pers.', value: 8.5 }) -}}
-								</div>
-								<div class="Form__group">
-									{{- _self.checkbox('menu-champagne-brut-maison-piollot', 'Champagne brut « Maison Piollot »', 'menu[champagne_brut_maison_piollot]', 'champagne_brut_maison_piollot', { label: '11 € / pers.', value: 11 }) -}}
-								</div>
-								<div class="Form__group">
-									{{- _self.checkbox('menu-verre-de-vin', 'Verre de vin', 'menu[verre_de_vin]', 'verre_de_vin', { label: '6,50 € / pers.', value: 6.5 }) -}}
-								</div>
-								<div class="Form__group">
-									{{- _self.checkbox('menu-accord-mets-vins-2-verres-de-vin-1-boisson-chaude', 'Accord Mets/vins (2 verres de vin, 1 boisson chaude)', 'menu[accord_mets_vins_2_verres_de_vin_1_boisson_chaude]', 'accord_mets_vins_2_verres_de_vin_1_boisson_chaude', { label: '16 € / pers.', value: 16 }) -}}
-								</div>
+								{% for field in coupon_fields.drinks %}
+									<div class="Form__group">
+										{{- _self.checkbox( field.value, field.label, 'menu[drinks][' ~ loop.index0 ~ ']', field.value, { label: field.price ~ __( ' € / pers.', 'delileauxpapilles' ), value: field.price }) -}}
+									</div>
+								{% endfor %}
+
 							</div>
 						</div>
 
 						<div class="Form__group">
 							<div class="row align-items-center">
 								<div class="col-6 col-md-2 offset-md-8 Form__total">{{ __( 'Total', 'delileauxpapilles' ) }}</div>
-								<div class="col-6 col-md-2 text-align-right"><span class="js-price">36,50</span> €</div>
-								<input class="js-total" type="hidden" name="total" value="36.50">
+								<div class="col-6 col-md-2 text-align-right"><span class="js-price"></span> €</div>
+								<input class="js-total" type="hidden" name="total" value="">
 							</div>
 						</div>
 

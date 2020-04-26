@@ -1,6 +1,6 @@
 {#
 
-Gift coupon
+Single: coupon
 
 #}
 <!DOCTYPE html>
@@ -19,8 +19,6 @@ Gift coupon
 		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
 
 		{{ wp_head }}
-
-		{# {% include 'components/gtag.html.twig' with { id: 'UA-153672608-1' } %} #}
 
     </head>
 
@@ -69,7 +67,7 @@ Gift coupon
 								D’ici au {{ post.post_date | date_modify( '+1 year' ) | date( 'l j F Y' ) }}<br>
 								vous êtes invités à déguster un <strong>repas</strong> pour <strong>{{ post.get_field( 'menu' ).number }} personnes :</strong><br>
 								<br>
-								<strong>{{- post.get_field( 'menu' ).drinks ? post.get_field( 'menu' ).drinks | map( drink => drink.label ) | join( ' / ' ) ~ ' + ' }}{{ post.get_field( 'menu' ).type.label -}}</strong><br>
+								<strong>{{- post.get_field( 'menu' ).drinks ? post.get_field( 'menu' ).drinks | map( drink => drink.label ) | join( ' / ' ) ~ ' + ' }}{{ post.get_field( 'menu' ).type | map( type => type.label ) | join( ' ' ) -}}</strong><br>
 								<br>
 								au restaurant De l’île aux Papilles<br>
 								<em>Pensez à réserver !</em>

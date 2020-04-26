@@ -41,8 +41,8 @@ class GenerateGiftCoupon {
 		add_action( 'wp_ajax_nopriv_request_gift_coupon', array( $this, 'ajax' ) );
 		add_action( 'wp_ajax_request_gift_coupon', array( $this, 'ajax' ) );
 
-		$this->drinks = json_decode( file_get_contents( get_template_directory() . '/inc/data/drinks.json' ), true ); // phpcs:ignore
-		$this->types = json_decode( file_get_contents( get_template_directory() . '/inc/data/types.json' ), true ); // phpcs:ignore
+		$this->drinks = get_field( 'drinks', 'coupon-options' );
+		$this->types  = get_field( 'type', 'coupon-options' );
 	}
 
 
@@ -61,13 +61,6 @@ class GenerateGiftCoupon {
 			return;
 		}
 
-		$data['menu']['drinks'] = array(
-			'cocktail_aperitif'             => isset( $data['menu']['cocktail_aperitif'] ) ? $data['menu']['cocktail_aperitif'] : false,
-			'champagne_brut_maison_piollot' => isset( $data['menu']['champagne_brut_maison_piollot'] ) ? $data['menu']['champagne_brut_maison_piollot'] : false,
-			'verre_de_vin'                  => isset( $data['menu']['verre_de_vin'] ) ? $data['menu']['verre_de_vin'] : false,
-			'accord_mets_vins_2_verres_de_vin_1_boisson_chaude' => isset( $data['menu']['accord_mets_vins_2_verres_de_vin_1_boisson_chaude'] ) ? $data['menu']['accord_mets_vins_2_verres_de_vin_1_boisson_chaude'] : false,
-		);
-
 		$new_post = array(
 			'post_title'  => $data['last_name'] . ' ' . $data['first_names'],
 			'post_status' => 'pending',
@@ -83,15 +76,48 @@ class GenerateGiftCoupon {
 		add_post_meta( $pid, 'email', $data['email'], true );
 		add_post_meta( $pid, 'type', $data['type'], true );
 		add_post_meta( $pid, 'total', (float) $data['total'], true );
+		add_post_meta( $pid, 'menu_number', $data['menu']['number'], true );
+		add_post_meta( $pid, 'menu_names_first_names', $data['menu']['names_first_names'], true );
 
 		if ( isset( $data['message'] ) ) {
-			add_post_meta( $pid, 'message', $data['message'], true );
+			update_field( 'field_5e9a1e0115532', $data['message'], $pid );
 		}
 
-		add_post_meta( $pid, 'menu_drinks', $data['menu']['drinks'], true );
-		add_post_meta( $pid, 'menu_number', $data['menu']['number'], true );
-		add_post_meta( $pid, 'menu_type', $data['menu']['type'], true );
-		add_post_meta( $pid, 'menu_names_first_names', $data['menu']['names_first_names'], true );
+		$drinks = array();
+
+		foreach ( $data['menu']['drinks'] as $key => $value ) {
+			foreach ( $this->drinks as $drink ) {
+				if ( $drink['value'] === $value ) {
+					$drinks[] = array(
+						'value' => $value,
+						'label' => $drink['label'],
+						'price' => $drink['price'],
+					);
+				}
+			}
+		}
+
+		$types = array();
+
+		foreach ( $this->types as $type ) {
+			if ( $type['value'] === $data['menu']['type'] ) {
+				$types[] = array(
+					'value' => $data['menu']['type'],
+					'label' => $type['label'],
+					'price' => $type['price'],
+				);
+			}
+		}
+
+		// Menu field.
+		update_field(
+			'field_5e99e38a3461b',
+			array(
+				'field_5e99e4d9fe4af' => $drinks,
+				'field_5e99e47c3461d' => $types,
+			),
+			$pid
+		);
 
 		// Mail.
 		$to[] = $data['email'];
@@ -103,22 +129,11 @@ class GenerateGiftCoupon {
 
 		$context = Timber::get_context();
 
-		$context['post'] = $data;
-
-
-		foreach ( $data['menu']['drinks'] as $key => $value ) {
-			if ( false !== $value ) {
-				$context['post']['menu']['drinks'][ $key ] = $this->drinks[ $key ];
-			} else {
-				unset( $context['post']['menu']['drinks'][ $key ] );
-			}
-		}
-
-		$context['post']['menu']['type'] = $this->types[ $data['menu']['type'] ];
+		$context['post'] = new Post( $pid );
 
 		Mail::init()
 			->to( $to )
-			->subject( 'Une nouvelle demande de coupon !' )
+			->subject( __( 'A new coupon request!', 'delileauxpapilles' ) )
 			->message( 'partials/email-confirm.html.twig', $context )
 			->headers( $headers )
 			->send();

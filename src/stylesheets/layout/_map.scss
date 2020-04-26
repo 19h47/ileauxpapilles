@@ -11,7 +11,7 @@
 		@include size(100%, $grid-gutter-width * 13);
 
 		@at-root .Site-footer & {
-			@include size(100%, $grid-gutter-width * 8);
+			@include size(100%, $grid-gutter-width * 10);
 		}
 	}
 }

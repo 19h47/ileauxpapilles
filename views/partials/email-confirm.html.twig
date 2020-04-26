@@ -30,14 +30,14 @@
 
 <p>Dès réception de votre paiement, nous vous enverrons votre bon cadeau, selon les choix effectués, récapitulés ci-dessous.</p>
 
-<p><strong>RECAPITULATIF DE COMMANDE :</strong></p>
+<p><strong>RÉCAPITULATIF DE COMMANDE :</strong></p>
 
 <ul>
 	<li>Nombre d’invités : <strong>{{ post.menu.number -}}</strong></li>
 	<li>De la part de <strong>{{- post.last_name }} {{ post.first_names -}}</strong></li>
-	<li>Pour <strong>{{ post.menu.names_first_names -}}</strong></li>
-	<li>Choix du menu : <strong>{{- post.menu.type -}}</strong></li>
-	{{- post.menu.drinks ? '<li>Choix des boissons : <strong>' ~ post.menu.drinks | map(drink => drink ) | join( ' / ' ) ~ '</strong></li>' -}}
+	<li>Pour <strong>{{- post.get_field( 'menu' ).names_first_names -}}</strong></li>
+	<li>Choix du menu : <strong>{{- post.get_field( 'menu' ).type | map( type => type.label ) | join( ' ' )  -}}</strong></li>
+	{{- post.get_field( 'menu' ).drinks ? '<li>' ~ __( 'Choice of drinks:', 'delileauxpapilles' ) ~ '<strong> ' ~ post.get_field( 'menu' ).drinks | map( drink => drink.label ) | join( ' / ' ) ~ '</strong></li>' -}}
 	<li>Pour un montant total de <strong>{{- post.total }} €</strong></li>
 </ul>
 
