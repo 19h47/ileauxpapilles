@@ -13,7 +13,7 @@ Header
 <html {{ html_class( 'ie9 no-js no-touch' ) }} {{ site.language_attributes }}>
 <![endif]-->
 <!--[if !(IE 9)]><!-->
-<html {{ site.language_attributes }} {{ html_class( 'no-js no-touch' ) }}>
+<html {{ site.language_attributes }} {{ html_class( 'no-js no-touch' ) }}{{ 'front-page' == namespace and modal ? ' style="overflow: hidden; height: 100%;"' | raw }}>
 <!--<![endif]-->
 
 	<head>
@@ -30,7 +30,7 @@ Header
     </head>
 
 
-    <body class="{{ body_class }}{{ body_classes ? ( ' ' ~ body_classes | join( ' ' ) ) }}">
+    <body class="{{ body_class }}{{ body_classes ? ( ' ' ~ body_classes | join( ' ' ) ) }}{{ 'front-page' == namespace and modal ? ' modal--is-open' }}">
 		<div id="svg-sprite" class="d-none">{% include 'icons.svg' %}</div>
 
 		{% include 'components/cursor.html.twig' %}
@@ -106,6 +106,9 @@ Header
 
 
 		<main id="{{ post.id ? "page-#{post.id}" : 'page' }}" class="page-content Page-wrapper" data-node-type="{{ node_type | default( 'DefaultPage' ) }}">
+
+			{{- 'front-page' == namespace ? modal -}}
+
 			<div class="Site-container">
 				<div class="row">
 					<div class="col-12 col-md-10 offset-md-1 col-hd-7 offset-hd-5">

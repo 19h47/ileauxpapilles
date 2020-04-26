@@ -19,7 +19,23 @@
                 "anchor": "Ancre",
                 "menu": "Menu",
                 "sync": "Synchroniser",
-                "vegetables": "Légumes"
+                "vegetables": "Légumes",
+                "umbrella": "Parasol",
+                "lighthouse": "Phare",
+                "ladle": "Louche",
+                "wine-02": "Vin 02",
+                "glass-of-straw": "Verre paille",
+                "glass": "Verre",
+                "glass-bottle": "Verre bouteille",
+                "cocktail": "Cocktail",
+                "flour": "Farine",
+                "dairy": "Laitage",
+                "beer": "Bière",
+                "wine-01": "Vin 01",
+                "casserole-dish": "Cocotte",
+                "cheese": "Fromage",
+                "meat": "Viande",
+                "salt": "Sel"
             },
             "default_value": [],
             "allow_null": 0,
@@ -47,5 +63,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1587121215
+    "modified": 1587922157
 }

@@ -47,6 +47,17 @@ class Sidebars {
 				'after_widget'  => '',
 			)
 		);
+
+		register_sidebar(
+			array(
+				'name'          => __( 'Modal', 'delileauxpapilles' ),
+				'id'            => 'modal',
+				'before_title'  => '<h3 class="Modal__title">',
+				'after_title'   => '</h3>',
+				'before_widget' => '',
+				'after_widget'  => '',
+			)
+		);
 	}
 }
 

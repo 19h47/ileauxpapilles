@@ -1,0 +1,72 @@
+/**
+ * Modal
+ *
+ *
+ *
+ *
+ *
+ */
+.Modal {
+	@include fixed(top 0 right 0 bottom 0 left 0);
+
+	background-color: rgba(the_color(gray, very-dark), 0.45);
+	z-index: 500;
+
+	@include autoAlpha(0);
+
+	transition: 0.3s map-get($easings, ease-out-expo);
+
+	@at-root .modal--is-open & {
+		@include autoAlpha(1);
+	}
+
+	&__button {
+		@extend %text-transform-uppercase;
+		@include letter-spacing(100);
+	}
+
+	&__title {
+		@include margin(bottom $grid-gutter-width / 2);
+		@include letter-spacing(100);
+		@extend %text-transform-uppercase,
+			%font-family-body,
+			%font-style-normal,
+			%font-weight-semibold;
+
+		font-size: #{$base-font-size}px;
+		line-height: #{$base-line-height}px;
+	}
+
+	&__body {
+		background-color: the_color(white);
+		color: the_color(gray, very-dark);
+		width: 100%;
+
+		@include padding(
+			top $grid-gutter-width right $grid-gutter-width bottom $grid-gutter-width left
+				$grid-gutter-width
+		);
+
+		& > *:first-child {
+			@include margin(top 0);
+		}
+
+		& > *:last-child {
+			@include margin(bottom 0);
+		}
+	}
+
+	.textwidget {
+		& > *:first-child {
+			@include margin(top 0);
+		}
+
+		& > *:last-child {
+			@include margin(bottom 0);
+		}
+
+		a {
+			@extend %text-decoration-underline;
+		}
+	}
+}

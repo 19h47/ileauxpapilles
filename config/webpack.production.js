@@ -99,6 +99,7 @@ module.exports = merge(common, {
 				'background-color-white',
 				'Single-coupon',
 				'picture',
+				'textwidget',
 			],
 			whitelistPatternsChildren: [
 				/^Form/,
@@ -112,6 +113,7 @@ module.exports = merge(common, {
 				/^noUi/,
 				/^Calendar/,
 				/^grecaptcha/,
+				/^Modal/,
 			],
 		}),
 	],

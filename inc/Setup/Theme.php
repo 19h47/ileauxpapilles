@@ -164,6 +164,7 @@ class Theme {
 
 		$context['references'] = Timber::get_sidebar( 'component-references.php' );
 		$context['partners']   = Timber::get_sidebar( 'component-partners.php' );
+		$context['modal']     = Timber::get_sidebar( 'component-modal.php' );
 
 		$context['placeholders'] = array(
 			'last_name'                => _x( 'Last name', 'gift coupon', 'delileauxpapilles' ),

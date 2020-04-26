@@ -1,0 +1,19 @@
+{#  #}
+{% if pop_up %}
+
+<div id="modal" class="Modal page-block" data-node-type="ModalBlock">
+	<div class="Site-container h-100">
+		<div class="row h-100">
+			<div class="col-12 col-sm-6 offset-sm-3 col-md-4 offset-md-4 d-flex align-items-center h-100">
+				<div class="Modal__body js-modal-body">
+					<header class="d-flex">
+						<button type="button" class="Modal__button margin-left-auto js-modal-button">{{- __( 'Close', 'delileauxpapilles' ) -}}</button>
+					</header>
+					{{ pop_up }}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endif %}

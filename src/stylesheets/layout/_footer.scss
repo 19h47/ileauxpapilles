@@ -64,6 +64,10 @@
 			@include margin(bottom 0);
 		}
 
+		a {
+			@extend %text-decoration-underline;
+		}
+
 		strong {
 			@at-root .Front-page & {
 				color: the_color(white);

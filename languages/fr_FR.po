@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: De l'île aux papilles\n"
-"POT-Creation-Date: 2020-04-26 16:57+0200\n"
-"PO-Revision-Date: 2020-04-26 16:57+0200\n"
+"POT-Creation-Date: 2020-04-26 20:00+0200\n"
+"PO-Revision-Date: 2020-04-26 20:00+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -83,12 +83,12 @@ msgstr "Message d’alerte"
 msgid "A new coupon request!"
 msgstr "Une nouvelle demande de coupon !"
 
-#: inc/Plugins/Acf.php:27
+#: inc/Plugins/Acf.php:33
 msgctxt "gift coupon"
 msgid "Settings"
 msgstr "Paramètres"
 
-#: inc/Plugins/Acf.php:28
+#: inc/Plugins/Acf.php:34
 msgctxt "gift coupon"
 msgid "Coupon Settings"
 msgstr "Paramètres du coupon cadeau"
@@ -564,6 +564,10 @@ msgstr "Première zone du pied de page"
 msgid "Footer Secondary"
 msgstr "Seconde zone du pied de page"
 
+#: inc/Setup/Sidebars.php:53
+msgid "Modal"
+msgstr "Pop-up"
+
 #: inc/Setup/Theme.php:109
 msgid "Share on Twitter"
 msgstr "Partager sur Twitter"
@@ -576,40 +580,44 @@ msgstr "Partager sur Facebook"
 msgid "Share on LinkedIn"
 msgstr "Partager sur LinkedIn"
 
-#: inc/Setup/Theme.php:169
+#: inc/Setup/Theme.php:170
 msgctxt "gift coupon"
 msgid "Last name"
 msgstr "Nom"
 
-#: inc/Setup/Theme.php:170
+#: inc/Setup/Theme.php:171
 msgctxt "gift coupon"
 msgid "First name(s)"
 msgstr "Prénom(s)"
 
-#: inc/Setup/Theme.php:171
+#: inc/Setup/Theme.php:172
 msgctxt "gift coupon"
 msgid "E-mail"
 msgstr "E-mail"
 
-#: inc/Setup/Theme.php:172
+#: inc/Setup/Theme.php:173
 msgctxt "gift coupon"
 msgid "Address"
 msgstr "Adresse"
 
-#: inc/Setup/Theme.php:173
+#: inc/Setup/Theme.php:174
 msgctxt "gift coupon"
 msgid "Postal code and city"
 msgstr "Code postal et ville"
 
-#: inc/Setup/Theme.php:174
+#: inc/Setup/Theme.php:175
 msgctxt "gift coupon"
 msgid "Lastname(s) and firstname(s)"
 msgstr "Nom(s) et prénom(s)"
 
-#: inc/Setup/Theme.php:175
+#: inc/Setup/Theme.php:176
 msgctxt "gift coupon"
 msgid "Your message"
 msgstr "Votre message"
+
+#: views/components/modal.html.twig:10
+msgid "Close"
+msgstr "Fermer"
 
 #: views/components/partners.html.twig:6
 msgid "Thanks to our partners and supporters:"
