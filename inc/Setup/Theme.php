@@ -164,7 +164,7 @@ class Theme {
 
 		$context['references'] = Timber::get_sidebar( 'component-references.php' );
 		$context['partners']   = Timber::get_sidebar( 'component-partners.php' );
-		$context['modal']     = Timber::get_sidebar( 'component-modal.php' );
+		$context['modal']      = Timber::get_sidebar( 'component-modal.php' );
 
 		$context['placeholders'] = array(
 			'last_name'                => _x( 'Last name', 'gift coupon', 'delileauxpapilles' ),
@@ -178,6 +178,8 @@ class Theme {
 
 		$context['coupon_fields']['drinks'] = get_field( 'drinks', 'coupon-options' );
 		$context['coupon_fields']['type']   = get_field( 'type', 'coupon-options' );
+		$context['coupon_fields']['labels']   = get_field( 'labels', 'coupon-options' );
+		$context['email_fiels']['content']  = get_field( 'content', 'email-options' );
 
 		return $context;
 	}

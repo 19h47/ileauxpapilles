@@ -1,44 +1,14 @@
-<p>Bonjour,</p>
-<p>Merci pour votre commande de carte-cadeau. C’est avec grand plaisir que nous accueillerons prochainement vos invités, à notre table.</p>
-<p>Afin de valider votre commande, merci de bien vouloir envoyer votre règlement :</p>
+{{- email_fiels.content -}}
+
+<p><strong style="text-transform: uppercase;">{{- __( 'Order summary:', 'delileauxpapilles' ) -}}</strong></p>
 
 <ul>
-	<li>
-		<p>par chèque :</p>
-		<p>Avec la copie de ce mail, par courrier, à l’adresse suivante :</p>
-		<p>
-			Restaurant De l’île aux papilles<br>
-			Place Camille Mémain<br>
-			17310 Saint Pierre d'Oleron
-		</p>
-	</li>
-
-	<li>
-		<p>par virement bancaire :</p>
-		<p>
-			RIB du compte DE L'ILE AUX PAPILLES<br>
-			IBAN : FR76 3004 7142 7800 0202 3570 172<br>
-			BIC : CMCIFRPP
-		</p>
-	</li>
-
-	<li>
-		<p>en passant directement au restaurant :</p>
-		<p>Paiement par chèque ou espèces acceptés.</p>
-	</li>
-</ul>
-
-<p>Dès réception de votre paiement, nous vous enverrons votre bon cadeau, selon les choix effectués, récapitulés ci-dessous.</p>
-
-<p><strong>RÉCAPITULATIF DE COMMANDE :</strong></p>
-
-<ul>
-	<li>Nombre d’invités : <strong>{{ post.menu.number -}}</strong></li>
-	<li>De la part de <strong>{{- post.last_name }} {{ post.first_names -}}</strong></li>
-	<li>Pour <strong>{{- post.get_field( 'menu' ).names_first_names -}}</strong></li>
-	<li>Choix du menu : <strong>{{- post.get_field( 'menu' ).type | map( type => type.label ) | join( ' ' )  -}}</strong></li>
+	<li>{{- __( 'Number of guests:', 'delileauxpapilles' )}} <strong>{{ post.menu_number -}}</strong></li>
+	<li>{{- __( 'From', 'delileauxpapilles' ) }} <strong>{{- post.last_name }} {{ post.first_names -}}</strong></li>
+	<li>{{- __( 'For', 'delileauxpapilles' ) }} <strong>{{- post.get_field( 'menu' ).names_first_names -}}</strong></li>
+	<li>{{- __( 'Choice of menu:', 'delileauxpapilles' )}} <strong>{{- post.get_field( 'menu' ).type | map( type => type.label ) | join( ' ' )  -}}</strong></li>
 	{{- post.get_field( 'menu' ).drinks ? '<li>' ~ __( 'Choice of drinks:', 'delileauxpapilles' ) ~ '<strong> ' ~ post.get_field( 'menu' ).drinks | map( drink => drink.label ) | join( ' / ' ) ~ '</strong></li>' -}}
-	<li>Pour un montant total de <strong>{{- post.total }} €</strong></li>
+	<li>{{- __( 'For a total amount of', 'delileauxpapilles' ) }} <strong>{{- post.total }} €</strong></li>
 </ul>
 
 <p>Nous restons à votre entière disposition pour toute information complémentaire.</p>

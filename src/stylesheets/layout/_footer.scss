@@ -64,19 +64,21 @@
 			@include margin(bottom 0);
 		}
 
-		a {
-			@extend %text-decoration-underline;
-		}
+		.textwidget {
+			a {
+				@extend %text-decoration-underline;
+			}
 
-		strong {
-			@at-root .Front-page & {
-				color: the_color(white);
-			}
-			@at-root .Restaurant-page & {
-				color: the_color(white);
-			}
-			@at-root .Voucher-page & {
-				color: the_color(white);
+			strong {
+				@at-root .Front-page & {
+					color: the_color(white);
+				}
+				@at-root .Restaurant-page & {
+					color: the_color(white);
+				}
+				@at-root .Voucher-page & {
+					color: the_color(white);
+				}
 			}
 		}
 

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: De l'île aux papilles\n"
-"POT-Creation-Date: 2020-04-26 20:00+0200\n"
-"PO-Revision-Date: 2020-04-26 20:00+0200\n"
+"POT-Creation-Date: 2020-04-27 17:38+0200\n"
+"PO-Revision-Date: 2020-04-27 17:38+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -83,15 +83,15 @@ msgstr "Message d’alerte"
 msgid "A new coupon request!"
 msgstr "Une nouvelle demande de coupon !"
 
-#: inc/Plugins/Acf.php:33
-msgctxt "gift coupon"
-msgid "Settings"
-msgstr "Paramètres"
-
-#: inc/Plugins/Acf.php:34
+#: inc/Plugins/Acf.php:34 inc/Plugins/Acf.php:35
 msgctxt "gift coupon"
 msgid "Coupon Settings"
 msgstr "Paramètres du coupon cadeau"
+
+#: inc/Plugins/Acf.php:45 inc/Plugins/Acf.php:46
+msgctxt "gift coupon"
+msgid "Email Settings"
+msgstr "Paramètres de l’email"
 
 #: inc/Setup/Menus.php:33 views/components/menu.html.twig:18
 msgid "Menu"
@@ -631,56 +631,88 @@ msgstr "Accès"
 msgid "Follow us!"
 msgstr "Suivez-nous !"
 
-#: views/pages/gift-coupon.html.twig:55
+#: views/pages/gift-coupon.html.twig:60
 msgctxt "gift coupon"
 msgid "From…"
 msgstr "De la part de…"
 
-#: views/pages/gift-coupon.html.twig:72
+#: views/pages/gift-coupon.html.twig:79
 msgctxt "gift coupon"
 msgid "Gift card offered to…"
 msgstr "Carte cadeau offerte à…"
 
-#: views/pages/gift-coupon.html.twig:78
+#: views/pages/gift-coupon.html.twig:87
 msgctxt "gift coupon"
-msgid "I wish to receive the gift voucher:"
-msgstr "Je souhaite recevoir le bon cadeau :"
+msgid "I wish to receive the gift card:"
+msgstr "Je souhaite recevoir la carte cadeau :"
 
-#: views/pages/gift-coupon.html.twig:82
+#: views/pages/gift-coupon.html.twig:91
 msgctxt "gift coupon"
 msgid "by email (the voucher will be printed)"
 msgstr "par email (le coupon sera à imprimer)"
 
-#: views/pages/gift-coupon.html.twig:83
+#: views/pages/gift-coupon.html.twig:92
 msgctxt "gift coupon"
 msgid "by mail"
 msgstr "par courrier"
 
-#: views/pages/gift-coupon.html.twig:87
+#: views/pages/gift-coupon.html.twig:97
 msgctxt "gift coupon"
 msgid "I compose the gift card:"
 msgstr "Je compose la carte-cadeau :"
 
-#: views/pages/gift-coupon.html.twig:96
+#: views/pages/gift-coupon.html.twig:106
 msgctxt "gift coupon"
 msgid "Number of people invited"
 msgstr "Nombre de personnes invitées"
 
-#: views/pages/gift-coupon.html.twig:111
+#: views/pages/gift-coupon.html.twig:121
+msgctxt "gift coupon"
 msgid " € / pers."
 msgstr " € / pers."
 
-#: views/pages/gift-coupon.html.twig:120
+#: views/pages/gift-coupon.html.twig:130
+msgctxt "gift coupon"
 msgid "Total"
 msgstr "Total"
 
-#: views/pages/gift-coupon.html.twig:149
+#: views/pages/gift-coupon.html.twig:138
+msgctxt "gift coupon"
+msgid "Additional details to your order:"
+msgstr "Précisions complémentaires à votre commande :"
+
+#: views/pages/gift-coupon.html.twig:156
+msgctxt "gift coupon"
 msgid "Send"
 msgstr "Envoyer"
 
-#: views/partials/email-confirm.html.twig:40
+#: views/partials/email-confirm.html.twig:3
+msgid "Order summary:"
+msgstr "Récapitulatif de commande :"
+
+#: views/partials/email-confirm.html.twig:6
+msgid "Number of guests:"
+msgstr "Nombre d’invités :"
+
+#: views/partials/email-confirm.html.twig:7
+msgid "From"
+msgstr "De la part de"
+
+#: views/partials/email-confirm.html.twig:8
+msgid "For"
+msgstr "Pour"
+
+#: views/partials/email-confirm.html.twig:9
+msgid "Choice of menu:"
+msgstr "Choix du menu :"
+
+#: views/partials/email-confirm.html.twig:10
 msgid "Choice of drinks:"
 msgstr "Choix de boissons :"
+
+#: views/partials/email-confirm.html.twig:11
+msgid "For a total amount of"
+msgstr "Pour un montant total de"
 
 #: views/partials/popupcontent.html.twig:4
 msgid "Route"

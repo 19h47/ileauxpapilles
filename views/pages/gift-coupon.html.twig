@@ -6,7 +6,7 @@ Gift coupon
 {% extends 'index.html.twig' %}
 
 {% macro checkbox( id, label, name, value, price ) %}
-	<div id="{{ id }}" tabindex="0" class="Checkbox page-block " role="checkbox" aria-checked="false" data-node-type="CheckboxBlock">
+	<div id="{{ id }}" tabindex="0" class="Checkbox page-block" role="checkbox" aria-checked="false" data-node-type="CheckboxBlock">
 		<button type="button" tabindex="-1"></button>
 		<span class="d-flex flex-column flex-md-row w-100">
 			{{- label -}}
@@ -34,25 +34,30 @@ Gift coupon
 		<div class="Site-container">
 			<div class="row">
 
-				<div class="col-12 col-md-3 offset-md-1">
-					<div class="Wysiwyg">
-						<p class="d-md-none">En fonction de vos envies, de votre budget et des préférences de vos invités, composez votre carte cadeau sur-mesure et faîtes plaisir à vos invités !</p>
-						<p>
-						<strong>Comment commander une carte cadeau ?</strong><br>
-						1 - Remplissez le formulaire ci-contre<br>
-						2 - Recevez le mail de confirmation de commande avec les instructions de paiement<br>
-						3 - Effectuer le paiement par chèque ou par virement<br>
-						4 - Recevez votre carte cadeau, valable un an, à compter de la date d'achat
-						</p>
-					</div>
-				</div>
+				{% if coupon_fields.labels.aside %}
+					<div class="col-12 col-md-3 offset-md-1">
+						<div class="Wysiwyg">
 
-				<div class="col-12 col-md-6 offset-md-1">
-					<form class="Form" action="" method="post">
-						<div class="Form__group d-none d-md-block">
-							<p>En fonction de vos envies, de votre budget et des préférences de vos invités, composez votre carte cadeau sur-mesure et faîtes plaisir à vos invités !</p>
+							{% if coupon_fields.labels.introduction %}
+								<p class="d-md-none">{{- coupon_fields.labels.introduction -}}</p>
+							{% endif %}
+
+							{{- coupon_fields.labels.aside -}}
 						</div>
-						<div class="Form__group"><h3 class="Form__title">{{- _x( 'From…', 'gift coupon', 'delileauxpapilles' ) -}}</h3></div>
+					</div>
+				{% endif %}
+
+				<div class="col-12 col-md-6{{ coupon_fields.labels.aside ? ' offset-md-1' : ' offset-md-5' }}">
+					<form class="Form" action="" method="post">
+
+						{% if coupon_fields.labels.introduction %}
+							<div class="Form__group d-none d-md-block">
+								<p>{{- coupon_fields.labels.introduction -}}</p>
+							</div>
+						{% endif %}
+
+						{# From #}
+						<div class="Form__group"><h3 class="Form__title">{{- coupon_fields.labels.from | default( _x( 'From…', 'gift coupon', 'delileauxpapilles' ) ) -}}</h3></div>
 						<div class="Form__group">
 							<input class="Input" id="last_name" type="text" name="last_name" required placeholder="{{ placeholders.last_name }} *">
 						</div>
@@ -68,14 +73,18 @@ Gift coupon
 						<div class="Form__group">
 							<input class="Input" id="postal_code_city" type="text" name="postal_code_city" required placeholder="{{ placeholders.postal_code_and_city }} *">
 						</div>
+
+						{# To #}
 						<div class="Form__group">
-							<h3 class="Form__title">{{- _x( 'Gift card offered to…', 'gift coupon', 'delileauxpapilles' ) -}}</h3>
+							<h3 class="Form__title">{{- coupon_fields.labels.to | default( _x( 'Gift card offered to…', 'gift coupon', 'delileauxpapilles' ) ) -}}</h3>
 						</div>
 						<div class="Form__group">
 							<input class="Input" id="menu[names_first_names]" type="text" name="menu[names_first_names]" required placeholder="{{ placeholders.lastnames_and_firstnames }} *">
 						</div>
+
+						{# Type #}
 						<div class="Form__group">
-							<h3 class="Form__title">{{- _x( 'I wish to receive the gift voucher:', 'gift coupon', 'delileauxpapilles' ) -}}</h3>
+							<h3 class="Form__title">{{- coupon_fields.labels.type | default( _x( 'I wish to receive the gift card:', 'gift coupon', 'delileauxpapilles' ) ) -}}</h3>
 						</div>
 
 						<div id="type" class="Form__group page-block margin-left-3" role="radiogroup" data-node-type="RadioGroupBlock">
@@ -83,8 +92,9 @@ Gift coupon
 							{{- _self.radio( false, _x( 'by mail', 'gift coupon', 'delileauxpapilles' ), false, 'type', 'mail' ) -}}
 						</div>
 
+						{# Compose #}
 						<div class="Form__group">
-							<h3 class="Form__title">{{- _x( 'I compose the gift card:', 'gift coupon', 'delileauxpapilles' ) -}}</h3>
+							<h3 class="Form__title">{{- coupon_fields.labels.compose | default( _x( 'I compose the gift card:', 'gift coupon', 'delileauxpapilles' ) ) -}}</h3>
 						</div>
 
 						<div class="Form__group">
@@ -108,7 +118,7 @@ Gift coupon
 
 								{% for field in coupon_fields.drinks %}
 									<div class="Form__group">
-										{{- _self.checkbox( field.value, field.label, 'menu[drinks][' ~ loop.index0 ~ ']', field.value, { label: field.price ~ __( ' € / pers.', 'delileauxpapilles' ), value: field.price }) -}}
+										{{- _self.checkbox( field.value, field.label, 'menu[drinks][' ~ loop.index0 ~ ']', field.value, { label: field.price ~ _x( ' € / pers.', 'gift coupon', 'delileauxpapilles' ), value: field.price }) -}}
 									</div>
 								{% endfor %}
 
@@ -117,36 +127,33 @@ Gift coupon
 
 						<div class="Form__group">
 							<div class="row align-items-center">
-								<div class="col-6 col-md-2 offset-md-8 Form__total">{{ __( 'Total', 'delileauxpapilles' ) }}</div>
+								<div class="col-6 col-md-2 offset-md-8 Form__total">{{ _x( 'Total', 'gift coupon', 'delileauxpapilles' ) }}</div>
 								<div class="col-6 col-md-2 text-align-right"><span class="js-price"></span> €</div>
 								<input class="js-total" type="hidden" name="total" value="">
 							</div>
 						</div>
 
+						{# Clarification #}
 						<div class="Form__group">
-							<h3 class="Form__title">Précisions complémentaires à votre commande :</h3>
+							<h3 class="Form__title">{{- coupon_fields.labels.clarification | default( _x( 'Additional details to your order:', 'gift coupon', 'delileauxpapilles' ) ) -}}</h3>
 						</div>
 
 						<div class="Form__group">
 							<textarea class="Textarea" name="message" id="message" placeholder="{{ placeholders.your_message }}"></textarea>
 						</div>
 
-						<div class="Form__group">
-							<p>En envoyant ce formulaire vous acceptez que les informations saisies soient utilisées dans le cadre du traitement de votre demande de réservation et des échanges par e-mail, courrier postal ou téléphone qui peuvent en découler et vous prenez connaissance de notre politique de confidentialité
-
-							<p><a class="text-decoration-underline" href="{{ legal_notice_permalink }}"><strong>Consultez notre politique de confidentialité.</strong></a></p>
-						</div>
+						{% if coupon_fields.labels.legals %}
+							<div class="Form__group Wysiwyg">{{- coupon_fields.labels.legals -}}</div>
+						{% endif %}
 
 						<div class="Form__group">
-							<p class="Form__message Form__message--success">
-								Merci pour votre commande de carte-cadeau. C’est avec grand plaisir que nous accueillerons prochainement vos invités, à notre table. Pour valider votre commande, un email vous a été envoyé !
-							</p>
+							<p class="Form__message Form__message--success">{{- coupon_fields.labels.success -}}</p>
 						</div>
 
 						<div class="Form__group margin-top-4">
 							<div class="row align-items-center">
 								<div class="col-12 col-md-4">
-									<button class="Button w-100" type="submit">{{- __( 'Send', 'delileauxpapilles' ) -}}</button>
+									<button class="Button w-100" type="submit">{{- _x( 'Send', 'gift coupon', 'delileauxpapilles' ) -}}</button>
 								</div>
 							</div>
 						</div>

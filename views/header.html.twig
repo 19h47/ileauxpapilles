@@ -79,11 +79,13 @@ Header
 							{% if post.get_field( 'hero' ).introduction %}
 								<div class="Page__introduction Wysiwyg">
 									{{- post.get_field( 'hero' ).introduction | raw -}}
-									{%- if phone_number -%}
-										<a href="tel:{{ phone_number | replace ( { ' ' : '' } ) }}" class="margin-bottom-0 margin-right-3 margin-left-auto">Réservation au <strong>{{- phone_number -}}</strong></a>
-									{%- endif -%}
 								</div>
 							{% endif %}
+
+							{%- if phone_number and 'front-page' == namespace -%}
+								<a href="tel:{{ phone_number | replace ( { ' ' : '' } ) }}" class="margin-bottom-0 margin-right-3 margin-left-auto">Réservation au <strong>{{- phone_number -}}</strong></a>
+							{%- endif -%}
+
 						</div>
 
 						{% if post.thumbnail %}

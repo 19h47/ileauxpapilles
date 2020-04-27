@@ -29,16 +29,16 @@ Single: coupon
 
 			<header class="Single-coupon__header">
 				<div class="Site-container">
-					<div class="row">
+					<div class="row d-flex align-items-center">
 						<div class="col-3">
 							<div class="Single-coupon__icon">
 								{% include 'svg/use.html.twig' with { icon: 'aperitif' } %}
 							</div>
 						</div>
-						<div class="col-4">
-							<h1 class="Single-coupon__title">Bon cadeau<br>Repas au restaurant</h1>
+						<div class="col-6">
+							<h2 class="Single-coupon__title">Bon cadeau Repas au restaurant</h2>
 						</div>
-						<div class="col-5">
+						<div class="col-3">
 							<div class="Single-coupon__logo">
 								{% include 'svg/use.html.twig' with { icon: 'logo' } %}
 							</div>
@@ -51,7 +51,7 @@ Single: coupon
 				<div class="Site-container">
 					<div class="row">
 						<div class="col-6">
-							Pour <strong>{{- post.get_field( 'menu' ).names_first_names -}}</strong>
+							{{- __( 'For', 'delileauxpapilles' ) }} <strong>{{- post.get_field( 'menu' ).names_first_names -}}</strong>
 						</div>
 						<div class="col-6">De la part de <strong>{{- post.last_name }} {{ post.first_names -}}</strong></div>
 					</div>
@@ -70,9 +70,10 @@ Single: coupon
 								<strong>{{- post.get_field( 'menu' ).drinks ? post.get_field( 'menu' ).drinks | map( drink => drink.label ) | join( ' / ' ) ~ ' + ' }}{{ post.get_field( 'menu' ).type | map( type => type.label ) | join( ' ' ) -}}</strong><br>
 								<br>
 								au restaurant De l’île aux Papilles<br>
-								<em>Pensez à réserver !</em>
 							</div>
 							<br>
+							<br>
+							<em>Pensez à réserver !</em>
 							<br>
 							<em>{{ site.link | replace( { 'http://' : '' }, { 'https://' : '' } ) }} // {{ phone_number }}</em><br>
 							<em>À l’angle de la place Camille Mémain à Saint-Pierrer d’Oléron</em>
