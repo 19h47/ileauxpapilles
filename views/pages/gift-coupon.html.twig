@@ -7,7 +7,7 @@ Gift coupon
 
 {% macro checkbox( id, label, name, value, price ) %}
 	<div id="{{ id }}" tabindex="0" class="Checkbox page-block" role="checkbox" aria-checked="false" data-node-type="CheckboxBlock">
-		<button type="button" tabindex="-1"></button>
+		<button type="button" tabindex="-1" aria-label={{ label }}></button>
 		<span class="d-flex flex-column flex-md-row w-100">
 			{{- label -}}
 			<span class="margin-left-md-auto white-space-nowrap">{{- price.label -}}</span>
@@ -59,19 +59,19 @@ Gift coupon
 						{# From #}
 						<div class="Form__group"><h3 class="Form__title">{{- coupon_fields.labels.from | default( _x( 'From…', 'gift coupon', 'delileauxpapilles' ) ) -}}</h3></div>
 						<div class="Form__group">
-							<input class="Input" id="last_name" type="text" name="last_name" required placeholder="{{ placeholders.last_name }} *">
+							<input class="Input" id="last_name" type="text" name="last_name" required placeholder="{{ placeholders.last_name }} *" aria-label="{{  placeholders.last_name  }}">
 						</div>
 						<div class="Form__group">
-							<input class="Input" id="first_names" type="text" name="first_names" required placeholder="{{ placeholders.first_names }} *">
+							<input class="Input" id="first_names" type="text" name="first_names" required placeholder="{{ placeholders.first_names }} *" aria-label="{{ placeholders.first_names }}">
 						</div>
 						<div class="Form__group">
-							<input class="Input" id="email" type="email" name="email" required placeholder="{{ placeholders.email }} *">
+							<input class="Input" id="email" type="email" name="email" required placeholder="{{ placeholders.email }} *" aria-label="{{ placeholders.email }}">
 						</div>
 						<div class="Form__group">
-							<input class="Input" id="address" type="text" name="address" required placeholder="{{ placeholders.address }} *">
+							<input class="Input" id="address" type="text" name="address" required placeholder="{{ placeholders.address }} *" aria-label="{{ placeholders.address }}">
 						</div>
 						<div class="Form__group">
-							<input class="Input" id="postal_code_city" type="text" name="postal_code_city" required placeholder="{{ placeholders.postal_code_and_city }} *">
+							<input class="Input" id="postal_code_city" type="text" name="postal_code_city" required placeholder="{{ placeholders.postal_code_and_city }} *" aria-label="{{ placeholders.postal_code_and_city }}">
 						</div>
 
 						{# To #}
@@ -79,7 +79,7 @@ Gift coupon
 							<h3 class="Form__title">{{- coupon_fields.labels.to | default( _x( 'Gift card offered to…', 'gift coupon', 'delileauxpapilles' ) ) -}}</h3>
 						</div>
 						<div class="Form__group">
-							<input class="Input" id="menu[names_first_names]" type="text" name="menu[names_first_names]" required placeholder="{{ placeholders.lastnames_and_firstnames }} *">
+							<input class="Input" id="menu[names_first_names]" type="text" name="menu[names_first_names]" required placeholder="{{ placeholders.lastnames_and_firstnames }} *" aria-label="{{ placeholders.lastnames_and_firstnames }}">
 						</div>
 
 						{# Type #}
@@ -103,7 +103,7 @@ Gift coupon
 									<input id="menu-number" class="Input w-100 js-person" min="1" step="1" type="number" name="menu[number]" value="1" required>
 								</div>
 								<div class="col-8 col-md-10">
-									<label for="number">{{- _x( 'Number of people invited', 'gift coupon', 'delileauxpapilles' ) }}&nbsp;*</label>
+									<label for="menu-number">{{- _x( 'Number of people invited', 'gift coupon', 'delileauxpapilles' ) }}&nbsp;*</label>
 								</div>
 							</div>
 						</div>
@@ -139,7 +139,7 @@ Gift coupon
 						</div>
 
 						<div class="Form__group">
-							<textarea class="Textarea" name="message" id="message" placeholder="{{ placeholders.your_message }}"></textarea>
+							<textarea class="Textarea" name="message" id="message" placeholder="{{ placeholders.your_message }}" aria-label="{{ placeholders.your_message }}"></textarea>
 						</div>
 
 						{% if coupon_fields.labels.legals %}

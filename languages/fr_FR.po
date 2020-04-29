@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: De l'île aux papilles\n"
-"POT-Creation-Date: 2020-04-27 17:38+0200\n"
-"PO-Revision-Date: 2020-04-27 17:38+0200\n"
+"POT-Creation-Date: 2020-04-29 00:05+0200\n"
+"PO-Revision-Date: 2020-04-29 00:08+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -631,6 +631,10 @@ msgstr "Accès"
 msgid "Follow us!"
 msgstr "Suivez-nous !"
 
+#: views/header.html.twig:83
+msgid "Reservation at"
+msgstr "Réservation au"
+
 #: views/pages/gift-coupon.html.twig:60
 msgctxt "gift coupon"
 msgid "From…"
@@ -686,6 +690,11 @@ msgctxt "gift coupon"
 msgid "Send"
 msgstr "Envoyer"
 
+#: views/pages/single-coupon.html.twig:54
+#: views/partials/email-confirm.html.twig:8
+msgid "For"
+msgstr "Pour"
+
 #: views/partials/email-confirm.html.twig:3
 msgid "Order summary:"
 msgstr "Récapitulatif de commande :"
@@ -697,10 +706,6 @@ msgstr "Nombre d’invités :"
 #: views/partials/email-confirm.html.twig:7
 msgid "From"
 msgstr "De la part de"
-
-#: views/partials/email-confirm.html.twig:8
-msgid "For"
-msgstr "Pour"
 
 #: views/partials/email-confirm.html.twig:9
 msgid "Choice of menu:"
@@ -737,9 +742,6 @@ msgstr "Jérémy Levron"
 #. Author URI of the plugin/theme
 msgid "https://19h47.fr/"
 msgstr "https://19h47.fr/"
-
-#~ msgid "Reservation recommended on"
-#~ msgstr "Réservation conseillée au"
 
 #~ msgctxt "placeholders"
 #~ msgid "Address"

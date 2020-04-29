@@ -11,8 +11,8 @@
 				<div class="row">
 					{% for post in posts %}
 						<div class="col-6 col-sm-3 col-md-2">
-							{{- post.get_field( 'link' ) ? "<a href=\"#{post.get_field( 'link' )}\" target=\"_blank\" rel=\"noopener\" class=\"d-block\">" | raw -}}
-								{%- include 'partials/image.html.twig' with { classes: [ 'Partners__item' ], image: post.thumbnail } -%}
+							{{- post.get_field( 'link' ) ? "<a href=\"#{post.get_field( 'link' )}\" target=\"_blank\" rel=\"noopener\" class=\"d-block\" aria-label=\"#{post.title}\">" | raw -}}
+								{%- include 'partials/image.html.twig' with { classes: [ 'Partners__item' ], image: post.thumbnail } only -%}
 							{{- post.get_field( 'link' ) ? '</a>' | raw -}}
 						</div>
 					{% endfor %}

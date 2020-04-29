@@ -32,7 +32,7 @@ export default class MapBlock extends AbstractBlock {
 
 		const marker = L.marker([latitude, longitude], { icon: customIcon });
 
-		const tileLayer = L.tileLayer('http://{s}.google.com/vt/lyrs=p&x={x}&y={y}&z={z}', {
+		const tileLayer = L.tileLayer('https://{s}.google.com/vt/lyrs=p&x={x}&y={y}&z={z}', {
 			maxZoom: 20,
 			subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
 		});
