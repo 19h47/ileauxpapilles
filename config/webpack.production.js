@@ -100,6 +100,7 @@ module.exports = merge(common, {
 				'Single-coupon',
 				'picture',
 				'textwidget',
+				'select',
 			],
 			whitelistPatternsChildren: [
 				/^Form/,
@@ -107,7 +108,7 @@ module.exports = merge(common, {
 				/^tippy-/,
 				/^wp-block-/,
 				/^flickity-/,
-				/^wpcf7-/,
+				/^wpcf7/,
 				/^Form__list/,
 				/^Share__link--/,
 				/^noUi/,

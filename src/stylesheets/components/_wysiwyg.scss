@@ -40,9 +40,13 @@
 	}
 
 	ul {
-		@include padding(left $grid-gutter-width);
+		@include padding(left $grid-gutter-width / 2);
 		@include margin(top $grid-gutter-width bottom $grid-gutter-width);
 		@extend %list-style-type-none;
+
+		@include media-breakpoint-up(md) {
+			@include padding(left $grid-gutter-width);
+		}
 
 		li {
 			&:before {
@@ -96,5 +100,13 @@
 
 		background-color: the_color(cyan, dark-moderate);
 		color: the_color(white);
+	}
+
+	img {
+		@extend .d-block;
+		@include margin(right auto left auto);
+
+		max-width: 100%;
+		height: auto;
 	}
 }

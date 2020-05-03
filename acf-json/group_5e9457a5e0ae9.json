@@ -112,7 +112,7 @@
                             "default_value": "",
                             "tabs": "all",
                             "toolbar": "basic",
-                            "media_upload": 0,
+                            "media_upload": 1,
                             "delay": 0
                         }
                     ],
@@ -224,7 +224,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "",
+                                "width": "50",
                                 "class": "",
                                 "id": ""
                             },
@@ -234,6 +234,35 @@
                             },
                             "default_value": [
                                 "transparent"
+                            ],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "return_format": "value",
+                            "ajax": 0,
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_5ead44a1bb15e",
+                            "label": "Taille",
+                            "name": "size",
+                            "type": "select",
+                            "instructions": "Indiquer la taille de l'image",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "xs": "Extra petite",
+                                "s": "Petite",
+                                "m": "Moyenne",
+                                "l": "Grande"
+                            },
+                            "default_value": [
+                                "l"
                             ],
                             "allow_null": 0,
                             "multiple": 0,
@@ -758,5 +787,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1587807580
+    "modified": 1588491512
 }

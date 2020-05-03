@@ -1,0 +1,52 @@
+/**
+ * WPCF7
+ *
+ *
+ *
+ *
+ */
+.wpcf7 {
+	.screen-reader-response {
+		@extend .d-none;
+	}
+
+	input[type='submit'] {
+		@extend .Button;
+	}
+	input[type='text'] {
+		@extend .Input;
+	}
+
+	input[type='email'] {
+		@extend .Input;
+	}
+
+	input[type='tel'] {
+		@extend .Input;
+	}
+
+	input[type='date'] {
+		@extend .Input;
+	}
+
+	select {
+		@extend .Input;
+	}
+
+	textarea {
+		@extend .Textarea;
+	}
+	&-form {
+		.wpcf7-form-control-wrap {
+			@extend .Form__group;
+		}
+	}
+
+	&-not-valid-tip {
+		@extend .Form__message;
+	}
+
+	&-response-output {
+		@extend .Form__group;
+	}
+}

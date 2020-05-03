@@ -22,10 +22,7 @@ const production = 'production' !== process.env.NODE_ENV;
 
 	const images = [...document.querySelectorAll('.js-baseline')];
 
-	images.map($image => {
-		const baseline = new Baseline($image);
-		return baseline.init();
-	});
+	images.map($image => new Baseline($image).init());
 
 	const startingBlocks = new StartingBlocks({
 		// manualDomAppend: true,

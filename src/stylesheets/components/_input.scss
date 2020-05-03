@@ -6,18 +6,23 @@
 .Input {
 	@include reset-placeholder(the_color(white));
 	@include padding(
-		top $grid-gutter-width / 2 right $grid-gutter-width bottom $grid-gutter-width / 2 left
-			$grid-gutter-width
+		top $grid-gutter-width / 2 right $grid-gutter-width / 2 bottom $grid-gutter-width / 2 left
+			$grid-gutter-width / 2
 	);
 
 	background-color: rgba(the_color(white), 0.15);
 	transition: box-shadow 0.3s map-get($easings, ease-out-expo);
 	color: the_color(white);
 	width: 100%;
+	border-radius: 0;
 
 	&:focus {
 		outline: none;
 		box-shadow: 0 0 0 3px rgba(the_color(white), 0.05);
+	}
+
+	@include media-breakpoint-up(md) {
+		@include padding(right $grid-gutter-width left $grid-gutter-width);
 	}
 
 	&[type='number'] {

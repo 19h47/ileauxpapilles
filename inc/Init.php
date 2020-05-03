@@ -32,6 +32,7 @@ class Init {
 			Setup\PostTypes\Reference::class,
 			Setup\PostTypes\Coupon::class,
 			Setup\PostTypes\Partner::class,
+			Setup\Media::class,
 			Custom\Extras::class,
 			Api\Customizer::class,
 			Plugins\TinyMCE::class,
