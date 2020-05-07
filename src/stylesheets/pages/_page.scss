@@ -29,10 +29,27 @@
 	}
 
 	&__subtitle {
+		@extend %text-align-center, %text-align-md-left;
 		@extend %margin-0;
 		@extend .h2;
 
-		color: the_color(cyan, dark-moderate);
+		color: the_color(white);
+
+		@at-root .Producers-page & {
+			color: the_color(white);
+		}
+
+		@at-root .Front-page & {
+			color: the_color(yellow, grayish);
+		}
+
+		@at-root .Restaurant-page & {
+			color: the_color(yellow, grayish);
+		}
+
+		@at-root .Voucher-page & {
+			color: the_color(yellow, grayish);
+		}
 	}
 
 	&__introduction {

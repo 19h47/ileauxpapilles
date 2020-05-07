@@ -74,7 +74,7 @@ Header
 					<div class="row h-100 d-flex align-items-end">
 						<div class="order-2 order-md-1 col-12 offset-sm-1 offset-md-0 col-md-4{{ post.thumbnail ? ' margin-top-3 margin-top-md-0' }}">
 							<h1 class="Page__title{{ post.get_field( 'hero' ).subtitle ? ' margin-0' : post.get_field( 'hero' ).introduction ? ' margin-bottom-5' : ' margin-0' -}}">{{- post.title -}}</h1>
-							{{ post.get_field( 'hero' ).subtitle ? "<p class=\"Page__subtitle\">#{post.subtitel}</p>" }}
+							{{ post.get_field( 'hero' ).subtitle ? "<p class=\"Page__subtitle\">#{post.subtitle}</p>" }}
 
 							{% if post.get_field( 'hero' ).introduction %}
 								<div class="Page__introduction Wysiwyg">
