@@ -71,14 +71,15 @@
 	}
 
 	&__message {
-		@extend .d-block;
 		@include margin(
 			top $grid-gutter-width / 2 bottom $grid-gutter-width / 2 left $grid-gutter-width
 		);
 
+		display: block;
+
 		&--success {
-			@include margin(left 0);
 			@extend .d-none;
+			@include margin(left 0);
 		}
 
 		@at-root #{ $this }--success &--success {
