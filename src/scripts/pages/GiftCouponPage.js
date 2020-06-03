@@ -1,5 +1,6 @@
 /* global delileauxpapilles */
 import { AbstractPage } from 'starting-blocks';
+import multiply from '@19h47/multiply';
 import Bouncer from 'formbouncerjs';
 
 const { ajax_url: ajaxUrl, nonce } = delileauxpapilles;
@@ -68,6 +69,7 @@ export default class GiftCouponPage extends AbstractPage {
 			const {
 				target: { value },
 			} = event;
+
 			this.person = Math.max(1, parseInt(value, 10));
 			this.$person.value = this.person;
 
@@ -76,6 +78,7 @@ export default class GiftCouponPage extends AbstractPage {
 		});
 
 		this.$radioGroup.addEventListener('RadioBlock.change', this.updatePrice);
+
 		this.checkboxes.map($checkbox => {
 			const $input = $checkbox.querySelector('input[type="checkbox"]');
 			$input.addEventListener('change', this.updatePrice);
@@ -111,7 +114,7 @@ export default class GiftCouponPage extends AbstractPage {
 			const price = parseFloat($input.getAttribute('data-price'));
 
 			if (true === JSON.parse($input.getAttribute('checked'))) {
-				this.price += price * this.person;
+				this.price += multiply(price, this.person);
 			}
 
 			return true;
@@ -121,7 +124,7 @@ export default class GiftCouponPage extends AbstractPage {
 			const price = parseFloat($input.getAttribute('data-price'));
 
 			if (true === $input.checked) {
-				this.price += price * this.person;
+				this.price += multiply(price, this.person);
 			}
 
 			return true;
