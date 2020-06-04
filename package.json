@@ -20,7 +20,7 @@
 	},
 	"name": "@19h47/delileauxpapilles",
 	"description": "De l'île aux papilles wordpress theme",
-	"version": "0.0.0",
+	"version": "0.0.1",
 	"main": "index.js",
 	"devDependencies": {
 		"@19h47/prettier-config": "19h47/prettier-config",

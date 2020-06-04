@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: De l'île aux papilles\n"
-"POT-Creation-Date: 2020-04-29 00:08+0200\n"
-"PO-Revision-Date: 2020-04-29 14:22+0200\n"
+"POT-Creation-Date: 2020-06-04 08:42+0200\n"
+"PO-Revision-Date: 2020-06-04 08:43+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 2.3.1\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
@@ -660,32 +660,37 @@ msgctxt "gift coupon"
 msgid "by mail"
 msgstr "par courrier"
 
-#: views/pages/gift-coupon.html.twig:97
+#: views/pages/gift-coupon.html.twig:93
+msgctxt "gift coupon"
+msgid "pick in restaurant"
+msgstr "retrait au restaurant"
+
+#: views/pages/gift-coupon.html.twig:98
 msgctxt "gift coupon"
 msgid "I compose the gift card:"
 msgstr "Je compose la carte-cadeau :"
 
-#: views/pages/gift-coupon.html.twig:106
+#: views/pages/gift-coupon.html.twig:107
 msgctxt "gift coupon"
 msgid "Number of people invited"
 msgstr "Nombre de personnes invitées"
 
-#: views/pages/gift-coupon.html.twig:121
+#: views/pages/gift-coupon.html.twig:122
 msgctxt "gift coupon"
 msgid " € / pers."
 msgstr " € / pers."
 
-#: views/pages/gift-coupon.html.twig:130
+#: views/pages/gift-coupon.html.twig:131
 msgctxt "gift coupon"
 msgid "Total"
 msgstr "Total"
 
-#: views/pages/gift-coupon.html.twig:138
+#: views/pages/gift-coupon.html.twig:139
 msgctxt "gift coupon"
 msgid "Additional details to your order:"
 msgstr "Précisions complémentaires à votre commande :"
 
-#: views/pages/gift-coupon.html.twig:156
+#: views/pages/gift-coupon.html.twig:157
 msgctxt "gift coupon"
 msgid "Send"
 msgstr "Envoyer"

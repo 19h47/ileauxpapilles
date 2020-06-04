@@ -98,7 +98,7 @@
         },
         {
             "key": "field_5e9a1f1ca9f29",
-            "label": "Cette personne souhaite recevoir le bon cadeau par",
+            "label": "Cette personne souhaite récupérer le bon cadeau",
             "name": "type",
             "type": "radio",
             "instructions": "",
@@ -111,7 +111,8 @@
             },
             "choices": {
                 "mail": "par courrier",
-                "email": "par mail (le bon sera à imprimer)"
+                "email": "par mail (le bon sera à imprimer)",
+                "pick": "par retrait au restaurant"
             },
             "allow_null": 0,
             "other_choice": 0,
@@ -395,5 +396,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1587907263
+    "modified": 1591254295
 }
