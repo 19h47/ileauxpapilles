@@ -53,7 +53,10 @@
 						<div class="col-6">
 							{{- __( 'For', 'delileauxpapilles' ) }} <strong>{{- post.get_field( 'menu' ).names_first_names -}}</strong>
 						</div>
-						<div class="col-6">De la part de <strong>{{- post.last_name }} {{ post.first_names -}}</strong></div>
+						<div class="col-6">
+							De la part de <strong>{{- post.last_name }} {{ post.first_names -}}</strong>
+							{{ post.get_field( 'menu' ).message ? "<br><br>#{post.get_field( 'menu' ).message}" }}
+						</div>
 					</div>
 				</div>
 			</div>

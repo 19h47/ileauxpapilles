@@ -167,13 +167,14 @@ class Theme {
 		$context['modal']      = Timber::get_sidebar( 'component-modal.php' );
 
 		$context['placeholders'] = array(
-			'last_name'                => _x( 'Last name', 'gift coupon', 'delileauxpapilles' ),
-			'first_names'              => _x( 'First name(s)', 'gift coupon', 'delileauxpapilles' ),
-			'email'                    => _x( 'E-mail', 'gift coupon', 'delileauxpapilles' ),
-			'address'                  => _x( 'Address', 'gift coupon', 'delileauxpapilles' ),
-			'postal_code_and_city'     => _x( 'Postal code and city', 'gift coupon', 'delileauxpapilles' ),
-			'lastnames_and_firstnames' => _x( 'Lastname(s) and firstname(s)', 'gift coupon', 'delileauxpapilles' ),
-			'your_message'             => _x( 'Your message', 'gift coupon', 'delileauxpapilles' ),
+			'last_name'                  => _x( 'Last name', 'gift coupon', 'delileauxpapilles' ),
+			'first_names'                => _x( 'First name(s)', 'gift coupon', 'delileauxpapilles' ),
+			'email'                      => _x( 'E-mail', 'gift coupon', 'delileauxpapilles' ),
+			'address'                    => _x( 'Address', 'gift coupon', 'delileauxpapilles' ),
+			'postal_code_and_city'       => _x( 'Postal code and city', 'gift coupon', 'delileauxpapilles' ),
+			'lastnames_and_firstnames'   => _x( 'Lastname(s) and firstname(s)', 'gift coupon', 'delileauxpapilles' ),
+			'your_message'               => _x( 'Your message', 'gift coupon', 'delileauxpapilles' ),
+			'your_personnalized_message' => _x( 'Your personalized message', 'gift coupon', 'delileauxpapilles' ),
 		);
 
 		$context['coupon_fields']['drinks'] = get_field( 'drinks', 'coupon-options' );

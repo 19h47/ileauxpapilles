@@ -175,6 +175,25 @@
                     "maxlength": ""
                 },
                 {
+                    "key": "field_5ee0ecbbbd8ea",
+                    "label": "Message personnalisé",
+                    "name": "message",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": "",
+                    "new_lines": "br"
+                },
+                {
                     "key": "field_5e99e44d3461c",
                     "label": "Nombre de personnes invitées",
                     "name": "number",
@@ -396,5 +415,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1591254295
+    "modified": 1591799060
 }

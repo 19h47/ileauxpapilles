@@ -83,6 +83,14 @@ class GenerateGiftCoupon {
 			update_field( 'field_5e9a1e0115532', $data['message'], $pid );
 		}
 
+		if ( isset( $data['your_personnalized_message'] ) ) {
+			update_field(
+				'field_5e99e38a3461b',
+				array( 'field_5ee0ecbbbd8ea' => $data['your_personnalized_message'] ),
+				$pid,
+			);
+		}
+
 		$drinks = array();
 
 		foreach ( $data['menu']['drinks'] as $key => $value ) {

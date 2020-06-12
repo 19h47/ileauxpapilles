@@ -82,6 +82,11 @@
 							<input class="Input" id="menu[names_first_names]" type="text" name="menu[names_first_names]" required placeholder="{{ placeholders.lastnames_and_firstnames }} *" aria-label="{{ placeholders.lastnames_and_firstnames }}">
 						</div>
 
+						{# Message #}
+						<div class="Form__group">
+							<textarea class="Textarea" name="your_personnalized_message" id="your_personnalized_message" placeholder="{{ placeholders.your_personnalized_message }}" aria-label="{{ placeholders.your_personnalized_message }}"></textarea>
+						</div>
+
 						{# Type #}
 						<div class="Form__group">
 							<h3 class="Form__title">{{- coupon_fields.labels.type | default( _x( 'I wish to receive the gift card:', 'gift coupon', 'delileauxpapilles' ) ) -}}</h3>
