@@ -8,7 +8,7 @@ const isHTMLElement = target => HTMLElement.prototype.isPrototypeOf(target); // 
  * @param {function} callback
  * @param {boolean} options
  */
-export default function(selector, callback, options = { removeListener: true }) {
+export default function clickOutside(selector, callback, options = { removeListener: true }) {
 	const listener = event => {
 		const { target } = event;
 
