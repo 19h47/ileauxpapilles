@@ -9,6 +9,15 @@
 	<li>{{- __( 'Choice of menu:', 'delileauxpapilles' )}} <strong>{{- post.get_field( 'menu' ).type | map( type => type.label ) | join( ' ' )  -}}</strong></li>
 	{{- post.get_field( 'menu' ).drinks ? '<li>' ~ __( 'Choice of drinks:', 'delileauxpapilles' ) ~ '<strong> ' ~ post.get_field( 'menu' ).drinks | map( drink => drink.label ) | join( ' / ' ) ~ '</strong></li>' -}}
 	<li>{{- __( 'For a total amount of', 'delileauxpapilles' ) }} <strong>{{- post.total }} €</strong></li>
+	{% if post.get_field( 'menu' ).message %}
+		<li>
+			{{- __( 'Personalized message', 'delileauxpapilles' ) -}}<br>
+			{{- post.get_field( 'menu' ).message -}}
+		</li>
+	{% endif %}
+	{% if post.get_field( 'message' ) %}
+		<li>{{- __( 'Details', 'delileauxpapilles' ) -}}<br>{{- post.get_field( 'message' ) -}}</li>
+	{% endif %}
 </ul>
 
 <p>Nous restons à votre entière disposition pour toute information complémentaire.</p>

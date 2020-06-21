@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: De l'île aux papilles\n"
-"POT-Creation-Date: 2020-06-10 16:16+0200\n"
-"PO-Revision-Date: 2020-06-10 16:16+0200\n"
+"POT-Creation-Date: 2020-06-12 16:43+0200\n"
+"PO-Revision-Date: 2020-06-12 16:44+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -79,7 +79,7 @@ msgctxt "Customizer"
 msgid "Alert Message"
 msgstr "Message d’alerte"
 
-#: inc/GenerateGiftCoupon.php:136
+#: inc/GenerateGiftCoupon.php:144
 msgid "A new coupon request!"
 msgstr "Une nouvelle demande de coupon !"
 
@@ -728,6 +728,14 @@ msgstr "Choix de boissons :"
 #: views/partials/email-confirm.html.twig:11
 msgid "For a total amount of"
 msgstr "Pour un montant total de"
+
+#: views/partials/email-confirm.html.twig:14
+msgid "Personalized message"
+msgstr "Message personnalisé"
+
+#: views/partials/email-confirm.html.twig:19
+msgid "Details"
+msgstr "Précisions"
 
 #: views/partials/popupcontent.html.twig:4
 msgid "Route"
