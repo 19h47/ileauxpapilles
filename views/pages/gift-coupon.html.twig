@@ -7,7 +7,7 @@
 
 {% macro checkbox( id, label, name, value, price ) %}
 	<div id="{{ id }}" tabindex="0" class="Checkbox page-block" role="checkbox" aria-checked="false" data-node-type="CheckboxBlock">
-		<button type="button" tabindex="-1" aria-label={{ label }}></button>
+		<button type="button" tabindex="-1" aria-label="{{ label }}"></button>
 		<span class="d-flex flex-column flex-md-row w-100">
 			{{- label -}}
 			<span class="margin-left-md-auto white-space-nowrap">{{- price.label -}}</span>
@@ -30,6 +30,7 @@
 {% endmacro %}
 
 {% block content %}
+
 	<div class="Page__content">
 		<div class="Site-container">
 			<div class="row">
