@@ -31,8 +31,8 @@ class Acf {
 
 		acf_add_options_sub_page(
 			array(
-				'menu_title'  => _x( 'Coupon Settings', 'gift coupon', 'delileauxpapilles' ),
-				'page_title'  => _x( 'Coupon Settings', 'gift coupon', 'delileauxpapilles' ),
+				'menu_title'  => _x( 'Coupon Settings', 'gift coupon', 'ileauxpapilles' ),
+				'page_title'  => _x( 'Coupon Settings', 'gift coupon', 'ileauxpapilles' ),
 				'menu_slug'   => 'coupon-settings',
 				'parent_slug' => 'edit.php?post_type=coupon',
 				'capability'  => 'edit_posts',
@@ -42,8 +42,8 @@ class Acf {
 
 		acf_add_options_sub_page(
 			array(
-				'menu_title'  => _x( 'Email Settings', 'gift coupon', 'delileauxpapilles' ),
-				'page_title'  => _x( 'Email Settings', 'gift coupon', 'delileauxpapilles' ),
+				'menu_title'  => _x( 'Email Settings', 'gift coupon', 'ileauxpapilles' ),
+				'page_title'  => _x( 'Email Settings', 'gift coupon', 'ileauxpapilles' ),
 				'menu_slug'   => 'email-settings',
 				'parent_slug' => 'edit.php?post_type=coupon',
 				'capability'  => 'edit_posts',

@@ -37,8 +37,8 @@ class Customizer {
 		$wp_customize->add_section(
 			'contact',
 			array(
-				'title'       => __( 'Contact', 'delileauxpapilles' ),
-				'description' => __( 'Contact settings', 'delileauxpapilles' ),
+				'title'       => __( 'Contact', 'ileauxpapilles' ),
+				'description' => __( 'Contact settings', 'ileauxpapilles' ),
 			)
 		);
 
@@ -54,8 +54,8 @@ class Customizer {
 		$wp_customize->add_control(
 			'facebook',
 			array(
-				'label'       => __( 'Facebook', 'delileauxpapilles' ),
-				'description' => __( 'Facebook URL', 'delileauxpapilles' ),
+				'label'       => __( 'Facebook', 'ileauxpapilles' ),
+				'description' => __( 'Facebook URL', 'ileauxpapilles' ),
 				'section'     => 'contact',
 				'settings'    => 'facebook',
 			)
@@ -73,9 +73,9 @@ class Customizer {
 		$wp_customize->add_control(
 			'phone_number',
 			array(
-				'label'       => __( 'Phone number', 'delileauxpapilles' ),
-				'section'     => 'contact',
-				'settings'    => 'phone_number',
+				'label'    => __( 'Phone number', 'ileauxpapilles' ),
+				'section'  => 'contact',
+				'settings' => 'phone_number',
 			)
 		);
 
@@ -91,8 +91,8 @@ class Customizer {
 		$wp_customize->add_control(
 			'youtube',
 			array(
-				'label'       => __( 'LinkedIn', 'delileauxpapilles' ),
-				'description' => __( 'LinkedIn URL', 'delileauxpapilles' ),
+				'label'       => __( 'LinkedIn', 'ileauxpapilles' ),
+				'description' => __( 'LinkedIn URL', 'ileauxpapilles' ),
 				'section'     => 'contact',
 				'settings'    => 'linkedin',
 			)
@@ -110,7 +110,7 @@ class Customizer {
 		$wp_customize->add_control(
 			'latitude',
 			array(
-				'label'    => __( 'Latitude', 'delileauxpapilles' ),
+				'label'    => __( 'Latitude', 'ileauxpapilles' ),
 				'section'  => 'contact',
 				'settings' => 'latitude',
 			)
@@ -128,7 +128,7 @@ class Customizer {
 		$wp_customize->add_control(
 			'email',
 			array(
-				'label'    => __( 'Longitude', 'delileauxpapilles' ),
+				'label'    => __( 'Longitude', 'ileauxpapilles' ),
 				'section'  => 'contact',
 				'settings' => 'longitude',
 			)
@@ -146,7 +146,7 @@ class Customizer {
 		$wp_customize->add_control(
 			'address',
 			array(
-				'label'    => __( 'Address', 'delileauxpapilles' ),
+				'label'    => __( 'Address', 'ileauxpapilles' ),
 				'type'     => 'textarea',
 				'section'  => 'contact',
 				'settings' => 'address',
@@ -165,9 +165,9 @@ class Customizer {
 		$wp_customize->add_control(
 			'legal_notice_permalink',
 			array(
-				'type'    => 'dropdown-pages',
-				'section' => 'contact',
-				'label'   => _x( 'Legal Notice Page', 'Customizer', 'delileauxpapilles' ),
+				'type'     => 'dropdown-pages',
+				'section'  => 'contact',
+				'label'    => _x( 'Legal Notice Page', 'Customizer', 'ileauxpapilles' ),
 				'settings' => 'legal_notice_permalink',
 			)
 		);
@@ -186,7 +186,7 @@ class Customizer {
 			array(
 				'type'     => 'dropdown-pages',
 				'section'  => 'contact',
-				'label'    => _x( 'Gift Coupon Page', 'Customizer', 'delileauxpapilles' ),
+				'label'    => _x( 'Gift Coupon Page', 'Customizer', 'ileauxpapilles' ),
 				'settings' => 'gift_coupon_permalink',
 			)
 		);
@@ -205,7 +205,7 @@ class Customizer {
 			array(
 				'type'     => 'textarea',
 				'section'  => 'contact',
-				'label'    => _x( 'Alert Message', 'Customizer', 'delileauxpapilles' ),
+				'label'    => _x( 'Alert Message', 'Customizer', 'ileauxpapilles' ),
 				'settings' => 'alert_message',
 			)
 		);

@@ -3,7 +3,7 @@
 		"timber/timber": "^1.15",
 		"vlucas/phpdotenv": "^4.1"
 	},
-	"name": "19h47/delileauxpapilles",
+	"name": "19h47/ileauxpapilles",
 	"description": "De l'île aux papilles's WordPress theme",
 	"type": "wordpress-theme",
 	"authors": [
@@ -21,15 +21,7 @@
 		]
 	},
 	"require-dev": {
-		"squizlabs/php_codesniffer": "^3.5",
 		"wp-coding-standards/wpcs": "^2.2",
-		"dealerdirect/phpcodesniffer-composer-installer": "^0.6.2"
-	},
-	"extra": {
-		"installer-paths": {
-			"../../plugins/{$name}/": [
-				"type:wordpress-plugin"
-			]
-		}
+		"squizlabs/php_codesniffer": "^3.5"
 	}
 }

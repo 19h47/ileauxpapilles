@@ -128,6 +128,7 @@ $base-font-size: 16;
 $base-font-size-px: $base-font-size * 1px;
 $base-line-height: 24;
 $scale-factor: $base-line-height / $base-font-size;
+$base-unit: px;
 
 /**
  * Outer gutter width

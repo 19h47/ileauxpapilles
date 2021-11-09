@@ -21,7 +21,7 @@ class Transients {
 	 * @return $transient
 	 */
 	public static function references() : array {
-		$transient = get_transient( 'delileauxpapilles_references' );
+		$transient = get_transient( 'ileauxpapilles_references' );
 
 		if ( $transient ) {
 			return $transient;
@@ -35,7 +35,7 @@ class Transients {
 			)
 		);
 
-		set_transient( 'delileauxpapilles_references', $references );
+		set_transient( 'ileauxpapilles_references', $references );
 
 		return $references;
 	}
@@ -47,7 +47,7 @@ class Transients {
 	 * @return $transient
 	 */
 	public static function partners() : array {
-		$transient = get_transient( 'delileauxpapilles_partners' );
+		$transient = get_transient( 'ileauxpapilles_partners' );
 
 		if ( $transient ) {
 			return $transient;
@@ -61,7 +61,7 @@ class Transients {
 			)
 		);
 
-		set_transient( 'delileauxpapilles_partners', $partners );
+		set_transient( 'ileauxpapilles_partners', $partners );
 
 		return $partners;
 	}

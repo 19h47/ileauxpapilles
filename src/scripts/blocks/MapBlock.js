@@ -1,4 +1,4 @@
-/* global delileauxpapilles */
+/* global ileauxpapilles */
 import { AbstractBlock } from 'starting-blocks';
 import * as L from 'leaflet';
 
@@ -7,7 +7,7 @@ const {
 	coordinates: { latitude, longitude },
 	popupContent,
 	template_directory_uri: templateDirectoryUri,
-} = delileauxpapilles;
+} = ileauxpapilles;
 
 export default class MapBlock extends AbstractBlock {
 	constructor(container) {

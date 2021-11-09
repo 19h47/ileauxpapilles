@@ -60,34 +60,34 @@ class Coupon {
 		$view_link_html = sprintf(
 			' <a href="%1$s">%2$s</a>',
 			esc_url( get_permalink( $post_ID ) ),
-			__( 'View Coupon', 'delileauxpapilles' )
+			__( 'View Coupon', 'ileauxpapilles' )
 		);
 
 		$scheduled_link_html = sprintf(
 			' <a target="_blank" href="%1$s">%2$s</a>',
 			esc_url( get_permalink( $post_ID ) ),
-			__( 'Preview Coupon', 'delileauxpapilles' )
+			__( 'Preview Coupon', 'ileauxpapilles' )
 		);
 
 		$preview_link_html = sprintf(
 			' <a target="_blank" href="%1$s">%2$s</a>',
 			esc_url( $preview_url ),
-			__( 'Preview Coupon', 'delileauxpapilles' )
+			__( 'Preview Coupon', 'ileauxpapilles' )
 		);
 
 		$messages['agency'] = array(
 			0  => '', // Unused. Messages start at index 1.
-			1  => __( 'Coupon updated.', 'delileauxpapilles' ) . $view_link_html,
-			2  => __( 'Custom field updated.', 'delileauxpapilles' ),
-			3  => __( 'Custom field deleted.', 'delileauxpapilles' ),
-			4  => __( 'Coupon updated.', 'delileauxpapilles' ),
+			1  => __( 'Coupon updated.', 'ileauxpapilles' ) . $view_link_html,
+			2  => __( 'Custom field updated.', 'ileauxpapilles' ),
+			3  => __( 'Custom field deleted.', 'ileauxpapilles' ),
+			4  => __( 'Coupon updated.', 'ileauxpapilles' ),
 			/* translators: %s: date and time of the revision */
-			5  => isset( $_GET['revision'] ) ? sprintf( __( 'Coupon restored to revision from %s.', 'delileauxpapilles' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false, // phpcs:ignore
-			6  => __( 'Coupon published.', 'delileauxpapilles' ) . $view_link_html,
-			7  => __( 'Coupon saved.', 'delileauxpapilles' ),
-			8  => __( 'Coupon submitted.', 'delileauxpapilles' ) . $preview_link_html,
-			9  => sprintf( __( 'Coupon scheduled for: %s.', 'delileauxpapilles' ), '<strong>' . $scheduled_date . '</strong>' ) . $scheduled_link_html, // phpcs:ignore
-			10 => __( 'Coupon draft updated.', 'delileauxpapilles' ) . $preview_link_html,
+			5  => isset( $_GET['revision'] ) ? sprintf( __( 'Coupon restored to revision from %s.', 'ileauxpapilles' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false, // phpcs:ignore
+			6  => __( 'Coupon published.', 'ileauxpapilles' ) . $view_link_html,
+			7  => __( 'Coupon saved.', 'ileauxpapilles' ),
+			8  => __( 'Coupon submitted.', 'ileauxpapilles' ) . $preview_link_html,
+			9  => sprintf( __( 'Coupon scheduled for: %s.', 'ileauxpapilles' ), '<strong>' . $scheduled_date . '</strong>' ) . $scheduled_link_html, // phpcs:ignore
+			10 => __( 'Coupon draft updated.', 'ileauxpapilles' ) . $preview_link_html,
 		);
 
 		return $messages;
@@ -102,39 +102,39 @@ class Coupon {
 	 */
 	public function register_post_type() : void {
 		$labels = array(
-			'name'                     => _x( 'Coupons', 'coupon general name', 'delileauxpapilles' ),
-			'singular_name'            => _x( 'Coupon', 'coupon singular name', 'delileauxpapilles' ),
-			'add_new'                  => _x( 'Add New', 'coupon', 'delileauxpapilles' ),
-			'add_new_item'             => __( 'Add New Coupons', 'delileauxpapilles' ),
-			'edit_item'                => __( 'Edit Coupon', 'delileauxpapilles' ),
-			'new_item'                 => __( 'New Coupon', 'delileauxpapilles' ),
-			'view_item'                => __( 'View Coupon', 'delileauxpapilles' ),
-			'view_items'               => __( 'View Coupons', 'delileauxpapilles' ),
-			'search_items'             => __( 'Search Coupons', 'delileauxpapilles' ),
-			'not_found'                => __( 'No coupons found.', 'delileauxpapilles' ),
-			'not_found_in_trash'       => __( 'No coupons found in Trash.', 'delileauxpapilles' ),
-			'parent_item_colon'        => __( 'Parent Coupon:', 'delileauxpapilles' ),
-			'all_items'                => __( 'All coupons', 'delileauxpapilles' ),
-			'archives'                 => __( 'Coupon Archives', 'delileauxpapilles' ),
-			'attributes'               => __( 'Coupon Attributes', 'delileauxpapilles' ),
-			'insert_into_item'         => __( 'Insert into coupon', 'delileauxpapilles' ),
-			'uploaded_to_this_item'    => __( 'Uploaded to this coupon', 'delileauxpapilles' ),
-			'featured_image'           => _x( 'Featured Image', 'coupon', 'delileauxpapilles' ),
-			'set_featured_image'       => _x( 'Set featured image', 'coupon', 'delileauxpapilles' ),
-			'remove_featured_image'    => _x( 'Remove featured image', 'coupon', 'delileauxpapilles' ),
-			'use_featured_image'       => _x( 'Use as featured image', 'coupon', 'delileauxpapilles' ),
-			'filter_items_list'        => __( 'Filter coupons list', 'delileauxpapilles' ),
-			'items_list_navigation'    => __( 'Coupons list navigation', 'delileauxpapilles' ),
-			'items_list'               => __( 'Coupons list', 'delileauxpapilles' ),
-			'item_published'           => __( 'Coupon published.', 'delileauxpapilles' ),
-			'item_published_privately' => __( 'Coupon published privately.', 'delileauxpapilles' ),
-			'item_reverted_to_draft'   => __( 'Coupon reverted to draft.', 'delileauxpapilles' ),
-			'item_scheduled'           => __( 'Coupon scheduled.', 'delileauxpapilles' ),
-			'item_updated'             => __( 'Coupon updated.', 'delileauxpapilles' ),
+			'name'                     => _x( 'Coupons', 'coupon general name', 'ileauxpapilles' ),
+			'singular_name'            => _x( 'Coupon', 'coupon singular name', 'ileauxpapilles' ),
+			'add_new'                  => _x( 'Add New', 'coupon', 'ileauxpapilles' ),
+			'add_new_item'             => __( 'Add New Coupons', 'ileauxpapilles' ),
+			'edit_item'                => __( 'Edit Coupon', 'ileauxpapilles' ),
+			'new_item'                 => __( 'New Coupon', 'ileauxpapilles' ),
+			'view_item'                => __( 'View Coupon', 'ileauxpapilles' ),
+			'view_items'               => __( 'View Coupons', 'ileauxpapilles' ),
+			'search_items'             => __( 'Search Coupons', 'ileauxpapilles' ),
+			'not_found'                => __( 'No coupons found.', 'ileauxpapilles' ),
+			'not_found_in_trash'       => __( 'No coupons found in Trash.', 'ileauxpapilles' ),
+			'parent_item_colon'        => __( 'Parent Coupon:', 'ileauxpapilles' ),
+			'all_items'                => __( 'All coupons', 'ileauxpapilles' ),
+			'archives'                 => __( 'Coupon Archives', 'ileauxpapilles' ),
+			'attributes'               => __( 'Coupon Attributes', 'ileauxpapilles' ),
+			'insert_into_item'         => __( 'Insert into coupon', 'ileauxpapilles' ),
+			'uploaded_to_this_item'    => __( 'Uploaded to this coupon', 'ileauxpapilles' ),
+			'featured_image'           => _x( 'Featured Image', 'coupon', 'ileauxpapilles' ),
+			'set_featured_image'       => _x( 'Set featured image', 'coupon', 'ileauxpapilles' ),
+			'remove_featured_image'    => _x( 'Remove featured image', 'coupon', 'ileauxpapilles' ),
+			'use_featured_image'       => _x( 'Use as featured image', 'coupon', 'ileauxpapilles' ),
+			'filter_items_list'        => __( 'Filter coupons list', 'ileauxpapilles' ),
+			'items_list_navigation'    => __( 'Coupons list navigation', 'ileauxpapilles' ),
+			'items_list'               => __( 'Coupons list', 'ileauxpapilles' ),
+			'item_published'           => __( 'Coupon published.', 'ileauxpapilles' ),
+			'item_published_privately' => __( 'Coupon published privately.', 'ileauxpapilles' ),
+			'item_reverted_to_draft'   => __( 'Coupon reverted to draft.', 'ileauxpapilles' ),
+			'item_scheduled'           => __( 'Coupon scheduled.', 'ileauxpapilles' ),
+			'item_updated'             => __( 'Coupon updated.', 'ileauxpapilles' ),
 		);
 
 		$args = array(
-			'label'               => __( 'Coupon', 'delileauxpapilles' ),
+			'label'               => __( 'Coupon', 'ileauxpapilles' ),
 			'labels'              => $labels,
 			'supports'            => array( 'title', 'custom-fields' ),
 			'taxonomies'          => array(),

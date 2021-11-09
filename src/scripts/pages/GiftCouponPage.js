@@ -1,9 +1,9 @@
-/* global delileauxpapilles */
+/* global ileauxpapilles */
 import { AbstractPage } from 'starting-blocks';
 import multiply from '@19h47/multiply';
 import Bouncer from 'formbouncerjs';
 
-const { ajax_url: ajaxUrl, nonce } = delileauxpapilles;
+const { ajax_url: ajaxUrl, nonce } = ileauxpapilles;
 
 const remove = target => target.classList.remove('Form--loading');
 

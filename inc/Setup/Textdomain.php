@@ -28,6 +28,6 @@ class Textdomain {
 	 * @return void
 	 */
 	public function add_theme_textdomain() : void {
-		load_theme_textdomain( 'delileauxpapilles', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'ileauxpapilles', get_template_directory() . '/languages' );
 	}
 }

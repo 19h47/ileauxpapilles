@@ -141,7 +141,7 @@ class GenerateGiftCoupon {
 
 		Mail::init()
 			->to( $to )
-			->subject( __( 'A new coupon request!', 'delileauxpapilles' ) )
+			->subject( __( 'A new coupon request!', 'ileauxpapilles' ) )
 			->message( 'partials/email-confirm.html.twig', $context )
 			->headers( $headers )
 			->send();

@@ -29,7 +29,7 @@ class Sidebars {
 	public function register() : void {
 		register_sidebar(
 			array(
-				'name'          => __( 'Footer Primary', 'delileauxpapilles' ),
+				'name'          => __( 'Footer Primary', 'ileauxpapilles' ),
 				'id'            => 'footer_primary',
 				'before_title'  => '<h3 class="Site-footer__title">',
 				'after_title'   => '</h3>',
@@ -39,7 +39,7 @@ class Sidebars {
 		);
 		register_sidebar(
 			array(
-				'name'          => __( 'Footer Secondary', 'delileauxpapilles' ),
+				'name'          => __( 'Footer Secondary', 'ileauxpapilles' ),
 				'id'            => 'footer_secondary',
 				'before_title'  => '<h3 class="Site-footer__title">',
 				'after_title'   => '</h3>',
@@ -50,7 +50,7 @@ class Sidebars {
 
 		register_sidebar(
 			array(
-				'name'          => __( 'Modal', 'delileauxpapilles' ),
+				'name'          => __( 'Modal', 'ileauxpapilles' ),
 				'id'            => 'modal',
 				'before_title'  => '<h3 class="Modal__title">',
 				'after_title'   => '</h3>',

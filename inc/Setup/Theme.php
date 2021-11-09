@@ -106,14 +106,14 @@ class Theme {
 			array(
 				'title' => 'Twitter',
 				'slug'  => 'twitter',
-				'name'  => __( 'Share on Twitter', 'delileauxpapilles' ),
+				'name'  => __( 'Share on Twitter', 'ileauxpapilles' ),
 				'link'  => 'https://twitter.com/intent/tweet?url=',
 				'url'   => get_option( 'twitter' ),
 			),
 			array(
 				'title' => 'Facebook',
 				'slug'  => 'facebook',
-				'name'  => __( 'Share on Facebook', 'delileauxpapilles' ),
+				'name'  => __( 'Share on Facebook', 'ileauxpapilles' ),
 				'link'  => 'https://www.facebook.com/sharer.php?u=',
 				'url'   => get_option( 'facebook' ),
 			),
@@ -125,7 +125,7 @@ class Theme {
 			array(
 				'title' => 'LinkedIn',
 				'slug'  => 'linkedin',
-				'name'  => __( 'Share on LinkedIn', 'delileauxpapilles' ),
+				'name'  => __( 'Share on LinkedIn', 'ileauxpapilles' ),
 				'link'  => 'https://www.linkedin.com/sharing/share-offsite/?url=',
 				'url'   => get_option( 'linkedin' ),
 			),
@@ -167,19 +167,19 @@ class Theme {
 		$context['modal']      = Timber::get_sidebar( 'component-modal.php' );
 
 		$context['placeholders'] = array(
-			'last_name'                  => _x( 'Last name', 'gift coupon', 'delileauxpapilles' ),
-			'first_names'                => _x( 'First name(s)', 'gift coupon', 'delileauxpapilles' ),
-			'email'                      => _x( 'E-mail', 'gift coupon', 'delileauxpapilles' ),
-			'address'                    => _x( 'Address', 'gift coupon', 'delileauxpapilles' ),
-			'postal_code_and_city'       => _x( 'Postal code and city', 'gift coupon', 'delileauxpapilles' ),
-			'lastnames_and_firstnames'   => _x( 'Lastname(s) and firstname(s)', 'gift coupon', 'delileauxpapilles' ),
-			'your_message'               => _x( 'Your message', 'gift coupon', 'delileauxpapilles' ),
-			'your_personnalized_message' => _x( 'Your personalized message', 'gift coupon', 'delileauxpapilles' ),
+			'last_name'                  => _x( 'Last name', 'gift coupon', 'ileauxpapilles' ),
+			'first_names'                => _x( 'First name(s)', 'gift coupon', 'ileauxpapilles' ),
+			'email'                      => _x( 'E-mail', 'gift coupon', 'ileauxpapilles' ),
+			'address'                    => _x( 'Address', 'gift coupon', 'ileauxpapilles' ),
+			'postal_code_and_city'       => _x( 'Postal code and city', 'gift coupon', 'ileauxpapilles' ),
+			'lastnames_and_firstnames'   => _x( 'Lastname(s) and firstname(s)', 'gift coupon', 'ileauxpapilles' ),
+			'your_message'               => _x( 'Your message', 'gift coupon', 'ileauxpapilles' ),
+			'your_personnalized_message' => _x( 'Your personalized message', 'gift coupon', 'ileauxpapilles' ),
 		);
 
 		$context['coupon_fields']['drinks'] = get_field( 'drinks', 'coupon-options' );
 		$context['coupon_fields']['type']   = get_field( 'type', 'coupon-options' );
-		$context['coupon_fields']['labels']   = get_field( 'labels', 'coupon-options' );
+		$context['coupon_fields']['labels'] = get_field( 'labels', 'coupon-options' );
 		$context['email_fiels']['content']  = get_field( 'content', 'email-options' );
 
 		return $context;

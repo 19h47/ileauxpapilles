@@ -80,7 +80,7 @@ Header
 								<div class="Page__introduction Wysiwyg">
 									{{- post.get_field( 'hero' ).introduction | raw -}}
 									{%- if phone_number and 'front-page' == namespace -%}
-										<a href="tel:{{ phone_number | replace ( { ' ' : '' } ) }}">{{- __( 'Reservation at', 'delileauxpapilles' ) }} <strong>{{- phone_number -}}</strong></a>
+										<a href="tel:{{ phone_number | replace ( { ' ' : '' } ) }}">{{- __( 'Reservation at', 'ileauxpapilles' ) }} <strong>{{- phone_number -}}</strong></a>
 									{%- endif -%}
 								</div>
 

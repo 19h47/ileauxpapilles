@@ -1,22 +1,22 @@
 {{- email_fiels.content -}}
 
-<p><strong style="text-transform: uppercase;">{{- __( 'Order summary:', 'delileauxpapilles' ) -}}</strong></p>
+<p><strong style="text-transform: uppercase;">{{- __( 'Order summary:', 'ileauxpapilles' ) -}}</strong></p>
 
 <ul>
-	<li>{{- __( 'Number of guests:', 'delileauxpapilles' )}} <strong>{{ post.menu_number -}}</strong></li>
-	<li>{{- __( 'From', 'delileauxpapilles' ) }} <strong>{{- post.last_name }} {{ post.first_names -}}</strong></li>
-	<li>{{- __( 'For', 'delileauxpapilles' ) }} <strong>{{- post.get_field( 'menu' ).names_first_names -}}</strong></li>
-	<li>{{- __( 'Choice of menu:', 'delileauxpapilles' )}} <strong>{{- post.get_field( 'menu' ).type | map( type => type.label ) | join( ' ' )  -}}</strong></li>
-	{{- post.get_field( 'menu' ).drinks ? '<li>' ~ __( 'Choice of drinks:', 'delileauxpapilles' ) ~ '<strong> ' ~ post.get_field( 'menu' ).drinks | map( drink => drink.label ) | join( ' / ' ) ~ '</strong></li>' -}}
-	<li>{{- __( 'For a total amount of', 'delileauxpapilles' ) }} <strong>{{- post.total }} €</strong></li>
+	<li>{{- __( 'Number of guests:', 'ileauxpapilles' )}} <strong>{{ post.menu_number -}}</strong></li>
+	<li>{{- __( 'From', 'ileauxpapilles' ) }} <strong>{{- post.last_name }} {{ post.first_names -}}</strong></li>
+	<li>{{- __( 'For', 'ileauxpapilles' ) }} <strong>{{- post.get_field( 'menu' ).names_first_names -}}</strong></li>
+	<li>{{- __( 'Choice of menu:', 'ileauxpapilles' )}} <strong>{{- post.get_field( 'menu' ).type | map( type => type.label ) | join( ' ' )  -}}</strong></li>
+	{{- post.get_field( 'menu' ).drinks ? '<li>' ~ __( 'Choice of drinks:', 'ileauxpapilles' ) ~ '<strong> ' ~ post.get_field( 'menu' ).drinks | map( drink => drink.label ) | join( ' / ' ) ~ '</strong></li>' -}}
+	<li>{{- __( 'For a total amount of', 'ileauxpapilles' ) }} <strong>{{- post.total }} €</strong></li>
 	{% if post.get_field( 'menu' ).message %}
 		<li>
-			{{- __( 'Personalized message', 'delileauxpapilles' ) -}}<br>
+			{{- __( 'Personalized message', 'ileauxpapilles' ) -}}<br>
 			{{- post.get_field( 'menu' ).message -}}
 		</li>
 	{% endif %}
 	{% if post.get_field( 'message' ) %}
-		<li>{{- __( 'Details', 'delileauxpapilles' ) -}}<br>{{- post.get_field( 'message' ) -}}</li>
+		<li>{{- __( 'Details', 'ileauxpapilles' ) -}}<br>{{- post.get_field( 'message' ) -}}</li>
 	{% endif %}
 </ul>
 

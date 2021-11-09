@@ -84,7 +84,7 @@ function get_webfonts() : array {
  * @return string The version number of the theme.
  */
 function get_theme_version() : string {
-	return wp_get_theme()->Version;
+	return wp_get_theme()->get( 'Version' );
 }
 
 
@@ -95,5 +95,17 @@ function get_theme_version() : string {
  * @return string The name of the theme.
  */
 function get_theme_name() : string {
-	return wp_get_theme()->Name;
+	return wp_get_theme()->get( 'Name' );
+}
+
+
+/**
+ * Retrieve the text domain.
+ *
+ * @since  1.0.0
+ * @return string The text domain.
+ * @see https://developer.wordpress.org/reference/functions/wp_get_theme/
+ */
+function get_theme_text_domain() : string {
+	return wp_get_theme()->get( 'TextDomain' );
 }

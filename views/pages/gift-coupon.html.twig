@@ -58,7 +58,7 @@
 						{% endif %}
 
 						{# From #}
-						<div class="Form__group"><h3 class="Form__title">{{- coupon_fields.labels.from | default( _x( 'From…', 'gift coupon', 'delileauxpapilles' ) ) -}}</h3></div>
+						<div class="Form__group"><h3 class="Form__title">{{- coupon_fields.labels.from | default( _x( 'From…', 'gift coupon', 'ileauxpapilles' ) ) -}}</h3></div>
 						<div class="Form__group">
 							<input class="Input" id="last_name" type="text" name="last_name" required placeholder="{{ placeholders.last_name }} *" aria-label="{{  placeholders.last_name  }}">
 						</div>
@@ -77,7 +77,7 @@
 
 						{# To #}
 						<div class="Form__group">
-							<h3 class="Form__title">{{- coupon_fields.labels.to | default( _x( 'Gift card offered to…', 'gift coupon', 'delileauxpapilles' ) ) -}}</h3>
+							<h3 class="Form__title">{{- coupon_fields.labels.to | default( _x( 'Gift card offered to…', 'gift coupon', 'ileauxpapilles' ) ) -}}</h3>
 						</div>
 						<div class="Form__group">
 							<input class="Input" id="menu[names_first_names]" type="text" name="menu[names_first_names]" required placeholder="{{ placeholders.lastnames_and_firstnames }} *" aria-label="{{ placeholders.lastnames_and_firstnames }}">
@@ -90,18 +90,18 @@
 
 						{# Type #}
 						<div class="Form__group">
-							<h3 class="Form__title">{{- coupon_fields.labels.type | default( _x( 'I wish to receive the gift card:', 'gift coupon', 'delileauxpapilles' ) ) -}}</h3>
+							<h3 class="Form__title">{{- coupon_fields.labels.type | default( _x( 'I wish to receive the gift card:', 'gift coupon', 'ileauxpapilles' ) ) -}}</h3>
 						</div>
 
 						<div id="type" class="Form__group page-block margin-x-1 margin-x-md-3" role="radiogroup" data-node-type="RadioGroupBlock">
-							{{- _self.radio( true, _x( 'by email (the voucher will be printed)', 'gift coupon', 'delileauxpapilles' ), false, 'type', 'email' ) -}}
-							{{- _self.radio( false, _x( 'by mail', 'gift coupon', 'delileauxpapilles' ), false, 'type', 'mail' ) -}}
-							{{- _self.radio( false, _x( 'pick in restaurant', 'gift coupon', 'delileauxpapilles' ), false, 'type', 'pick' ) -}}
+							{{- _self.radio( true, _x( 'by email (the voucher will be printed)', 'gift coupon', 'ileauxpapilles' ), false, 'type', 'email' ) -}}
+							{# {{- _self.radio( false, _x( 'by mail', 'gift coupon', 'ileauxpapilles' ), false, 'type', 'mail' ) -}} #}
+							{{- _self.radio( false, _x( 'pick in restaurant', 'gift coupon', 'ileauxpapilles' ), false, 'type', 'pick' ) -}}
 						</div>
 
 						{# Compose #}
 						<div class="Form__group">
-							<h3 class="Form__title">{{- coupon_fields.labels.compose | default( _x( 'I compose the gift card:', 'gift coupon', 'delileauxpapilles' ) ) -}}</h3>
+							<h3 class="Form__title">{{- coupon_fields.labels.compose | default( _x( 'I compose the gift card:', 'gift coupon', 'ileauxpapilles' ) ) -}}</h3>
 						</div>
 
 						<div class="Form__group">
@@ -110,7 +110,7 @@
 									<input id="menu-number" class="Input w-100 js-person" min="1" step="1" type="number" name="menu[number]" value="1" required>
 								</div>
 								<div class="col-8 col-md-10">
-									<label for="menu-number">{{- _x( 'Number of people invited', 'gift coupon', 'delileauxpapilles' ) }}&nbsp;*</label>
+									<label for="menu-number">{{- _x( 'Number of people invited', 'gift coupon', 'ileauxpapilles' ) }}&nbsp;*</label>
 								</div>
 							</div>
 						</div>
@@ -125,7 +125,7 @@
 
 								{% for field in coupon_fields.drinks %}
 									<div class="Form__group">
-										{{- _self.checkbox( field.value, field.label, 'menu[drinks][' ~ loop.index0 ~ ']', field.value, { label: field.price ~ _x( ' € / pers.', 'gift coupon', 'delileauxpapilles' ), value: field.price }) -}}
+										{{- _self.checkbox( field.value, field.label, 'menu[drinks][' ~ loop.index0 ~ ']', field.value, { label: field.price ~ _x( ' € / pers.', 'gift coupon', 'ileauxpapilles' ), value: field.price }) -}}
 									</div>
 								{% endfor %}
 
@@ -134,7 +134,7 @@
 
 						<div class="Form__group">
 							<div class="row align-items-center">
-								<div class="col-6 col-md-2 offset-md-8 Form__total">{{ _x( 'Total', 'gift coupon', 'delileauxpapilles' ) }}</div>
+								<div class="col-6 col-md-2 offset-md-8 Form__total">{{ _x( 'Total', 'gift coupon', 'ileauxpapilles' ) }}</div>
 								<div class="col-6 col-md-2 text-align-right"><span class="js-price"></span> €</div>
 								<input class="js-total" type="hidden" name="total" value="">
 							</div>
@@ -142,7 +142,7 @@
 
 						{# Clarification #}
 						<div class="Form__group">
-							<h3 class="Form__title">{{- coupon_fields.labels.clarification | default( _x( 'Additional details to your order:', 'gift coupon', 'delileauxpapilles' ) ) -}}</h3>
+							<h3 class="Form__title">{{- coupon_fields.labels.clarification | default( _x( 'Additional details to your order:', 'gift coupon', 'ileauxpapilles' ) ) -}}</h3>
 						</div>
 
 						<div class="Form__group">
@@ -160,7 +160,7 @@
 						<div class="Form__group margin-top-4">
 							<div class="row align-items-center">
 								<div class="col-12 col-md-4">
-									<button class="Button w-100" type="submit">{{- _x( 'Send', 'gift coupon', 'delileauxpapilles' ) -}}</button>
+									<button class="Button w-100" type="submit">{{- _x( 'Send', 'gift coupon', 'ileauxpapilles' ) -}}</button>
 								</div>
 							</div>
 						</div>

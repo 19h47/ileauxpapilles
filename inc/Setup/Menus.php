@@ -30,8 +30,8 @@ class Menus {
 	public function register_menus() : void {
 		register_nav_menus(
 			array(
-				'menu'   => __( 'Menu', 'delileauxpapilles' ),
-				'footer' => __( 'Footer', 'delileauxpapilles' ),
+				'menu'   => __( 'Menu', 'ileauxpapilles' ),
+				'footer' => __( 'Footer', 'ileauxpapilles' ),
 			)
 		);
 	}

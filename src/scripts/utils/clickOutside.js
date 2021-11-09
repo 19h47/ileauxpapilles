@@ -14,11 +14,11 @@ export default function clickOutside(selector, callback, options = { removeListe
 
 		if (isNodeList(selector) || isHTMLCollection(selector)) {
 			if ([...selector].some(selection => selection.contains(target))) {
-				return callback(false); // eslint-disable-line standard/no-callback-literal
+				return callback(false); // eslint-disable-line node/no-callback-literal
 			}
 		} else if (isHTMLElement(selector)) {
 			if (selector.contains(target)) {
-				return callback(false); // eslint-disable-line standard/no-callback-literal
+				return callback(false); // eslint-disable-line node/no-callback-literal
 			}
 		} else {
 			console.warn('Undefined type of', selector);
@@ -29,7 +29,7 @@ export default function clickOutside(selector, callback, options = { removeListe
 			document.removeEventListener('click', listener);
 		}
 
-		return callback(true); // eslint-disable-line standard/no-callback-literal
+		return callback(true); // eslint-disable-line node/no-callback-literal
 	};
 
 	document.addEventListener('click', event => listener(event));

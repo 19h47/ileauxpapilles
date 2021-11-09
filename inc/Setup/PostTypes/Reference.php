@@ -54,7 +54,7 @@ class Reference {
 	 * @return void
 	 */
 	public function save( int $post_id, WP_Post $post, bool $update ) : void {
-		delete_transient( 'delileauxpapilles_references' );
+		delete_transient( 'ileauxpapilles_references' );
 	}
 
 
@@ -109,7 +109,7 @@ class Reference {
 
 		foreach ( $columns as $key => $value ) {
 			if ( 'title' === $key ) {
-				$new_columns['thumbnail'] = __( 'Thumbnail', 'delileauxpapilles' );
+				$new_columns['thumbnail'] = __( 'Thumbnail', 'ileauxpapilles' );
 			}
 
 			$new_columns[ $key ] = $value;
@@ -168,34 +168,34 @@ class Reference {
 		$view_link_html = sprintf(
 			' <a href="%1$s">%2$s</a>',
 			esc_url( get_permalink( $post_ID ) ),
-			__( 'View Reference', 'delileauxpapilles' )
+			__( 'View Reference', 'ileauxpapilles' )
 		);
 
 		$scheduled_link_html = sprintf(
 			' <a target="_blank" href="%1$s">%2$s</a>',
 			esc_url( get_permalink( $post_ID ) ),
-			__( 'Preview Reference', 'delileauxpapilles' )
+			__( 'Preview Reference', 'ileauxpapilles' )
 		);
 
 		$preview_link_html = sprintf(
 			' <a target="_blank" href="%1$s">%2$s</a>',
 			esc_url( $preview_url ),
-			__( 'Preview Reference', 'delileauxpapilles' )
+			__( 'Preview Reference', 'ileauxpapilles' )
 		);
 
 		$messages['agency'] = array(
 			0  => '', // Unused. Messages start at index 1.
-			1  => __( 'Reference updated.', 'delileauxpapilles' ) . $view_link_html,
-			2  => __( 'Custom field updated.', 'delileauxpapilles' ),
-			3  => __( 'Custom field deleted.', 'delileauxpapilles' ),
-			4  => __( 'Reference updated.', 'delileauxpapilles' ),
+			1  => __( 'Reference updated.', 'ileauxpapilles' ) . $view_link_html,
+			2  => __( 'Custom field updated.', 'ileauxpapilles' ),
+			3  => __( 'Custom field deleted.', 'ileauxpapilles' ),
+			4  => __( 'Reference updated.', 'ileauxpapilles' ),
 			/* translators: %s: date and time of the revision */
-			5  => isset( $_GET['revision'] ) ? sprintf( __( 'Reference restored to revision from %s.', 'delileauxpapilles' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false, // phpcs:ignore
-			6  => __( 'Reference published.', 'delileauxpapilles' ) . $view_link_html,
-			7  => __( 'Reference saved.', 'delileauxpapilles' ),
-			8  => __( 'Reference submitted.', 'delileauxpapilles' ) . $preview_link_html,
-			9  => sprintf( __( 'Reference scheduled for: %s.', 'delileauxpapilles' ), '<strong>' . $scheduled_date . '</strong>' ) . $scheduled_link_html, // phpcs:ignore
-			10 => __( 'Reference draft updated.', 'delileauxpapilles' ) . $preview_link_html,
+			5  => isset( $_GET['revision'] ) ? sprintf( __( 'Reference restored to revision from %s.', 'ileauxpapilles' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false, // phpcs:ignore
+			6  => __( 'Reference published.', 'ileauxpapilles' ) . $view_link_html,
+			7  => __( 'Reference saved.', 'ileauxpapilles' ),
+			8  => __( 'Reference submitted.', 'ileauxpapilles' ) . $preview_link_html,
+			9  => sprintf( __( 'Reference scheduled for: %s.', 'ileauxpapilles' ), '<strong>' . $scheduled_date . '</strong>' ) . $scheduled_link_html, // phpcs:ignore
+			10 => __( 'Reference draft updated.', 'ileauxpapilles' ) . $preview_link_html,
 		);
 
 		return $messages;
@@ -210,39 +210,39 @@ class Reference {
 	 */
 	public function register_post_type() : void {
 		$labels = array(
-			'name'                     => _x( 'References', 'reference general name', 'delileauxpapilles' ),
-			'singular_name'            => _x( 'Reference', 'reference singular name', 'delileauxpapilles' ),
-			'add_new'                  => _x( 'Add New', 'reference', 'delileauxpapilles' ),
-			'add_new_item'             => __( 'Add New References', 'delileauxpapilles' ),
-			'edit_item'                => __( 'Edit Reference', 'delileauxpapilles' ),
-			'new_item'                 => __( 'New Reference', 'delileauxpapilles' ),
-			'view_item'                => __( 'View Reference', 'delileauxpapilles' ),
-			'view_items'               => __( 'View References', 'delileauxpapilles' ),
-			'search_items'             => __( 'Search References', 'delileauxpapilles' ),
-			'not_found'                => __( 'No references found.', 'delileauxpapilles' ),
-			'not_found_in_trash'       => __( 'No references found in Trash.', 'delileauxpapilles' ),
-			'parent_item_colon'        => __( 'Parent Reference:', 'delileauxpapilles' ),
-			'all_items'                => __( 'All references', 'delileauxpapilles' ),
-			'archives'                 => __( 'Reference Archives', 'delileauxpapilles' ),
-			'attributes'               => __( 'Reference Attributes', 'delileauxpapilles' ),
-			'insert_into_item'         => __( 'Insert into reference', 'delileauxpapilles' ),
-			'uploaded_to_this_item'    => __( 'Uploaded to this reference', 'delileauxpapilles' ),
-			'featured_image'           => _x( 'Featured Image', 'reference', 'delileauxpapilles' ),
-			'set_featured_image'       => _x( 'Set featured image', 'reference', 'delileauxpapilles' ),
-			'remove_featured_image'    => _x( 'Remove featured image', 'reference', 'delileauxpapilles' ),
-			'use_featured_image'       => _x( 'Use as featured image', 'reference', 'delileauxpapilles' ),
-			'filter_items_list'        => __( 'Filter references list', 'delileauxpapilles' ),
-			'items_list_navigation'    => __( 'References list navigation', 'delileauxpapilles' ),
-			'items_list'               => __( 'References list', 'delileauxpapilles' ),
-			'item_published'           => __( 'Reference published.', 'delileauxpapilles' ),
-			'item_published_privately' => __( 'Reference published privately.', 'delileauxpapilles' ),
-			'item_reverted_to_draft'   => __( 'Reference reverted to draft.', 'delileauxpapilles' ),
-			'item_scheduled'           => __( 'Reference scheduled.', 'delileauxpapilles' ),
-			'item_updated'             => __( 'Reference updated.', 'delileauxpapilles' ),
+			'name'                     => _x( 'References', 'reference general name', 'ileauxpapilles' ),
+			'singular_name'            => _x( 'Reference', 'reference singular name', 'ileauxpapilles' ),
+			'add_new'                  => _x( 'Add New', 'reference', 'ileauxpapilles' ),
+			'add_new_item'             => __( 'Add New References', 'ileauxpapilles' ),
+			'edit_item'                => __( 'Edit Reference', 'ileauxpapilles' ),
+			'new_item'                 => __( 'New Reference', 'ileauxpapilles' ),
+			'view_item'                => __( 'View Reference', 'ileauxpapilles' ),
+			'view_items'               => __( 'View References', 'ileauxpapilles' ),
+			'search_items'             => __( 'Search References', 'ileauxpapilles' ),
+			'not_found'                => __( 'No references found.', 'ileauxpapilles' ),
+			'not_found_in_trash'       => __( 'No references found in Trash.', 'ileauxpapilles' ),
+			'parent_item_colon'        => __( 'Parent Reference:', 'ileauxpapilles' ),
+			'all_items'                => __( 'All references', 'ileauxpapilles' ),
+			'archives'                 => __( 'Reference Archives', 'ileauxpapilles' ),
+			'attributes'               => __( 'Reference Attributes', 'ileauxpapilles' ),
+			'insert_into_item'         => __( 'Insert into reference', 'ileauxpapilles' ),
+			'uploaded_to_this_item'    => __( 'Uploaded to this reference', 'ileauxpapilles' ),
+			'featured_image'           => _x( 'Featured Image', 'reference', 'ileauxpapilles' ),
+			'set_featured_image'       => _x( 'Set featured image', 'reference', 'ileauxpapilles' ),
+			'remove_featured_image'    => _x( 'Remove featured image', 'reference', 'ileauxpapilles' ),
+			'use_featured_image'       => _x( 'Use as featured image', 'reference', 'ileauxpapilles' ),
+			'filter_items_list'        => __( 'Filter references list', 'ileauxpapilles' ),
+			'items_list_navigation'    => __( 'References list navigation', 'ileauxpapilles' ),
+			'items_list'               => __( 'References list', 'ileauxpapilles' ),
+			'item_published'           => __( 'Reference published.', 'ileauxpapilles' ),
+			'item_published_privately' => __( 'Reference published privately.', 'ileauxpapilles' ),
+			'item_reverted_to_draft'   => __( 'Reference reverted to draft.', 'ileauxpapilles' ),
+			'item_scheduled'           => __( 'Reference scheduled.', 'ileauxpapilles' ),
+			'item_updated'             => __( 'Reference updated.', 'ileauxpapilles' ),
 		);
 
 		$args = array(
-			'label'               => __( 'Reference', 'delileauxpapilles' ),
+			'label'               => __( 'Reference', 'ileauxpapilles' ),
 			'labels'              => $labels,
 			'supports'            => array( 'title', 'thumbnail' ),
 			'public'              => false,
