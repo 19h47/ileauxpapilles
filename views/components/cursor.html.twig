@@ -1,11 +1,11 @@
 {#
- #
+ # Cursor
  #}
-<div class="Cursor js-cursor">
+<div class="Cursor Pointer-events-none d-flex align-items-center justify-content-center js-cursor">
 	<div class="Cursor__button">
-		{% include 'svg/use.html.twig' with { icon: 'arrow-left' } only %}
+		{{- include( 'svg/use.html.twig', { icon: 'arrow-left' }, with_context = false ) -}}
 	</div>
 	<div class="Cursor__button">
-		{% include 'svg/use.html.twig' with { icon: 'arrow-right' } only %}
+		{{- include( 'svg/use.html.twig', { icon: 'arrow-right' }, with_context = false ) -}}
 	</div>
 </div>

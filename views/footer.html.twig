@@ -1,25 +1,25 @@
 {#
-
-Footer
-
-@package DLAP
-
-#}
+ # Footer
+ #
+ # @package DLAP
+ #}
 
 			<footer class="Site-footer">
 				<div class="Site-container">
 					<div class="row">
-						<div class="col-12 col-md-3 margin-y-3 margin-y-md-0">
+						<div class="col-md-3 margin-y-3 margin-y-md-0">
 							<div class="Site-footer__column">
-								<h3 class="Site-footer__title">{{- __( 'Access', 'ileauxpapilles' ) -}}</h3>
-								<div class="Map">
-									{% include 'partials/map.html.twig' %}
-								</div>
+								<h3 class="Site-footer__title text-transform-uppercase font-family-body font-style-normal font-weight-semibold">
+									{{- __( 'Access', 'ileauxpapilles' ) -}}
+								</h3>
+								<div class="Map">{{- include( 'partials/map.html.twig' ) -}}</div>
 							</div>
 						</div>
-						<div class="col-12 col-md-3 margin-y-3 margin-y-md-0">
+						<div class="col-md-3 margin-y-3 margin-y-md-0">
 							<div class="Site-footer__column">
-								<h3 class="Site-footer__title">{{- __( 'Follow us!', 'ileauxpapilles' ) -}}</h3>
+								<h3 class="Site-footer__title text-transform-uppercase font-family-body font-style-normal font-weight-semibold">
+									{{- __( 'Follow us!', 'ileauxpapilles' ) -}}
+								</h3>
 								<div
 									class="fb-page"
 									data-href="https://www.facebook.com/ileauxpapilles/"
@@ -33,27 +33,27 @@ Footer
 								><blockquote cite="https://www.facebook.com/ileauxpapilles/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/ileauxpapilles/">De l&#039;île aux papilles</a></blockquote></div>
 							</div>
 						</div>
-						<div class="col-12 col-md-3 margin-y-3 margin-y-md-0">
+						<div class="col-md-3 margin-y-3 margin-y-md-0">
 							<div class="Site-footer__column">{{- footer_primary -}}</div>
 						</div>
-						<div class="col-12 col-md-3 margin-y-3 margin-y-md-0">
+						<div class="col-md-3 margin-y-3 margin-y-md-0">
 							<div class="Site-footer__column">{{- footer_secondary -}}</div>
 						</div>
 					</div>
 				</div>
 				<div class="Site-container margin-top-md-3">
 					<div class="row">
-						<div class="col-12">
-							<hr class="Site-footer__horizontal-line">
-						</div>
+						<div><hr class="Site-footer__horizontal-line"></div>
 					</div>
 					<div class="row margin-top-3">
-						<div class="col-12 col-sm-6">
-							{% include 'components/menu.html.twig' with { items: menus.footer.items } %}
+						<div class="col-sm-6">
+							{{- include('components/menu.html.twig', { items: menus.footer.items } ) -}}
 						</div>
-						<div class="col-12 margin-top-3 margin-top-sm-0 col-sm-6 text-align-sm-right">
+						<div class="margin-top-3 margin-top-sm-0 col-sm-6 text-align-sm-right">
 							<p class="Site-footer__copyright">
-								Réalisé par <a href="http://inesa.fr/" target="_blank" rel="noopener"><strong>Inès A</strong></a> et <a href="https://19h47.fr/" target="_blank" rel="noopener"><strong>19h47</strong></a>
+								Réalisé par <a href="http://inesa.fr/" target="_blank" rel="noopener">
+								<strong class="text-transform-uppercase font-family-body font-style-normal font-weight-semibold">Inès A</strong></a>&nbsp;et&nbsp;<a href="https://19h47.fr/" target="_blank" rel="noopener">
+								<strong class="text-transform-uppercase font-family-body font-style-normal font-weight-semibold">19h47</strong></a>
 							</p>
 						</div>
 					</div>

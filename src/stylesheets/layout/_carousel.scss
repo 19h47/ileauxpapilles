@@ -4,9 +4,9 @@
  *
  *
  */
-.Carousel {
-	@extend %overflow-hidden;
 
+/*! purgecss start ignore */
+.Carousel {
 	.flickity-viewport {
 		overflow: visible;
 	}
@@ -27,3 +27,4 @@
 		@include size(auto, 100%);
 	}
 }
+/*! purgecss end ignore */

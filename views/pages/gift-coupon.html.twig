@@ -6,8 +6,15 @@
 {% extends 'index.html.twig' %}
 
 {% macro checkbox( id, label, name, value, price ) %}
-	<div id="{{ id }}" tabindex="0" class="Checkbox page-block" role="checkbox" aria-checked="false" data-node-type="CheckboxBlock">
-		<button type="button" tabindex="-1" aria-label="{{ label }}"></button>
+	<div
+		id="{{ id }}"
+		tabindex="0"
+		class="Checkbox d-flex align-items-center page-block"
+		role="checkbox"
+		aria-checked="false"
+		data-node-type="CheckboxBlock"
+	>
+		<button class="position-relative" type="button" tabindex="-1" aria-label="{{ label }}"></button>
 		<span class="d-flex flex-column flex-md-row w-100">
 			{{- label -}}
 			<span class="margin-left-md-auto white-space-nowrap">{{- price.label -}}</span>
@@ -36,7 +43,7 @@
 			<div class="row">
 
 				{% if coupon_fields.labels.aside %}
-					<div class="col-12 col-md-3 offset-md-1">
+					<div class="col-md-3 offset-md-1">
 						<div class="Wysiwyg">
 
 							{% if coupon_fields.labels.introduction %}
@@ -48,7 +55,7 @@
 					</div>
 				{% endif %}
 
-				<div class="col-12 col-md-6{{ coupon_fields.labels.aside ? ' offset-md-1' : ' offset-md-5' }}">
+				<div class="col-md-6{{ coupon_fields.labels.aside ? ' offset-md-1' : ' offset-md-5' }}">
 					<form class="Form" action="" method="post">
 
 						{% if coupon_fields.labels.introduction %}
@@ -85,7 +92,7 @@
 
 						{# Message #}
 						<div class="Form__group">
-							<textarea class="Textarea" name="your_personnalized_message" id="your_personnalized_message" placeholder="{{ placeholders.your_personnalized_message }}" aria-label="{{ placeholders.your_personnalized_message }}"></textarea>
+							<textarea class="Textarea vertical-align-middle" name="your_personnalized_message" id="your_personnalized_message" placeholder="{{ placeholders.your_personnalized_message }}" aria-label="{{ placeholders.your_personnalized_message }}"></textarea>
 						</div>
 
 						{# Type #}
@@ -146,7 +153,7 @@
 						</div>
 
 						<div class="Form__group">
-							<textarea class="Textarea" name="message" id="message" placeholder="{{ placeholders.your_message }}" aria-label="{{ placeholders.your_message }}"></textarea>
+							<textarea class="Textarea vertical-align-middle" name="message" id="message" placeholder="{{ placeholders.your_message }}" aria-label="{{ placeholders.your_message }}"></textarea>
 						</div>
 
 						{% if coupon_fields.labels.legals %}
@@ -159,8 +166,10 @@
 
 						<div class="Form__group margin-top-4">
 							<div class="row align-items-center">
-								<div class="col-12 col-md-4">
-									<button class="Button w-100" type="submit">{{- _x( 'Send', 'gift coupon', 'ileauxpapilles' ) -}}</button>
+								<div class="col-md-4">
+									<button class="Button w-100" type="submit">
+										{{- _x( 'Send', 'gift coupon', 'ileauxpapilles' ) -}}
+									</button>
 								</div>
 							</div>
 						</div>

@@ -5,16 +5,9 @@
  *
  * @package DLAP
  */
+
+/*! purgecss start ignore */
 .Menu {
-	$this: &;
-
-	@extend .d-flex, .flex-row;
-	@extend %font-weight-semibold;
-
-	&--header {
-		@extend .flex-column, .flex-md-row;
-	}
-
 	[role='region'] {
 		transition: max-height 0.3s map-get($easings, ease-out-expo);
 	}
@@ -23,20 +16,13 @@
 		@include padding(top $grid-gutter-width / 2 bottom $grid-gutter-width / 2);
 		@include margin(left auto);
 		@include letter-spacing(100);
-		@extend %text-transform-uppercase;
-		@extend .d-md-none;
 	}
 
 	&__items {
-		@extend .d-flex, .flex-column, .flex-md-row, .justify-content-between;
-		@extend %list-style-type-none, %text-transform-uppercase;
 		@include letter-spacing(100);
 	}
 
 	&__link {
-		@extend .d-block;
-		@extend %position-relative;
-
 		transition: color 0.3s map-get($easings, ease-out-expo);
 
 		@at-root .Front-page .Site-footer & {
@@ -49,7 +35,7 @@
 			color: the_color(white);
 		}
 
-		@at-root #{ $this }--header & {
+		@at-root .Menu--header & {
 			@include padding(top $grid-gutter-width / 2 bottom $grid-gutter-width / 2);
 
 			color: the_color(gray, very-light);
@@ -98,3 +84,4 @@
 		}
 	}
 }
+/*! purgecss end ignore */

@@ -34,7 +34,8 @@
 	}
 
 	a {
-		@extend %font-weight-bold, %text-decoration-underline;
+		font-weight: 700;
+		text-decoration: underline;
 
 		color: the_color(white);
 	}
@@ -42,7 +43,8 @@
 	ul {
 		@include padding(left $grid-gutter-width / 2);
 		@include margin(top $grid-gutter-width bottom $grid-gutter-width);
-		@extend %list-style-type-none;
+
+		list-style-type: none;
 
 		@include media-breakpoint-up(md) {
 			@include padding(left $grid-gutter-width);
@@ -103,8 +105,9 @@
 	}
 
 	img {
-		@extend .d-block;
 		@include margin(right auto left auto);
+
+		display: block;
 
 		max-width: 100%;
 		height: auto;

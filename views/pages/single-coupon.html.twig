@@ -61,11 +61,11 @@
 				</div>
 			</div>
 
-			<div class="Site-container"><div class="row"><div class="col-12"><hr class="Single-coupon__horizontal-line"></div></div></div>
+			<div class="Site-container"><div class="row"><div><hr class="Single-coupon__horizontal-line"></div></div></div>
 			<div class="Single-coupon__content">
 				<div class="Site-container">
 					<div class="row">
-						<div class="col-12">
+						<div>
 							<div class="color-cyan-dark-moderate">
 								D’ici au {{ post.post_date | date_modify( '+6 month' ) | date( 'l j F Y' ) }}<br>
 								vous êtes invités à déguster un <strong>repas</strong> pour <strong>{{ post.get_field( 'menu' ).number }} personnes :</strong><br>
@@ -84,7 +84,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="Site-container"><div class="row"><div class="col-12"><hr class="Single-coupon__horizontal-line"></div></div></div>
+			<div class="Site-container"><div class="row"><div><hr class="Single-coupon__horizontal-line"></div></div></div>
 		</main>
 
 		{{ wp_footer }}

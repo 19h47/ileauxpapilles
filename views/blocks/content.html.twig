@@ -3,13 +3,13 @@
 	<div class="Site-container">
 		<div class="row">
 			{% if block.aside %}
-				<div class="col-12 col-sm-1 col-sm-3 offset-sm-1 margin-bottom-3 margin-bottom-md-0">
+				<div class="col-sm-1 col-sm-3 offset-sm-1 margin-bottom-3 margin-bottom-md-0">
 					<div class="Wysiwyg margin-bottom-3 margin-bottom-md-0">
 						{{- block.aside -}}
 					</div>
 				</div>
 			{% endif %}
-			<div class="col-12 col-sm-1 col-sm-6{{ block.aside ? ' offset-sm-1' : ' offset-sm-5' }}">
+			<div class="col-sm-1 col-sm-6{{ block.aside ? ' offset-sm-1' : ' offset-sm-5' }}">
 				<div class="Wysiwyg">
 					{{- block.content -}}
 				</div>

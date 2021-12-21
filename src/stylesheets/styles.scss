@@ -7,9 +7,11 @@
 
 @import 'base/fonts';
 
+/*! purgecss start ignore */
 @import '~ress/ress';
 @import '~flickity/css/flickity';
 @import '~leaflet/dist/leaflet.css';
+/*! purgecss end ignore */
 
 // Functions
 @import '~@19h47/architecture/src/stylesheets/abstracts/functions';
@@ -66,8 +68,6 @@
 
 // Pages
 @import 'pages/page';
-@import 'pages/front-page';
-@import 'pages/producers';
 @import 'pages/single-coupon';
 
 @import 'vendors/wpcf7';

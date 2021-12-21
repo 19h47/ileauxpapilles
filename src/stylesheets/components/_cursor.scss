@@ -1,36 +1,34 @@
 /**
- *
+ * Cursor
  *
  *
  */
 .Cursor {
-	@extend %Pointer-events-none;
-	@extend .d-flex, .align-items-center, .justify-content-center;
-	@include size( 80px );
-	@include fixed( top -40px left -40px );
+	@include size(80px);
+	@include fixed(top -40px left -40px);
 
 	border-radius: 40px;
-	background-color: the_color( white );
-	transform: scale( 0 );
+	background-color: the_color(white);
+	transform: scale(0);
 	z-index: 10;
 
 	&__button {
-		@include margin( right 5px left 5px );
-		@include size( 14px );
+		@include margin(right 5px left 5px);
+		@include size(14px);
 
 		&:first-child {
-			@include margin( left 0 );
+			@include margin(left 0);
 		}
 
 		&:last-child {
-			@include margin( right 0 );
+			@include margin(right 0);
 		}
 
 		svg {
 			@extend .d-block;
-			@include size( 14px );
+			@include size(14px);
 
-			fill: the_color( blue, very-dark );
+			fill: the_color(blue, very-dark);
 		}
 	}
 }

@@ -1,10 +1,14 @@
-{#  #}
+{#
+ # Divider
+ #
+ # @package DLAP
+ #}
 <div class="Section">
 	<div class="Site-container">
 		<div class="row">
-			<div class="col-12 col-md-10 offset-md-1 col-hd-6 offset-hd-5">
+			<div class="col-md-10 offset-md-1 col-hd-6 offset-hd-5">
 				<div class="Divider">
-					{% include 'svg/use.html.twig' with { icon: 'divider' } %}
+					{{- include( 'svg/use.html.twig', { classes: [ 'd-inline-block vertical-align-middle' ], icon: 'divider' } ) -}}
 				</div>
 			</div>
 		</div>

@@ -5,6 +5,7 @@
  *
  * @package DLAP
  */
+
 .Site-footer {
 	@include padding(top $grid-gutter-width bottom $grid-gutter-width);
 
@@ -32,10 +33,6 @@
 	&__title {
 		@include margin(bottom $grid-gutter-width / 2);
 		@include letter-spacing(100);
-		@extend %text-transform-uppercase,
-			%font-family-body,
-			%font-style-normal,
-			%font-weight-semibold;
 
 		font-size: #{$base-font-size}px;
 		line-height: #{$base-line-height}px;
@@ -66,7 +63,7 @@
 
 		.textwidget {
 			a {
-				@extend %text-decoration-underline;
+				text-decoration: underline;
 			}
 
 			strong {
@@ -89,12 +86,8 @@
 
 	&__copyright {
 		@include margin(bottom 0);
-		strong {
-			@extend %text-transform-uppercase,
-				%font-family-body,
-				%font-style-normal,
-				%font-weight-semibold;
 
+		strong {
 			@at-root .Front-page & {
 				color: the_color(white);
 			}

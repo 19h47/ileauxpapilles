@@ -1,16 +1,10 @@
 /**
  * Divider
  *
- *
- *
- *
- *
- *
+ * @package DLAP
  */
 .Divider {
 	svg {
 		@include size(100%, $grid-gutter-width * 4);
-		@extend .d-inline-block;
-		@extend %vertical-align-middle;
 	}
 }

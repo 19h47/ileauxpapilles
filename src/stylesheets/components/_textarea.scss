@@ -4,7 +4,6 @@
  *
  */
 .Textarea {
-	@extend %vertical-align-middle;
 	@include reset-placeholder(the_color(white));
 	@include padding(
 		top $grid-gutter-width / 2 right $grid-gutter-width / 2 bottom $grid-gutter-width / 2 left

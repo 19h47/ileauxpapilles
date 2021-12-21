@@ -3,11 +3,11 @@
  #
  #
  #}
-<div id="carousel" class="Carousel Section page-block" data-node-type="CarouselBlock">
+<div id="carousel" class="overflow-hidden Carousel Section page-block" data-node-type="CarouselBlock">
 
 	<div class="Site-container">
 		<div class="row">
-			<div class="col-12">
+			<div>
 				<div class="Carousel__items js-items">
 					{% for item in block.items %}
 						{% include 'partials/image.html.twig' with { loading: 'eager', image: item, classes: [ 'Carousel__item', 'js-item' ] } %}

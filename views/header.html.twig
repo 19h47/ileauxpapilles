@@ -40,7 +40,7 @@ Header
 		<header class="Site-header margin-bottom-3 margin-bottom-md-0">
 			<div class="Site-container h-100">
 				<div class="row h-100">
-					<div class="col-12 d-flex flex-column flex-md-row align-items-center">
+					<div class="d-flex flex-column flex-md-row align-items-center">
 
 						{%- if alert_message -%}
 							<p class="text-align-center text-align-md-left margin-top-3 margin-top-md-0 margin-bottom-0">
@@ -61,9 +61,9 @@ Header
 		<div class="Hero">
 			<div class="Site-container">
 				<div class="row">
-					<div class="col-12">
-						<a class="Hero__logo js-baseline" href="{{ site.link }}" aria-label="{{ site.description }}">
-							{% include 'svg/use.html.twig' with { attributes: { height: '576px', width: '1296px' }, icon: 'logo' } only %}
+					<div>
+						<a class="Hero__logo d-block js-baseline" href="{{ site.link }}" aria-label="{{ site.description }}">
+							{{- include( 'svg/use.html.twig', { classes: [ 'position-relative vertical-align-middle d-inline-block' ], attributes: { height: '576px', width: '1296px' }, icon: 'logo' }, with_context = false ) -}}
 						</a>
 					</div>
 				</div>
@@ -101,7 +101,7 @@ Header
 
 			<div class="Site-container">
 				<div class="row">
-					<div class="col-12">
+					<div>
 						<hr class="Hero__horizontal-line">
 					</div>
 				</div>
@@ -115,8 +115,8 @@ Header
 
 			<div class="Site-container">
 				<div class="row">
-					<div class="col-12 col-md-10 offset-md-1 col-hd-7 offset-hd-5">
-						{% include 'components/menu.html.twig' with { items: menus.menu.items, accordion: true, classes: [ 'Menu--header' ] } %}
+					<div class="col-md-10 offset-md-1 col-hd-7 offset-hd-5">
+						{% include 'components/menu.html.twig' with { items: menus.menu.items, accordion: true, classes: [ 'Menu--header', 'flex-column flex-md-row' ] } %}
 					</div>
 				</div>
 			</div>

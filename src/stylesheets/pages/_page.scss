@@ -1,10 +1,10 @@
 /**
  * Page
- *
- *
- *
+
  * @package DLAP
  */
+
+/*! purgecss start ignore */
 .Page {
 	&__title {
 		@extend %text-align-center, %text-align-md-left;
@@ -91,3 +91,4 @@
 		}
 	}
 }
+/*! purgecss end ignore */

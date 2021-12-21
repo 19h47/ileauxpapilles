@@ -31,7 +31,7 @@ class Sidebars {
 			array(
 				'name'          => __( 'Footer Primary', 'ileauxpapilles' ),
 				'id'            => 'footer_primary',
-				'before_title'  => '<h3 class="Site-footer__title">',
+				'before_title'  => '<h3 class="Site-footer__title text-transform-uppercase font-family-body font-style-normal font-weight-semibold">',
 				'after_title'   => '</h3>',
 				'before_widget' => '',
 				'after_widget'  => '',
@@ -41,7 +41,7 @@ class Sidebars {
 			array(
 				'name'          => __( 'Footer Secondary', 'ileauxpapilles' ),
 				'id'            => 'footer_secondary',
-				'before_title'  => '<h3 class="Site-footer__title">',
+				'before_title'  => '<h3 class="Site-footer__title text-transform-uppercase font-family-body font-style-normal font-weight-semibold">',
 				'after_title'   => '</h3>',
 				'before_widget' => '',
 				'after_widget'  => '',

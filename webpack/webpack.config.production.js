@@ -7,10 +7,10 @@
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
-// const PurgecssPlugin = require('purgecss-webpack-plugin');
-// const purgecssWordpress = require('purgecss-with-wordpress');
+const PurgecssPlugin = require('purgecss-webpack-plugin');
+const purgecssWordpress = require('purgecss-with-wordpress');
 
-// const glob = require('glob'); // eslint-disable-line import/no-extraneous-dependencies
+const glob = require('glob-all'); // eslint-disable-line import/no-extraneous-dependencies
 const resolve = require('./webpack.utils');
 
 module.exports = {
@@ -62,9 +62,17 @@ module.exports = {
 			filename: 'css/main.[chunkhash:8].css',
 		}),
 		new CompressionPlugin(),
-		// new PurgecssPlugin({
-		// 	paths: glob.sync(resolve('views/**/*'), { nodir: true }),
-		// 	safelist: purgecssWordpress.safelist
-		// }),
+		new PurgecssPlugin({
+			paths: glob.sync(
+				[
+					resolve('templates/**/*.php'),
+					resolve('views/**/*.twig'),
+					resolve('inc/**/*.php'),
+				],
+				{ nodir: true },
+			),
+			defaultExtractor: content => content.match(/[^<>"'`\s]*[^<>"'`\s:]/g) || [],
+			safelist: [...purgecssWordpress.safelist, /leaflet/, /marker/],
+		}),
 	],
 };

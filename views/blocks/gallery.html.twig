@@ -3,7 +3,7 @@
 	<div class="Site-container">
 		<div class="row Gallery__items">
 			{% for image in block.images %}
-				<div class="col-12 col-sm-6 col-md-4">{% include 'partials/image.html.twig' with { image: image } %}</div>
+				<div class="col-sm-6 col-md-4">{% include 'partials/image.html.twig' with { image: image } %}</div>
 			{% endfor %}
 		</div>
 	</div>

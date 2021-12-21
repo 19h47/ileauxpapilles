@@ -6,8 +6,6 @@
  */
 .Image {
 	img {
-		@extend .d-inline-block;
-		@extend %vertical-align-middle;
 		@include size(100%, auto);
 
 		object-fit: contain;
