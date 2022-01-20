@@ -9,6 +9,10 @@
 .Single-coupon {
 	@include padding(/* top #{(96 * 11) / 24}pt */ bottom #{(96 * 11) / 24}pt);
 
+	.grecaptcha-badge {
+		display: none !important;
+	}
+
 	&__header {
 	}
 
