@@ -26,7 +26,7 @@
 {% endmacro %}
 
 {% macro radio( checked, label, price, name, value ) %}
-	<div class="Radio{{ checked ? ' is-selected' }}" aria-checked="{{ checked ? 'true' : 'false' }}" tabindex="{{ checked ? '0' : '-1' }}" role="radio">
+	<div class="Radio {{ checked ? ' is-selected' }}" aria-checked="{{ checked ? 'true' : 'false' }}" tabindex="{{ checked ? '0' : '-1' }}" role="radio">
 		<span></span>
 		<span class="d-flex flex-column flex-md-row w-100">
 			{{- label -}}
