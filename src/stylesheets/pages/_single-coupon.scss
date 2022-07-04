@@ -6,8 +6,10 @@
  */
 
 /*! purgecss start ignore */
+@use "sass:math";
+
 .Single-coupon {
-	@include padding(/* top #{(96 * 11) / 24}pt */ bottom #{(96 * 11) / 24}pt);
+	@include padding(/* top #{(96 * 11) / 24}pt */ bottom #{math.div(96 * 11, 24)}pt);
 
 	.grecaptcha-badge {
 		display: none !important;
@@ -20,27 +22,27 @@
 		@include size(88pt);
 		@extend .d-flex, .align-items-center, .justify-content-center;
 
-		border: #{(5 * 11) / 24}pt solid the_color(cyan, dark-moderate);
-		border-radius: #{(96 * 11) / 24}pt;
+		border: #{math.div(5 * 11, 24)}pt solid the_color(cyan, dark-moderate);
+		border-radius: #{math.div(96 * 11, 24)}pt;
 
 		svg {
-			@include size(#{(96 * 11) / 24}pt);
+			@include size(#{math.div(96 * 11, 24)}pt);
 		}
 	}
 
 	&__title {
 		@extend %font-family-title, %font-style-normal, %font-weight-regular;
-		@include margin(top #{(24 * 11) / 24}pt bottom #{(24 * 11) / 24}pt);
+		@include margin(top #{math.div(24 * 11, 24)}pt bottom #{math.div(24 * 11, 24)}pt);
 
-		font-size: #{(54 * 11) / 24}pt;
-		line-height: #{(72 * 11) / 24}pt;
+		font-size: #{math.div(54 * 11, 24)}pt;
+		line-height: #{math.div(72 * 11, 24)}pt;
 		color: the_color(cyan, dark-moderate);
 	}
 
 	&__logo {
 		@extend %text-align-right;
-		@include margin(top #{(24 * 11) / 24}pt bottom #{(24 * 11) / 24}pt);
-		@include size(auto, #{(144 * 11) / 24}pt);
+		@include margin(top #{math.div(24 * 11, 24)}pt bottom #{math.div(24 * 11, 24)}pt);
+		@include size(auto, #{math.div(144 * 11, 24)}pt);
 
 		max-width: 100%;
 
@@ -57,8 +59,8 @@
 	&__from-to {
 		@include margin(top 27.5pt bottom 14.4pt);
 		color: the_color(cyan, dark-moderate);
-		font-size: #{(24 * 11) / 24}pt;
-		line-height: #{(24 * 11) / 24}pt;
+		font-size: #{math.div(24 * 11, 24)}pt;
+		line-height: #{math.div(24 * 11, 24)}pt;
 	}
 
 	&__horizontal-line {
@@ -70,11 +72,11 @@
 	}
 
 	&__content {
-		@include margin(top #{(24 * 11) / 24}pt bottom #{(24 * 11) / 24}pt);
+		@include margin(top #{math.div(24 * 11, 24)}pt bottom #{math.div(24 * 11, 24)}pt);
 		@extend %text-align-center;
 
-		font-size: #{(24 * 11) / 24}pt;
-		line-height: #{(24 * 11) / 24}pt;
+		font-size: #{math.div(24 * 11, 24)}pt;
+		line-height: #{math.div(24 * 11, 24)}pt;
 	}
 }
 /*! purgecss end ignore */

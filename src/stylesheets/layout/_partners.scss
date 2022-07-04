@@ -26,7 +26,7 @@
 	&__item {
 		@extend .d-block;
 		@include margin(
-			top $grid-gutter-width / 2 right auto bottom $grid-gutter-width / 2 left auto
+			top $grid-gutter-width * 0.5 right auto bottom $grid-gutter-width * 0.5 left auto
 		);
 		@include size(3 * $grid-gutter-width);
 

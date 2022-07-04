@@ -7,7 +7,7 @@
 	@extend %text-transform-uppercase, %font-weight-bold;
 	@include letter-spacing(100);
 	@include padding(
-		top $grid-gutter-width / 2 right $grid-gutter-width bottom $grid-gutter-width / 2 left
+		top $grid-gutter-width * 0.5 right $grid-gutter-width bottom $grid-gutter-width * 0.5 left
 			$grid-gutter-width
 	);
 

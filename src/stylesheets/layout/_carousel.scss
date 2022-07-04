@@ -6,13 +6,15 @@
  */
 
 /*! purgecss start ignore */
+@use "sass:math";
+
 .Carousel {
 	.flickity-viewport {
 		overflow: visible;
 	}
 
 	&__items {
-		@include margin(right $grid-gutter-width / -2 left $grid-gutter-width / -2);
+		@include margin(right math.div($grid-gutter-width, -2) left math.div($grid-gutter-width, -2));
 
 		@include size(auto, $grid-gutter-width * 12);
 
@@ -23,7 +25,7 @@
 
 	// .Carousel__item
 	&__item {
-		@include padding(right $grid-gutter-width / 2 left $grid-gutter-width / 2);
+		@include padding(right $grid-gutter-width * 0.5 left $grid-gutter-width * 0.5);
 		@include size(auto, 100%);
 	}
 }

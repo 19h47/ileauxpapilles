@@ -6,8 +6,8 @@
 .Input {
 	@include reset-placeholder(the_color(white));
 	@include padding(
-		top $grid-gutter-width / 2 right $grid-gutter-width / 2 bottom $grid-gutter-width / 2 left
-			$grid-gutter-width / 2
+		top $grid-gutter-width * 0.5 right $grid-gutter-width * 0.5 bottom $grid-gutter-width * 0.5 left
+			$grid-gutter-width * 0.5
 	);
 
 	background-color: rgba(the_color(white), 0.15);

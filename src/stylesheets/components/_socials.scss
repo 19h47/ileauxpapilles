@@ -15,7 +15,7 @@
 	}
 
 	&__item {
-		@include margin(right $grid-gutter-width / 4 left $grid-gutter-width / 4);
+		@include margin(right $grid-gutter-width * 0.25 left $grid-gutter-width * 0.25);
 
 		&:last-child {
 			@include margin(right 0);
@@ -29,14 +29,14 @@
 		@extend .d-flex, .align-items-center, .justify-content-center;
 		@include size($grid-gutter-width);
 
-		border-radius: $grid-gutter-width / 2;
+		border-radius: $grid-gutter-width * 0.5;
 		background-color: the_color(cyan, dark-moderate);
 
 		// &:hover {
 		// }
 
 		svg {
-			@include size($grid-gutter-width / 2);
+			@include size($grid-gutter-width * 0.5);
 
 			fill: the_color(white);
 		}

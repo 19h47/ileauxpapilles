@@ -31,7 +31,7 @@
 	}
 
 	&__title {
-		@include margin(bottom $grid-gutter-width / 2);
+		@include margin(bottom $grid-gutter-width * 0.5);
 		@include letter-spacing(100);
 
 		font-size: #{$base-font-size}px;

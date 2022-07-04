@@ -5,13 +5,15 @@
  *
  *
  */
+@use "sass:math";
+
 .Gallery {
 	&__items {
-		@include margin(top $grid-gutter-width / -2 bottom $grid-gutter-width / -2);
+		@include margin(top math.div($grid-gutter-width, -2) bottom math.div($grid-gutter-width, -2));
 	}
 	img {
 		@extend .d-block;
-		@include margin(top $grid-gutter-width / 2 bottom $grid-gutter-width / 2);
+		@include margin(top $grid-gutter-width * 0.5 bottom $grid-gutter-width * 0.5);
 		@include size(100%, $grid-gutter-width * 10);
 
 		max-width: 100%;

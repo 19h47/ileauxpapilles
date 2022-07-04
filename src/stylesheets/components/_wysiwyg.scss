@@ -1,27 +1,16 @@
-/**
- *
- *
- *
- *
- *
- */
 .Wysiwyg {
 	& > *:first-child {
 		@include margin(top 0);
 	}
-
 	& > *:last-child {
 		@include margin(bottom 0);
 	}
-
 	strong {
 		color: the_color(white);
 	}
-
 	h3 {
 		@include margin(top $grid-gutter-width * 2 bottom $grid-gutter-width);
 		color: the_color(white);
-
 		@at-root .Restaurant-page & {
 			color: the_color(yellow, grayish);
 		}
@@ -32,31 +21,24 @@
 			color: the_color(yellow, grayish);
 		}
 	}
-
 	a {
 		font-weight: 700;
 		text-decoration: underline;
-
 		color: the_color(white);
 	}
-
 	ul {
-		@include padding(left $grid-gutter-width / 2);
+		@include padding(left $grid-gutter-width * 0.5);
 		@include margin(top $grid-gutter-width bottom $grid-gutter-width);
-
 		list-style-type: none;
-
 		@include media-breakpoint-up(md) {
 			@include padding(left $grid-gutter-width);
 		}
-
 		li {
 			&:before {
 				content: '\2022';
 				color: the_color(cyan, dark-moderate);
 				display: inline-block;
 				width: 1em;
-
 				@at-root .Restaurant-page & {
 					color: the_color(yellow, grayish);
 				}
@@ -69,46 +51,35 @@
 			}
 		}
 	}
-
 	table {
 		border: none;
-
 		td {
 			border: none;
 		}
-
 		tr {
 			height: $grid-gutter-width * 2;
-
 			@include media-breakpoint-up(md) {
 				height: auto;
 			}
 		}
 	}
-
 	blockquote {
 		@include padding(
 			top $grid-gutter-width right $grid-gutter-width bottom $grid-gutter-width left
 				$grid-gutter-width
 		);
-
 		& > *:first-child {
 			@include margin(top 0);
 		}
-
 		& > *:last-child {
 			@include margin(bottom 0);
 		}
-
 		background-color: the_color(cyan, dark-moderate);
 		color: the_color(white);
 	}
-
 	img {
 		@include margin(right auto left auto);
-
 		display: block;
-
 		max-width: 100%;
 		height: auto;
 	}

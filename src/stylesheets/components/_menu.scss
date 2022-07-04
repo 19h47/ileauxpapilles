@@ -13,7 +13,7 @@
 	}
 
 	&__button {
-		@include padding(top $grid-gutter-width / 2 bottom $grid-gutter-width / 2);
+		@include padding(top $grid-gutter-width * 0.5 bottom $grid-gutter-width * 0.5);
 		@include margin(left auto);
 		@include letter-spacing(100);
 	}
@@ -36,7 +36,7 @@
 		}
 
 		@at-root .Menu--header & {
-			@include padding(top $grid-gutter-width / 2 bottom $grid-gutter-width / 2);
+			@include padding(top $grid-gutter-width * 0.5 bottom $grid-gutter-width * 0.5);
 
 			color: the_color(gray, very-light);
 

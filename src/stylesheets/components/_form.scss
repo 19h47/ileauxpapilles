@@ -42,7 +42,7 @@
 
 	&__group {
 		@extend .d-block;
-		@include margin(top $grid-gutter-width / 2 bottom $grid-gutter-width / 2);
+		@include margin(top $grid-gutter-width * 0.5 bottom $grid-gutter-width * 0.5);
 
 		& > *:first-child {
 			@include margin(top 0);
@@ -55,8 +55,8 @@
 
 	&__fieldset {
 		@include padding(
-			top $grid-gutter-width right $grid-gutter-width / 2 bottom $grid-gutter-width left
-				$grid-gutter-width / 2
+			top $grid-gutter-width right $grid-gutter-width * 0.5 bottom $grid-gutter-width left
+				$grid-gutter-width * 0.5
 		);
 		box-shadow: inset 0 0 0 3px rgba(the_color(white), 0.15);
 
@@ -72,7 +72,7 @@
 
 	&__message {
 		@include margin(
-			top $grid-gutter-width / 2 bottom $grid-gutter-width / 2 left $grid-gutter-width
+			top $grid-gutter-width * 0.5 bottom $grid-gutter-width * 0.5 left $grid-gutter-width
 		);
 
 		display: block;

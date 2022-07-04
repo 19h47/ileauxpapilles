@@ -13,6 +13,8 @@
  * @see http://www.colorhexa.com/ to pickup color name
  * @see https://brandcolors.net/
  */
+@use "sass:math";
+
 $color-variations: (
 	black: #000,
 	white: #fff,
@@ -127,7 +129,7 @@ $font: (
 $base-font-size: 16;
 $base-font-size-px: $base-font-size * 1px;
 $base-line-height: 24;
-$scale-factor: $base-line-height / $base-font-size;
+$scale-factor: math.div($base-line-height, $base-font-size);
 $base-unit: px;
 
 /**
